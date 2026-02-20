@@ -1,0 +1,2902 @@
+[
+  {
+    "id": "expr_001",
+    "french": "C'est bon / Ça marche",
+    "romand": "Ça joue",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "ça joue",
+      "ca joue"
+    ],
+    "notes": "Littéralement 'ça joue,' c'est l'expression romande par excellence et le marqueur le plus immédiat qu'on est bien en Suisse romande. Elle fonctionne comme un 'OK / d'accord' universel et peut s'utiliser autant en question qu'en réponse."
+  },
+  {
+    "id": "expr_002",
+    "french": "Bonjour / Au revoir",
+    "romand": "Adieu",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "adieu"
+    ],
+    "notes": "En Romandie, 'adieu' est une salutation décontractée qui veut dire à la fois 'bonjour' et 'au revoir,' dépouillée de la connotation d'adieu dramatique qu'elle porte en français standard. Elle vient du vieux français 'a Dieu' et s'utilise entre amis comme 'salut.'"
+  },
+  {
+    "id": "expr_003",
+    "french": "Bonne continuation",
+    "romand": "Tout de bon",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "tout de bon"
+    ],
+    "notes": "Une formule chaleureuse qui signifie littéralement 'tout ce qu'il y a de bon,' utilisée quand on quitte quelqu'un qu'on ne reverra pas de sitôt. Elle porte un ton sincère et cordial qui n'a pas d'équivalent direct en français standard."
+  },
+  {
+    "id": "expr_004",
+    "french": "Je vous en prie / De rien",
+    "romand": "Service !",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "service"
+    ],
+    "notes": "Quand un Romand dit 'service!' après avoir été remercié, cela fait écho au 'Bitte' allemand et reflète la culture multilingue de la Suisse. C'est bien plus courant que 'de rien' dans les interactions quotidiennes en Suisse romande."
+  },
+  {
+    "id": "expr_005",
+    "french": "À tes souhaits",
+    "romand": "Santé !",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "santé"
+    ],
+    "notes": "Alors qu'en France 'santé' est surtout un toast à table, en Romandie ça sert aussi à répondre quand quelqu'un éternue, remplaçant le 'à tes souhaits' français standard. Un mot pratique deux-en-un."
+  },
+  {
+    "id": "expr_006",
+    "french": "Hein ? / N'est-ce pas ?",
+    "romand": "Ou bien ?",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "ou bien"
+    ],
+    "notes": "Cette question-tag placée en fin de phrase est empruntée au suisse allemand 'oder?' et remplit la même fonction que le 'hein?' québécois ou le 'right?' anglais. C'est l'un des marqueurs les plus évidents du parler romand."
+  },
+  {
+    "id": "expr_007",
+    "french": "Je vous en prie / Allez-y",
+    "romand": "Faites seulement",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "faites seulement"
+    ],
+    "notes": "Littéralement 'faites seulement' (avant que Nike ne le rende célèbre), cette phrase polie invite quelqu'un à se servir ou à y aller. Elle reflète la réputation suisse de courtoisie et s'entend souvent quand on tient une porte ou offre une place."
+  },
+  {
+    "id": "expr_008",
+    "french": "Sans problème / Volontiers",
+    "romand": "Sans autre",
+    "tier": 1,
+    "lesson": "everyday-greetings",
+    "alternatives": [
+      "sans autre"
+    ],
+    "notes": "Signifiant 'sans autre formalité' ou 'pas de problème,' cette expression compacte sert à accepter quelque chose sans difficulté. Elle peut aussi servir de formule de politesse dans les emails, équivalent à 'volontiers' ou 'avec plaisir.'"
+  },
+  {
+    "id": "expr_009",
+    "french": "Soixante-dix",
+    "romand": "Septante",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "septante"
+    ],
+    "notes": "La façon logique de dire 70, utilisée en Suisse, Belgique et dans certaines parties de l'Afrique francophone. Dérivé du latin 'septuaginta,' ce mot épargne aux apprenants la gymnastique mentale du 'soixante-dix' français (soixante-dix)."
+  },
+  {
+    "id": "expr_010",
+    "french": "Quatre-vingts",
+    "romand": "Huitante",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "huitante"
+    ],
+    "notes": "Propre aux cantons de Vaud, Valais et Fribourg, 'huitante' est le plus typiquement suisse des nombres réformés. Genève et Neuchâtel préfèrent 'quatre-vingts,' ce qui en fait un shibboleth même au sein de la Romandie."
+  },
+  {
+    "id": "expr_011",
+    "french": "Quatre-vingt-dix",
+    "romand": "Nonante",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "nonante"
+    ],
+    "notes": "Comme 'septante,' cette forme logique pour 90 est partagée avec le français belge et remonte au latin 'nonaginta.' Elle remplace le fameux 'quatre-vingt-dix' français (quatre-vingt-dix)."
+  },
+  {
+    "id": "expr_012",
+    "french": "Un décilitre de vin",
+    "romand": "Un déci",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "un déci",
+      "déci"
+    ],
+    "notes": "Dans les cafés et restaurants suisses, le vin se commande couramment au décilitre (1 dl = 100 ml), une habitude de mesure uniquement suisse. Un 'deci' est un petit verre standard, parfait pour la pause de midi."
+  },
+  {
+    "id": "expr_013",
+    "french": "Un demi-litre de vin",
+    "romand": "Un demi",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "un demi",
+      "demi"
+    ],
+    "notes": "Commander 'un demi' en Romandie vous donne un demi-litre de vin, pas un demi de bière comme ce serait le cas en France. Cette différence a surpris bien des touristes français qui s'attendaient à une bière."
+  },
+  {
+    "id": "expr_014",
+    "french": "Le collation de 10h",
+    "romand": "Les dix-heures",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "les dix-heures",
+      "dix-heures"
+    ],
+    "notes": "Le 'goûter de dix heures' est une tradition suisse bien-aimée, surtout dans les écoles et lieux de travail, où une pause en milieu de matinée avec un petit en-cas est culturellement attendue. Elle reflète l'approche structurée des repas en Suisse."
+  },
+  {
+    "id": "expr_015",
+    "french": "L'heure actuelle",
+    "romand": "L'heure vivante",
+    "tier": 1,
+    "lesson": "numbers-time",
+    "alternatives": [
+      "heure vivante"
+    ],
+    "notes": "Littéralement 'l'heure vivante,' cette expression poétique signifie 'l'heure actuelle' ou 'maintenant.' Elle vient probablement de l'idée que le temps est vivant et présent, et donne au français romand une saveur charmante et philosophique."
+  },
+  {
+    "id": "expr_016",
+    "french": "Déjeuner (repas de midi)",
+    "romand": "Dîner",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "dîner"
+    ],
+    "notes": "En Romandie, les noms des repas sont décalés: 'dîner' désigne le repas de midi, pas celui du soir. Cela suit l'usage français ancien qui était standard avant le 19ème siècle, préservé en Suisse alors que la France a évolué."
+  },
+  {
+    "id": "expr_017",
+    "french": "Dîner (repas du soir)",
+    "romand": "Souper",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "souper"
+    ],
+    "notes": "Le repas du soir est le 'souper' en Romandie, suivant la tradition française ancienne qu'on retrouve aussi au Québec et dans la France rurale. Dire 'dîner' pour le repas du soir vous marquera immédiatement comme Français."
+  },
+  {
+    "id": "expr_018",
+    "french": "Café au lait",
+    "romand": "Un renversé",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "renversé",
+      "un renversé"
+    ],
+    "notes": "Un 'renversé' est un café au lait où les proportions sont inversées: plus de lait que de café, littéralement 'renversé.' C'est un classique des cafés romands et en commander un est un rite de passage pour les nouveaux venus."
+  },
+  {
+    "id": "expr_019",
+    "french": "Fromage blanc",
+    "romand": "Séré",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "séré"
+    ],
+    "notes": "Venant de l'allemand 'Serai' ou du vieux français 'séré' (petit-lait), ce mot pour le séré ou fromage blanc reflète la profonde culture laitière de la Suisse. C'est un ingrédient de base de la cuisine suisse, souvent mangé avec du muesli."
+  },
+  {
+    "id": "expr_020",
+    "french": "Thé glacé",
+    "romand": "Thé froid",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "thé froid"
+    ],
+    "notes": "Le simple 'thé froid' pour le thé glacé est un exemple charmant du littéralisme du français suisse. Il reflète aussi la forte culture du thé glacé en Suisse, avec des marques comme Migros Ice Tea qui sont des icônes nationales."
+  },
+  {
+    "id": "expr_021",
+    "french": "Yaourt",
+    "romand": "Yogourt",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "yogourt"
+    ],
+    "notes": "La prononciation suisse 'yogourt' (avec un 't' final prononcé) est en fait plus proche du turc original 'yogurt.' C'est un de ces cas où le français suisse préserve sans doute la prononciation la plus authentique."
+  },
+  {
+    "id": "expr_022",
+    "french": "Pâtes coudées / Coquillettes",
+    "romand": "Cornettes",
+    "tier": 1,
+    "lesson": "food-drink",
+    "alternatives": [
+      "cornettes"
+    ],
+    "notes": "Ces pâtes en forme de coude tirent leur nom de l'italien 'cornetto' (petite corne). Le mot est spécifique à la Romandie et reflète la forte influence culinaire italienne sur la cuisine suisse."
+  },
+  {
+    "id": "expr_023",
+    "french": "Sac en plastique",
+    "romand": "Cornet",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "cornet",
+      "un cornet"
+    ],
+    "notes": "Alors que 'cornet' signifie un cornet de glace en France, en Romandie ça désigne un sac plastique. Demander un 'cornet' dans une épicerie suisse vous donnera un sac, pas une friandise glacée."
+  },
+  {
+    "id": "expr_024",
+    "french": "Serpillère",
+    "romand": "Panosse",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "panosse",
+      "la panosse"
+    ],
+    "notes": "Ce mot pour une serpillière ou lavette vient probablement du francoprovençal 'panosse' (chiffon). Il est si profondément ancré dans le vocabulaire romand que beaucoup de Romands sont surpris d'apprendre que ce n'est pas du français standard."
+  },
+  {
+    "id": "expr_025",
+    "french": "Serviette / Torchon",
+    "romand": "Linge",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "linge",
+      "un linge"
+    ],
+    "notes": "En Romandie, 'linge' désigne une serviette ou un chiffon plutôt que du linge/vêtements comme en français standard. Demander à quelqu'un de passer le 'linge' à table en Suisse vous donnera une serviette, pas une pile de vêtements."
+  },
+  {
+    "id": "expr_026",
+    "french": "Couette",
+    "romand": "Duvet",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "duvet",
+      "un duvet"
+    ],
+    "notes": "Alors qu'en anglais 'duvet' désigne toute la literie, en français suisse il désigne spécifiquement la couette ou l'édredon. Le mot est passé en anglais via le français mais a mieux gardé son sens suisse que la 'couette' française."
+  },
+  {
+    "id": "expr_027",
+    "french": "Essuie-tout / Sopalin",
+    "romand": "Papier ménage",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "papier ménage"
+    ],
+    "notes": "Littéralement 'papier de ménage,' ce terme pragmatique pour l'essuie-tout est un exemple parfait du système de nommage descriptif du français suisse. Il évite les noms de marques comme le 'Sopalin' français en faveur d'un vocabulaire basé sur la fonction."
+  },
+  {
+    "id": "expr_028",
+    "french": "Pochette / Housse",
+    "romand": "Fourre",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "fourre",
+      "une fourre"
+    ],
+    "notes": "Du vieux français 'forre' (étui), un 'fourre' en Romandie désigne tout, de la taie d'oreiller à la pochette plastique en passant par la housse de téléphone. C'est l'un des mots ménagers les plus polyvalents du français suisse."
+  },
+  {
+    "id": "expr_029",
+    "french": "Sèche-cheveux",
+    "romand": "Foehn",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "foehn",
+      "feune"
+    ],
+    "notes": "Nommé d'après le vent de foehn qui souffle de l'air chaud dans les vallées alpines, 'foehn' pour un sèche-cheveux est utilisé dans toute la Suisse et certaines parties de l'Allemagne. La métaphore de l'air chaud soufflé en fait un mot satisfaisamment logique."
+  },
+  {
+    "id": "expr_030",
+    "french": "Gant de toilette",
+    "romand": "Lavette",
+    "tier": 1,
+    "lesson": "household-items",
+    "alternatives": [
+      "lavette"
+    ],
+    "notes": "En Romandie, une 'lavette' est un gant de toilette, pas un paillasson ou une personne faible comme le suggère le sens argotique en France. L'utiliser dans son sens suisse à Paris pourrait faire sourciller."
+  },
+  {
+    "id": "expr_031",
+    "french": "Téléphone portable",
+    "romand": "Natel",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "natel",
+      "le natel"
+    ],
+    "notes": "Abréviation de 'Nationales Telefon,' ce mot d'origine suisse allemande pour téléphone portable était autrefois une marque de Swisscom. Il est devenu si omniprésent qu'il est entré dans le français romand quotidien, un rare croisement de marque allemand-français."
+  },
+  {
+    "id": "expr_032",
+    "french": "Promotion / Soldes",
+    "romand": "Action",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "action",
+      "en action"
+    ],
+    "notes": "Quand un magasin suisse a une 'action,' ça signifie une promotion ou une offre spéciale, emprunté à l'allemand 'Aktion.' Repérer les panneaux 'action' chez Migros ou Coop est un rituel hebdomadaire pour les Romands économes."
+  },
+  {
+    "id": "expr_033",
+    "french": "Distributeur de billets",
+    "romand": "Bancomat",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "bancomat",
+      "bancomate"
+    ],
+    "notes": "Un mélange de 'banque' et 'automat,' ce mot pour distributeur de billets reflète l'ingénierie multilingue suisse. Alors que la France utilise 'distributeur de billets,' les Suisses préfèrent ce mot-valise emprunté à la Suisse italienne."
+  },
+  {
+    "id": "expr_034",
+    "french": "Se garer",
+    "romand": "Se parquer",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "se parquer",
+      "parquer"
+    ],
+    "notes": "De l'allemand 'parken,' 'se parquer' remplace le français standard 'se garer.' Ça fait partie d'un modèle plus large de vocabulaire automobile influencé par l'allemand en Romandie."
+  },
+  {
+    "id": "expr_035",
+    "french": "Clignotant",
+    "romand": "Signofile",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "signofile"
+    ],
+    "notes": "Ce mot merveilleusement spécifique pour un clignotant vient probablement de 'signal' combiné à 'file' (voie). Il est unique au français suisse et déroute systématiquement les visiteurs français dans les auto-écoles."
+  },
+  {
+    "id": "expr_036",
+    "french": "Essence",
+    "romand": "Benzine",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "benzine"
+    ],
+    "notes": "Emprunté à l'allemand 'Benzin,' ce mot pour l'essence remplace le français standard 'essence.' C'est l'un des nombreux termes automobiles du français suisse qui révèlent l'influence de la langue allemande du pays."
+  },
+  {
+    "id": "expr_037",
+    "french": "Reçu / Ticket",
+    "romand": "Quittance",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "quittance"
+    ],
+    "notes": "Alors que 'quittance' existe en français standard comme terme juridique formel pour un reçu de paiement, en Romandie il s'utilise de façon informelle pour n'importe quel reçu ou ticket. L'allemand 'Quittung' a renforcé son usage quotidien."
+  },
+  {
+    "id": "expr_038",
+    "french": "Place de stationnement",
+    "romand": "Place de parc",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "place de parc"
+    ],
+    "notes": "Le littéral 'place de parc' est un calque direct de l'allemand 'Parkplatz.' Il remplace la 'place de stationnement' française et est l'un des germanismes les plus courants dans la vie romande quotidienne."
+  },
+  {
+    "id": "expr_039",
+    "french": "J'ai hâte / Je suis impatient",
+    "romand": "Je me réjouis",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "se réjouir",
+      "je me réjouis"
+    ],
+    "notes": "En Romandie, 'se réjouir' s'utilise au présent pour dire 'j'ai hâte,' ce qui sonne grammaticalement étrange aux oreilles françaises puisque le verbe implique normalement de déjà ressentir de la joie. Ça reflète l'allemand 'sich freuen auf.'"
+  },
+  {
+    "id": "expr_040",
+    "french": "Faire une sieste",
+    "romand": "Faire un clopet",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "clopet",
+      "un clopet"
+    ],
+    "notes": "Cette charmante expression pour faire une sieste vient peut-être de l'onomatopée des paupières qui se ferment ('clop'). Elle est plus ludique et informelle que le 'faire une sieste' standard et est adorée dans la Romandie rurale."
+  },
+  {
+    "id": "expr_041",
+    "french": "Avoir des démangeaisons",
+    "romand": "Avoir la gratte",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "la gratte"
+    ],
+    "notes": "Avoir 'la gratte' (le grattement) est la façon vivante romande de décrire une démangeaison. Le mot peint une image parfaite de l'action de gratter et est bien plus évocateur que les 'démangeaisons' cliniques."
+  },
+  {
+    "id": "expr_042",
+    "french": "Avoir une ampoule",
+    "romand": "Avoir une gonfle",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "une gonfle",
+      "gonfle au pied"
+    ],
+    "notes": "Un 'gonfle' (de 'gonfler') est une ampoule, nommée pour son apparence boursouflée. C'est un terme logique et descriptif que beaucoup de Romands pensent être du français standard jusqu'à correction."
+  },
+  {
+    "id": "expr_043",
+    "french": "Avoir pied (dans l'eau)",
+    "romand": "Avoir fond",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "avoir fond",
+      "avoir son fond"
+    ],
+    "notes": "'Avoir fond' signifie pouvoir toucher le fond en nageant, littéralement 'avoir le fond.' C'est du vocabulaire essentiel pour les lacs dans une région où la baignade dans le lac Léman ou le lac de Neuchâtel est un incontournable de l'été."
+  },
+  {
+    "id": "expr_044",
+    "french": "Mal de gorge",
+    "romand": "Mal au cou",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "mal au cou"
+    ],
+    "notes": "En Romandie, 'mal au cou' (douleur au cou) signifie en fait un mal de gorge, ce qui cause une confusion sans fin avec les francophones qui le prennent littéralement. Le glissement sémantique s'est probablement produit par la proximité du cou et de la gorge."
+  },
+  {
+    "id": "expr_045",
+    "french": "Un rhume / Refroidissement",
+    "romand": "Une crève",
+    "tier": 1,
+    "lesson": "body-feelings",
+    "alternatives": [
+      "crève",
+      "une crève"
+    ],
+    "notes": "Une 'crève' en français suisse est simplement un rhume, alors qu'en français standard 'crever' signifie mourir ou éclater, ce qui rend l'usage suisse dramatiquement plus sévère que prévu. Le contexte est tout."
+  },
+  {
+    "id": "expr_046",
+    "french": "Il fait agréablement chaud",
+    "romand": "Il fait bon chaud",
+    "tier": 1,
+    "lesson": "weather-basics",
+    "alternatives": [
+      "bon chaud",
+      "bon froid"
+    ],
+    "notes": "Cette expression douillette signifiant 'il fait agréablement chaud' n'a pas d'équivalent concis en français standard. L'ajout de 'bon' avant 'chaud' ajoute une couche de contentement qui capture parfaitement un après-midi ensoleillé dans les Alpes."
+  },
+  {
+    "id": "expr_047",
+    "french": "Il fait froid et humide",
+    "romand": "Il fait cru",
+    "tier": 1,
+    "lesson": "weather-basics",
+    "alternatives": [
+      "cru",
+      "temps cru"
+    ],
+    "notes": "Décrivant le temps froid et humide typique des hivers suisses près des lacs, 'cru' (brut) dresse un tableau viscéral. Il est particulièrement associé aux jours brumeux autour du lac Léman de novembre à février."
+  },
+  {
+    "id": "expr_048",
+    "french": "Il pleut à verse",
+    "romand": "Il roille",
+    "tier": 1,
+    "lesson": "weather-basics",
+    "alternatives": [
+      "roille",
+      "la roille",
+      "il roille"
+    ],
+    "notes": "Ce verbe expressif pour une pluie battante vient peut-être d'anciennes racines francoprovençales liées à l'eau qui coule ou se précipite. Il capture les averses alpines dramatiques qui peuvent apparaître avec peu d'avertissement dans les montagnes suisses."
+  },
+  {
+    "id": "expr_049",
+    "french": "Un abri",
+    "romand": "Une chotte",
+    "tier": 1,
+    "lesson": "weather-basics",
+    "alternatives": [
+      "chotte",
+      "à la chotte"
+    ],
+    "notes": "Une 'chotte' est un petit abri ou surplomb, qu'on trouve souvent le long des sentiers de randonnée ou dans les vignobles. Le mot est profondément lié à la culture suisse du plein air où trouver un abri contre le temps de montagne soudain est une nécessité pratique."
+  },
+  {
+    "id": "expr_050",
+    "french": "Cesser de pleuvoir",
+    "romand": "Choter",
+    "tier": 1,
+    "lesson": "weather-basics",
+    "alternatives": [
+      "choter",
+      "ça a choté"
+    ],
+    "notes": "Lié à 'chotte' (abri), 'choter' signifie que la pluie s'est arrêtée, impliquant qu'on peut quitter son abri. Ce verbe capture magnifiquement l'expérience suisse de montagne d'attendre la fin d'un orage puis de reprendre sa randonnée."
+  },
+  {
+    "id": "expr_051",
+    "french": "Se faire la bise",
+    "romand": "Se faire un bec",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "un bec",
+      "faire un bec"
+    ],
+    "notes": "Le 'bec' suisse (bec/bisou) pour un baiser de salutation reflète la coutume régionale des trois bises, comparé aux deux typiques dans la plupart de la France. Le nombre de bises varie selon le canton, ajoutant une couche de complexité locale."
+  },
+  {
+    "id": "expr_052",
+    "french": "Le désordre / Le bazar",
+    "romand": "Le cheni",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "cheni",
+      "le cheni"
+    ],
+    "notes": "Venant peut-être de l'allemand 'Scheni' ou d'origines francoprovençales, 'cheni' couvre tout, d'une chambre en désordre au désordre général. C'est l'un des mots romands les plus utilisés dans les foyers familiaux."
+  },
+  {
+    "id": "expr_053",
+    "french": "Jeter à la poubelle",
+    "romand": "Foutre loin",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "foutre loin"
+    ],
+    "notes": "Littéralement 'jeter loin,' cette expression directe pour jeter quelque chose est plus vivante que le 'jeter' standard. Elle reflète une certaine franchise suisse et est couramment utilisée lors du désencombrement."
+  },
+  {
+    "id": "expr_054",
+    "french": "Faire le ménage",
+    "romand": "Faire la poutze",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "poutze",
+      "poutser",
+      "faire la poutze"
+    ],
+    "notes": "De l'allemand 'putzen' (nettoyer), 'faire la poutze' est la façon romande standard de dire 'faire le ménage.' Une 'dame de poutze' est une femme de ménage, et le mot est utilisé dans tous les registres sociaux."
+  },
+  {
+    "id": "expr_055",
+    "french": "Un idiot / Un nigaud",
+    "romand": "Un bobet",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "bobet",
+      "bobette"
+    ],
+    "notes": "Un 'bobet' est un imbécile attachant ou une personne bête, utilisé plus affectueusement que durement. Ça vient du francoprovençal et c'est le genre d'insulte douce qu'on pourrait utiliser avec un ami qui a enfermé ses clés dans sa voiture."
+  },
+  {
+    "id": "expr_056",
+    "french": "Une flaque d'eau",
+    "romand": "Une gouille",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "gouille",
+      "une gouille"
+    ],
+    "notes": "Une 'gouille' est une flaque, mais peut aussi désigner un petit étang naturel dans les Alpes. Le mot a des racines francoprovençales et est un favori des enfants suisses qui adorent y barboter après la pluie."
+  },
+  {
+    "id": "expr_057",
+    "french": "Trébucher",
+    "romand": "S'encoubler",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "s'encoubler",
+      "encoubler"
+    ],
+    "notes": "Ce verbe délicieux signifiant 'trébucher ou faire un faux pas' vient du francoprovençal et n'a pas d'équivalent en français standard qui sonne aussi satisfaisamment maladroit. Le mot lui-même sonne presque comme le trébuchement qu'il décrit."
+  },
+  {
+    "id": "expr_058",
+    "french": "Le grenier",
+    "romand": "Le galetas",
+    "tier": 1,
+    "lesson": "social-basics",
+    "alternatives": [
+      "galetas",
+      "le galetas"
+    ],
+    "notes": "Du grec 'galatas' via le vieux français, le 'galetas' en Romandie est simplement le grenier, alors qu'en français standard il porte un sens péjoratif de taudis misérable. En Suisse, c'est un mot neutre et quotidien."
+  },
+  {
+    "id": "expr_059",
+    "french": "Carte grise / Certificat d'immatriculation",
+    "romand": "Permis de circulation",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "permis de circulation"
+    ],
+    "notes": "Le 'permis de circulation' suisse est le document d'immatriculation du véhicule, équivalent à la 'carte grise' française. La terminologie différente reflète le système administratif indépendant de la Suisse et sa bureaucratie bilingue."
+  },
+  {
+    "id": "expr_060",
+    "french": "Scrutin / Référendum",
+    "romand": "Votation",
+    "tier": 1,
+    "lesson": "daily-errands",
+    "alternatives": [
+      "votation"
+    ],
+    "notes": "La 'votation' suisse reflète le système célèbre de démocratie directe du pays, où les citoyens votent sur des questions spécifiques plusieurs fois par an. Le mot porte un poids de fierté civique que 'référendum' seul ne transmet pas."
+  },
+  {
+    "id": "expr_061",
+    "french": "Ça ne va pas la tête ?",
+    "romand": "Ça va le chalet ?",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "ça va le chalet"
+    ],
+    "notes": "Litteralement 'ton chalet est-il en ordre ?' -- une maniere humoristique typiquement suisse de demander 'es-tu fou ?' Le chalet, symbole de l'identite alpine suisse, remplace ici la tete ; s'il ne va pas bien, vous non plus."
+  },
+  {
+    "id": "expr_062",
+    "french": "Ce n'est pas urgent",
+    "romand": "Y'a pas le feu au lac",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "y'a pas le feu au lac",
+      "pas le feu au lac"
+    ],
+    "notes": "Litteralement 'le lac n'est pas en feu'. Une expression quintessentiellement suisse faisant reference au Leman (ou a n'importe quel lac suisse), signifiant qu'il n'y a pas le feu. Elle capture parfaitement le temperament calme et sans hate des Romands."
+  },
+  {
+    "id": "expr_063",
+    "french": "Agréablement surpris",
+    "romand": "Décevoir en bien",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "décevoir en bien",
+      "déçu en bien"
+    ],
+    "notes": "Une construction unique au francais suisse signifiant 'etre agreablement surpris'. En francais standard, 'decevoir' ne signifie que 'decouvrir', donc 'decevoir en bien' (decouvrir de maniere positive) laisse les visiteurs francais perplexes."
+  },
+  {
+    "id": "expr_064",
+    "french": "Remettre les choses en ordre",
+    "romand": "Remettre l'église au milieu du village",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "l'église au milieu du village"
+    ],
+    "notes": "Litteralement 'remettre l'eglise au milieu du village'. Cette image vivante de restaurer le monument central du village a sa place signifie remettre les choses en ordre. Elle reflete l'importance de l'eglise comme coeur de la vie villageoise romande traditionnelle."
+  },
+  {
+    "id": "expr_065",
+    "french": "Tu es fou ou quoi ?",
+    "romand": "T'es royé ou bien ?",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "royé",
+      "roillé"
+    ],
+    "notes": "Du franco-provencal 'roye' signifiant fou ou derange. La formulation directe 'es-tu roye ou quoi ?' est typique du style franc et sans detour du parler romand familier."
+  },
+  {
+    "id": "expr_066",
+    "french": "Coûter très cher",
+    "romand": "Coûter le lard du chat",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "le lard du chat"
+    ],
+    "notes": "Litteralement 'couter le lard du chat'. L'idee est que meme le lard du chat -- quelque chose normalement considere comme sans valeur -- est devenu cher. Une facon coloree romande de dire que quelque chose coute les yeux de la tete."
+  },
+  {
+    "id": "expr_067",
+    "french": "Certainement / Bien sûr",
+    "romand": "Déjà",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "déjà"
+    ],
+    "notes": "En francais suisse, 'deja' s'est etendu bien au-dela de son sens premier pour servir de mot de remplissage signifiant 'certainement' ou 'bien sur'. Il emaille les conversations romandes quotidiennes si frequemment que les visiteurs francais le trouvent souvent deroutant."
+  },
+  {
+    "id": "expr_068",
+    "french": "Directement / Immédiatement",
+    "romand": "Direct",
+    "tier": 2,
+    "lesson": "informal-expressions",
+    "alternatives": [
+      "direct"
+    ],
+    "notes": "Alors que le francais standard utilise 'directement', les Romands l'ont raccourci en simplement 'direct' comme adverbe signifiant 'tout de suite'. Cela reflete une tendance plus large en Suisse romande a ecourter les mots pour plus d'efficacite dans le langage familier."
+  },
+  {
+    "id": "expr_069",
+    "french": "Faire la tête / Bouder",
+    "romand": "Faire la pote",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "la pote",
+      "faire la pote"
+    ],
+    "notes": "Du franco-provencal 'pota' signifiant levre ou moue. 'Faire la pote' est l'equivalent romand de 'faire la tete' -- bouder ou faire la grimace -- et est particulierement utilise pour decrire les caprices d'enfants."
+  },
+  {
+    "id": "expr_070",
+    "french": "Effrayé / Épouvanté",
+    "romand": "Épouairé",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "épouairé"
+    ],
+    "notes": "Derive de l'ancien franco-provencal 'epoairi', signifiant terrifie ou epouvante. Ce mot expressif capture un sentiment de frayeur plus fort que les equivalents francais standards et reste vivant dans le parler romand quotidien."
+  },
+  {
+    "id": "expr_071",
+    "french": "Hésiter",
+    "romand": "Être sur le balan",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "sur le balan",
+      "le balan"
+    ],
+    "notes": "Litteralement 'etre sur la balancoire', evoquant le mouvement de va-et-vient d'un pendule ou d'une bascule. Cette image de vacillement entre deux choix capture parfaitement le sentiment d'indecision."
+  },
+  {
+    "id": "expr_072",
+    "french": "La flemme / La paresse",
+    "romand": "La molle",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "la molle",
+      "avoir la molle"
+    ],
+    "notes": "'La molle' (la molle/flasque) est l'argot suisse romand pour la paresse ou le manque de motivation. Dire 'j'ai la molle' est l'equivalent local de 'j'ai la flemme' -- je n'ai pas envie de bouger."
+  },
+  {
+    "id": "expr_073",
+    "french": "Rager / S'énerver",
+    "romand": "Criser",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "criser"
+    ],
+    "notes": "Bien que 'crise' existe en francais standard, les Romands en ont fait le verbe 'criser', signifiant piquer une colere ou perdre son sang-froid. Il est particulierement populaire chez les jeunes locuteurs et se repand maintenant aussi dans l'argot francais."
+  },
+  {
+    "id": "expr_074",
+    "french": "Fou rire",
+    "romand": "Déguille",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "déguille",
+      "une déguille"
+    ],
+    "notes": "Un mot romand pour un fou rire incontroulable. 'Avoir la deguille' decrit ce moment ou le rire prend completement le dessus -- le genre qui vous laisse en larmes et incapable de parler."
+  },
+  {
+    "id": "expr_075",
+    "french": "Zut / Mince",
+    "romand": "De bleu !",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "de bleu",
+      "de bleu de bleu"
+    ],
+    "notes": "Un juron suisse leger, une deformation euphemique de 'De Dieu !' Echanger 'Dieu' contre 'bleu' permettait aux locuteurs d'exprimer leur frustration sans blaspheme manifeste -- une strategie courante dans les regions suisses traditionnellement catholiques et protestantes."
+  },
+  {
+    "id": "expr_076",
+    "french": "Je me suis trompé",
+    "romand": "Je me suis chié",
+    "tier": 2,
+    "lesson": "emotions-reactions",
+    "alternatives": [
+      "se chier"
+    ],
+    "notes": "Litteralement 'je me suis chie', mais dans l'usage romand cela signifie simplement 'j'ai fait une erreur'. Bien moins vulgaire qu'il n'y parait aux oreilles exterieures, c'est un langage familier quotidien dans toute la Romandie."
+  },
+  {
+    "id": "expr_077",
+    "french": "Vin d'honneur / Apéro offert",
+    "romand": "Verrée",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "verrée",
+      "une verrée"
+    ],
+    "notes": "Une 'verree' est une reception communautaire vin-et-petits-fours, souvent tenue apres des ceremonies officielles, des evenements sportifs ou des rassemblements culturels. C'est une pierre angulaire de la vie sociale et civique romande, incarnant l'esprit communautaire de l'hospitalite partagee."
+  },
+  {
+    "id": "expr_078",
+    "french": "Un verre (à boire)",
+    "romand": "Un godet",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "godet",
+      "un godet"
+    ],
+    "notes": "De l'ancien francais 'godet' (une petite coupe), ce mot survit en Suisse romande pour designer n'importe quel verre a boire. 'Prendre un godet' est une invitation a boire un verre ensemble, soulignant la culture conviviale de la boisson en Romandie."
+  },
+  {
+    "id": "expr_079",
+    "french": "Être un peu ivre",
+    "romand": "Être sur Soleure",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "sur Soleure",
+      "chargé sur Soleure"
+    ],
+    "notes": "Litteralement 'etre sur Soleure' -- Soleure (Solothurn) se trouve a la frontiere linguistique franco-allemande. L'expression signifie etre emeche, comme si vous aviez derive linguistiquement et geographiquement apres quelques verres."
+  },
+  {
+    "id": "expr_080",
+    "french": "Boire un petit coup",
+    "romand": "Se rincer le gosier",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "se rincer le gosier"
+    ],
+    "notes": "Litteralement 'se rincer le cornet'. Cette expression ludique pour boire un verre souligne l'aspect rafraichissant et purificateur d'un bon verre de vin ou de biere entre amis."
+  },
+  {
+    "id": "expr_081",
+    "french": "Jeu de cartes suisse",
+    "romand": "Le yass",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "yass",
+      "jasser",
+      "chibre"
+    ],
+    "notes": "Le Jass (ou Yass) est le jeu de cartes national de la Suisse, joue avec un jeu special de 36 cartes presentant des ecussons, des grelots, des glands et des fleurs. Il est si central dans la culture suisse que la television suisse diffuse une emission hebdomadaire de Jass depuis des decennies."
+  },
+  {
+    "id": "expr_082",
+    "french": "Un trophée / Une coupe",
+    "romand": "Une channe",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "channe",
+      "une channe"
+    ],
+    "notes": "A l'origine une grande cruche a vin en etain utilisee dans les corporations et societes suisses, la 'channe' en est venue a signifier un trophee ou une coupe ceremonielle. La channe valaisanne traditionnelle, avec sa forme distinctive, est encore utilisee pour servir le vin lors des fetes."
+  },
+  {
+    "id": "expr_083",
+    "french": "Une plaisanterie / Blague",
+    "romand": "Un witz",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "witz",
+      "un witz"
+    ],
+    "notes": "Emprunte directement au suisse allemand 'Witz' (blague), c'est un exemple parfait de la facon dont le francais romand absorbe le vocabulaire germano-suisse. Il reflete la realite bilingue quotidienne de la vie pres du Roestigraben (la frontiere culturelle franco-allemande)."
+  },
+  {
+    "id": "expr_084",
+    "french": "Tricheur",
+    "romand": "Frouillon",
+    "tier": 2,
+    "lesson": "social-gatherings",
+    "alternatives": [
+      "frouillon"
+    ],
+    "notes": "Un mot romand pour un tricheur ou escroc, surtout dans les jeux de cartes ou les jeux d'enfants. Il vient de la tradition franco-provencale et porte un ton plus leger et taquin que le 'tricheur' francais standard."
+  },
+  {
+    "id": "expr_085",
+    "french": "Réunion (de travail)",
+    "romand": "Séance",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "séance",
+      "une séance"
+    ],
+    "notes": "En francais suisse, 'seance' signifie une reunion de travail ordinaire, alors qu'en France cela designe generalement une seance de cinema ou une session parlementaire formelle. Ce faux-ami fait regulierement trebucher les expatries francais travaillant dans les bureaux suisses."
+  },
+  {
+    "id": "expr_086",
+    "french": "Candidature",
+    "romand": "Postulation",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "postulation",
+      "postuler"
+    ],
+    "notes": "Le francais suisse utilise 'postulation' la ou la France utilise 'candidature' pour une demande d'emploi. De meme, 'postuler' est le verbe standard pour postuler. C'est l'une des differences administratives les plus courantes que rencontrent les nouveaux arrivants en Suisse."
+  },
+  {
+    "id": "expr_087",
+    "french": "Baccalauréat",
+    "romand": "Maturité",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "maturité",
+      "la matu"
+    ],
+    "notes": "La 'maturite' suisse est l'equivalent du 'baccalaureat' francais, le diplome obtenu a la fin du secondaire. La version suisse est consideree comme plus selective, avec seulement environ 20% des eleves suivant cette filiere academique."
+  },
+  {
+    "id": "expr_088",
+    "french": "Lycée",
+    "romand": "Collège",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "collège",
+      "le collège"
+    ],
+    "notes": "En Suisse, le 'college' designe ce que la France appelle 'lycee' (enseignement secondaire superieur, ages ~15-19 ans). C'est une source notoire de confusion, puisqu'en France 'college' signifie college (ages ~11-15 ans)."
+  },
+  {
+    "id": "expr_089",
+    "french": "Collège (établissement)",
+    "romand": "Cycle d'orientation",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "cycle",
+      "le cycle"
+    ],
+    "notes": "Le 'cycle d'orientation' (CO) est l'equivalent suisse romand du 'college' francais (college). Le nom reflete sa fonction : orienter les eleves vers des parcours academiques, professionnels ou de formation -- une caracteristique cle du systeme educatif suisse."
+  },
+  {
+    "id": "expr_090",
+    "french": "Sécher les cours",
+    "romand": "Courber l'école",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "courber",
+      "courber l'école"
+    ],
+    "notes": "Litteralement 'plier l'ecole', signifiant secher les cours. L'image de se plier ou s'ecarter du chemin de l'ecole est merveilleusement evocatrice. En France, l'equivalent est 'secher les cours'."
+  },
+  {
+    "id": "expr_091",
+    "french": "Sortie scolaire",
+    "romand": "Course d'école",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "course d'école"
+    ],
+    "notes": "Une 'course d'ecole' est une sortie ou excursion scolaire, impliquant souvent une randonnee dans les Alpes ou la visite d'une ferme locale. Ces excursions sont une tradition suisse cherie, et de nombreux adultes se souviennent avec tendresse de leurs sorties scolaires des decennies plus tard."
+  },
+  {
+    "id": "expr_092",
+    "french": "Garderie + Cantine scolaire",
+    "romand": "Parascolaire",
+    "tier": 2,
+    "lesson": "workplace-school",
+    "alternatives": [
+      "parascolaire"
+    ],
+    "notes": "Dans l'usage romand, 'parascolaire' designe les services combines de garde periscolaire et de repas fournis par les ecoles. Il reflete le systeme bien organise suisse de garde d'enfants complementaire qui soutient les parents qui travaillent."
+  },
+  {
+    "id": "expr_093",
+    "french": "Une forte pluie / Averse",
+    "romand": "Une rincée",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "rincée",
+      "une rincée"
+    ],
+    "notes": "Une 'rincee' est une averse soudaine et intense -- le genre qui vous trempe jusqu'aux os en quelques secondes. Le mot vient de 'rincer' et suggere avec humour que la nature a decide de vous donner un bon lavage."
+  },
+  {
+    "id": "expr_094",
+    "french": "Un froid glacial",
+    "romand": "Une cramine",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "cramine",
+      "une cramine"
+    ],
+    "notes": "'Cramine' decrit un froid mordant, glacial jusqu'aux os, du franco-provencal 'cramina'. Quiconque a vecu un hiver dans une vallee jurassienne ou un vent de bise balayant le Leman sait exactement ce que ce mot signifie."
+  },
+  {
+    "id": "expr_095",
+    "french": "Petite chute de neige",
+    "romand": "Crachée de neige",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "crachée",
+      "une crachée"
+    ],
+    "notes": "Litteralement un 'crachat de neige' -- une breve chute de neige legere qui saupoudre a peine le sol. Ce vocabulaire meteorologique precis reflete a quel point les locuteurs romands sont attentifs aux nombreuses varietes de precipitations alpines."
+  },
+  {
+    "id": "expr_096",
+    "french": "Neige fondue / Boue",
+    "romand": "Vouaffe",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "vouaffe",
+      "ouaffe"
+    ],
+    "notes": "'Vouaffe' decrit le melange desagreable de neige a moitie fondue et de boue qui recouvre les rues suisses en fin d'hiver. Ce survivant franco-provencal comble un vide que le francais standard n'a pas de mot unique pour designer."
+  },
+  {
+    "id": "expr_097",
+    "french": "Pomme de pin",
+    "romand": "Pive",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "pive",
+      "une pive"
+    ],
+    "notes": "En Romandie, une pomme de pin s'appelle une 'pive', du franco-provencal 'piva'. Les enfants collectionnent les pives pour des bricolages et decorations, et le mot est si ancre que beaucoup de Romands ne realisent pas qu'il n'est pas francais standard."
+  },
+  {
+    "id": "expr_098",
+    "french": "Groseille",
+    "romand": "Raisinet",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "raisinet"
+    ],
+    "notes": "Alors que 'groseille' est francais standard pour groseille rouge, les Romands utilisent 'raisinet', litteralement 'petit raisin'. Le mot pourrait refleter la ressemblance visuelle de la baie avec de minuscules grappes de raisin suspendues a leurs tiges."
+  },
+  {
+    "id": "expr_099",
+    "french": "Mûre (fruit)",
+    "romand": "Meuron",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "meuron",
+      "mûron"
+    ],
+    "notes": "Le 'meuron' est le mot romand pour mure. Il derive probablement d'une forme diminutive franco-provencale. Cueillir des meurons le long des haies en fin d'ete est une tradition campagnarde romande bien-aimee."
+  },
+  {
+    "id": "expr_100",
+    "french": "Muguet (fleur)",
+    "romand": "Mourdiet",
+    "tier": 2,
+    "lesson": "weather-nature",
+    "alternatives": [
+      "mourdiet"
+    ],
+    "notes": "'Mourdiet' est le nom romand pour le muguet. En France, le muguet est traditionnellement offert le 1er mai (fete du Travail), une tradition egalement observee en Romandie, ou le nom local ajoute une touche regionale distinctive."
+  },
+  {
+    "id": "expr_101",
+    "french": "Fou / Dérangé",
+    "romand": "Tablard",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "tablard"
+    ],
+    "notes": "Un 'tablard' est quelqu'un qui est fou ou derange, probablement derive de l'idee d'avoir la tete (table/planche) pas tout a fait en ordre. C'est une insulte ludique courante entre amis en Romandie, moins dure qu'elle ne le semble."
+  },
+  {
+    "id": "expr_102",
+    "french": "Plouc / Campagnard",
+    "romand": "Péouze",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "péouze"
+    ],
+    "notes": "'Peouze' est l'equivalent romand de 'plouc' -- un paysan ou beotien. Il reflete les taquineries urbain-rural douces qui existent en Suisse romande, souvent utilise de maniere taquine plutot que vraiment mechante."
+  },
+  {
+    "id": "expr_103",
+    "french": "Travail mal fait",
+    "romand": "De la gogne",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "gogne",
+      "de la gogne"
+    ],
+    "notes": "'De la gogne' signifie un travail bacle, mal fait. Quand un Romand dit 'c'est de la gogne', il rejette quelque chose comme de l'artisanat de pacotille -- une insulte serieuse dans une culture qui se targue de precision et de qualite."
+  },
+  {
+    "id": "expr_104",
+    "french": "Chenapan / Garnement",
+    "romand": "Chenoille",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "chenoille"
+    ],
+    "notes": "Une 'chenoille' est un petit coquin ou fripon, utilise affectueusement pour les enfants espiègles. Ses racines franco-provencales lui donnent un ton plus chaleureux et indulgent que le 'chenapan' francais standard."
+  },
+  {
+    "id": "expr_105",
+    "french": "Bavarde / Commère",
+    "romand": "Barjaque",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "barjaque"
+    ],
+    "notes": "Une 'barjaque' est une commere ou pie bavarde, presque toujours utilise pour les femmes. Le mot vient du franco-provencal et porte une saveur villageoise demodee, evoquant l'image de voisines bavardant par-dessus les clotures de jardin."
+  },
+  {
+    "id": "expr_106",
+    "french": "Roublard / De mauvaise foi",
+    "romand": "Crouïe",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "crouïe",
+      "crouille"
+    ],
+    "notes": "'Crouie' decrit quelqu'un qui est sournois, deloyal, ou argumente de mauvaise foi. Il est particulierement utile dans les jeux de cartes et le sport, ou accuser quelqu'un d'etre 'crouie' est une plainte courante et coloree."
+  },
+  {
+    "id": "expr_107",
+    "french": "Importun / Collant",
+    "romand": "Pèdze",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "pèdze",
+      "pédze"
+    ],
+    "notes": "'Pedze' decrit quelqu'un qui est agaçamment collant ou persistant, comme un chewing-gum colle a votre chaussure. De maniere appropriee, le verbe apparente 'pedzer' signifie 'coller' -- la personne est litteralement decrite comme adhesive."
+  },
+  {
+    "id": "expr_108",
+    "french": "Rageur / Colérique (enfant)",
+    "romand": "Criseux",
+    "tier": 2,
+    "lesson": "insults-teasing",
+    "alternatives": [
+      "criseux",
+      "criseuse"
+    ],
+    "notes": "Un 'criseux' est un enfant (ou adulte) qui fait des crises frequentes et se fache facilement. Derive de 'criser' (enrager), c'est le mot de reference pour decrire ce gamin perpetuellement grognon dans la cour de recreation."
+  },
+  {
+    "id": "expr_109",
+    "french": "Passer la serpillère",
+    "romand": "Donner un coup de panosse",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "panosser",
+      "coup de panosse"
+    ],
+    "notes": "La 'panosse' est le mot suisse romand pour une serpilliere ou chiffon a sol. 'Donner un coup de panosse' signifie passer rapidement la serpilliere -- une phrase entendue dans pratiquement chaque menage romand."
+  },
+  {
+    "id": "expr_110",
+    "french": "Boules de poussière",
+    "romand": "Minons",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "minon",
+      "minons",
+      "des minons"
+    ],
+    "notes": "'Minons' sont les moutons de poussiere -- ces amas doux de poussiere et de peluches qui s'accumulent sous les meubles. Le mot vient probablement de 'minet/minon' (chaton), comparant les boules de poussiere duveteuses a de minuscules creatures poilues."
+  },
+  {
+    "id": "expr_111",
+    "french": "Buanderie",
+    "romand": "Chambre à lessive",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "chambre à lessive"
+    ],
+    "notes": "Une 'chambre a lessive' est une buanderie commune, generalement situee au sous-sol des immeubles d'appartements suisses. Dans la culture residentielle suisse, les locataires s'inscrivent pour des creneaux horaires de lessive assignes -- un systeme qui est fameux pour sa rigueur et provoque parfois des differends de voisinage."
+  },
+  {
+    "id": "expr_112",
+    "french": "Vide-grenier",
+    "romand": "Vide-galetas",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "vide-galetas"
+    ],
+    "notes": "Un 'vide-galetas' est un vide-grenier ou marche aux puces, ou 'galetas' est le mot romand pour grenier. Le concept de vider son grenier dans une vente communautaire est une activite de week-end populaire dans toute la Romandie."
+  },
+  {
+    "id": "expr_113",
+    "french": "Coller / Être collant",
+    "romand": "Pédzer",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "pédzer",
+      "pèdzer"
+    ],
+    "notes": "'Pedzer' signifie coller ou etre collant, d'origines franco-provencales. Il est utilise pour tout, de la colle et du scotch a la peau moite par temps chaud. Le nom apparente 'pedze' (une personne collante) montre a quel point cette racine est polyvalente."
+  },
+  {
+    "id": "expr_114",
+    "french": "Chewing-gum",
+    "romand": "Chiclette",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "chiclette"
+    ],
+    "notes": "'Chiclette' est le mot romand pour chewing-gum, emprunte a l'espagnol 'chicle' (qui lui-meme vient du nahuatl 'tzictli'). Alors que la France utilise 'chewing-gum' (de l'anglais), les Romands ont pris la route hispano-americaine."
+  },
+  {
+    "id": "expr_115",
+    "french": "Épingle de sûreté",
+    "romand": "Imperdable",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "imperdable"
+    ],
+    "notes": "Un 'imperdable' est une epingle de surete -- litteralement 'l'imperible', parce que contrairement a une epingle droite, son fermoir l'empeche de tomber. Ce neologisme suisse charmant et logique contraste avec 'epingle de surete' francais."
+  },
+  {
+    "id": "expr_116",
+    "french": "Pince à épiler",
+    "romand": "Brucelle",
+    "tier": 2,
+    "lesson": "household-cleaning",
+    "alternatives": [
+      "brucelle"
+    ],
+    "notes": "'Brucelle' signifie pince a epiler en francais suisse romand, venant du latin 'brucella'. Le mot est egalement utilise dans l'industrie horlogere suisse pour les pinces a pointe fine utilisees pour manipuler les minuscules composants de montres -- un lien approprie pour la Suisse."
+  },
+  {
+    "id": "expr_117",
+    "french": "Plat vaudois (poireaux-pommes de terre)",
+    "romand": "Papet vaudois",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "papet",
+      "papet vaudois"
+    ],
+    "notes": "Le papet vaudois est le plat emblematique du canton de Vaud : un ragoût copieux de poireaux et de pommes de terre servi avec de la 'saucisse aux choux'. Il est traditionnellement consomme en automne et en hiver et est un sujet de fierte cantonale feroce."
+  },
+  {
+    "id": "expr_118",
+    "french": "Brioche sucrée (Fribourg)",
+    "romand": "Cuchaule",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "cuchaule"
+    ],
+    "notes": "La cuchaule est une brioche au safran du canton de Fribourg, traditionnellement cuite pour la fete de la Benicho en automne. Sa couleur doree distinctive provient du safran, et elle detient une designation AOC (origine protegee) depuis 2018."
+  },
+  {
+    "id": "expr_119",
+    "french": "Résidus de graisse croustillants",
+    "romand": "Greubons",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "greubons"
+    ],
+    "notes": "Les greubons (ou griebons) sont des residus de graisse de porc croustillants, similaires aux 'grattons' ou 'rillons' francais. Ils sont un en-cas adore en Romandie, souvent manges sur du pain ou a l'aperitif, et sont un sous-produit de la fabrication traditionnelle de saindoux."
+  },
+  {
+    "id": "expr_120",
+    "french": "Fondue moitié gruyère moitié vacherin",
+    "romand": "Moitié-moitié",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "moitié-moitié"
+    ],
+    "notes": "La fondue moitie-moitie est le melange de fondue suisse classique : moitie Gruyere AOP et moitie Vacherin Fribourgeois AOP. Cette recette specifique 50-50 est originaire du canton de Fribourg et est consideree par beaucoup comme la fondue par excellence."
+  },
+  {
+    "id": "expr_121",
+    "french": "Tartine de pain garnie au fromage",
+    "romand": "Croûte au fromage",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "croûte",
+      "croûte au fromage"
+    ],
+    "notes": "La croute au fromage est un toast ouvert nape de fromage fondu, souvent enrichi de vin blanc, de jambon ou d'un oeuf au plat. C'est un element de base des restaurants de montagne suisses et un repas rapide adore dans toute la Romandie."
+  },
+  {
+    "id": "expr_122",
+    "french": "Vin cuit (jus de pommes longuement cuit)",
+    "romand": "Vin cuit",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "vin cuit",
+      "vincuit"
+    ],
+    "notes": "Le 'vin cuit' suisse n'est pas reellement du vin mais un sirop epais et fonce obtenu en faisant bouillir lentement du jus de pomme ou de poire pendant des heures. Specialite des cantons de Vaud et Fribourg, il est tartine sur du pain ou utilise dans des desserts comme la fameuse 'moutarde de Benicho' fribourgeoise."
+  },
+  {
+    "id": "expr_123",
+    "french": "Choucroute de raves",
+    "romand": "Compote aux raves",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "compote aux raves"
+    ],
+    "notes": "La compote aux raves est une preparation de navet legerement fermentee traditionnelle des cantons de Fribourg et de Berne. Contrairement a la choucroute alsacienne (faite de chou), celle-ci utilise des navets blancs et a une saveur plus douce et plus sucree."
+  },
+  {
+    "id": "expr_124",
+    "french": "Pain perdu",
+    "romand": "Croûtes dorées",
+    "tier": 2,
+    "lesson": "cooking-cuisine",
+    "alternatives": [
+      "croûtes dorées"
+    ],
+    "notes": "'Croutes dorees' est le nom romand pour le pain perdu (pain perdu francais). Le nom signifie 'croutes dorees', soulignant l'exterieur croustillant et dore. C'est un gouter populaire pour les enfants et un en-cas dans toute la Romandie."
+  },
+  {
+    "id": "expr_125",
+    "french": "Tomber / Chuter",
+    "romand": "Gameller",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "gameller"
+    ],
+    "notes": "'Gameller' signifie faire une chute ou se vautrer, possiblement derive de 'gamelle' (un plat en metal), comme dans 'prendre une gamelle' (se prendre une gamelle). Il est utilise pour tout, de trebucher sur la glace a s'ecraser sur une piste de ski."
+  },
+  {
+    "id": "expr_126",
+    "french": "Tomber / Dégringoler",
+    "romand": "Déguiller",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "déguiller"
+    ],
+    "notes": "'Deguiller' signifie degringoler, basculer ou renverser, de l'ancien mot pour quilles de bowling. Il evoque l'image de quilles se dispersant dans toutes les directions -- une image vivante de quelqu'un ou quelque chose qui tombe."
+  },
+  {
+    "id": "expr_127",
+    "french": "De travers / En zigzag",
+    "romand": "De bizingue",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "de bizingue",
+      "bizingue"
+    ],
+    "notes": "'De bizingue' signifie de travers, de guingois ou en zigzag. Si vous avez accroche un tableau 'de bizingue', il n'est pas droit. Le mot est aussi utilise pour decrire quelqu'un qui marche de maniere instable, peut-etre apres une visite a la pinte (bistrot) locale."
+  },
+  {
+    "id": "expr_128",
+    "french": "Embrasser",
+    "romand": "Tchuffer",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "tchuffer"
+    ],
+    "notes": "'Tchuffer' signifie embrasser, surtout dans le contexte d'un bisou ou d'un baiser. Il est considere comme onomatopeique, imitant le son d'un baiser rapide. Le mot est largement utilise dans toute la Romandie et est un favori des enfants."
+  },
+  {
+    "id": "expr_129",
+    "french": "Rester coincé / Bloqué",
+    "romand": "Rester croché",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "croché",
+      "rester croché"
+    ],
+    "notes": "'Rester croche' signifie rester coince ou accroche a quelque chose, de 'croche' (crochet). Il s'applique a tout, d'un pull accroche a un clou a etre bloque dans le trafic ou incapable de depasser une idee."
+  },
+  {
+    "id": "expr_130",
+    "french": "Aller se coucher / Ranger",
+    "romand": "Se réduire",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "se réduire"
+    ],
+    "notes": "'Se reduire' en Suisse romande signifie ranger ou se mettre au lit, assez different du sens francais standard de 'se reduire'. Dire aux enfants 'il faut se reduire' signifie qu'il est temps de ranger et d'aller au lit."
+  },
+  {
+    "id": "expr_131",
+    "french": "Partir rapidement",
+    "romand": "Déhotter",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "déhotter"
+    ],
+    "notes": "'Dehotter' signifie partir rapidement ou degager, possiblement lie a 'hotte' (un panier porte sur le dos) -- l'idee de saisir son sac et de s'en aller. Il transmet l'urgence : pas seulement partir, mais degager vite."
+  },
+  {
+    "id": "expr_132",
+    "french": "Jeter un œil / Regarder furtivement",
+    "romand": "Guigner",
+    "tier": 2,
+    "lesson": "movement-actions",
+    "alternatives": [
+      "guigner"
+    ],
+    "notes": "'Guigner' signifie jeter un coup d'oeil furtif ou lorgner quelque chose, du vieux germanique 'winkjan' (cligner de l'oeil ou signaler). Il porte une connotation sournoise -- vous regardez quelque chose que vous ne devriez probablement pas, ou vous essayez de ne pas etre remarque."
+  },
+  {
+    "id": "expr_133",
+    "french": "Éclairer",
+    "romand": "Clairer",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "clairer"
+    ],
+    "notes": "Clairer vient de l'ancien français 'esclairer' et conserve la forme simplifiée perdue en français standard ; il s'utilise couramment dans toute la Romandie pour dire allumer une lumière ou éclairer quelque chose."
+  },
+  {
+    "id": "expr_134",
+    "french": "Devenir",
+    "romand": "Venir",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "venir"
+    ],
+    "notes": "Utiliser 'venir' pour dire 'devenir' reflète un usage du français ancien et constitue une marque distinctive du parler romand qui surprend souvent les visiteurs de France."
+  },
+  {
+    "id": "expr_135",
+    "french": "Vigoureux / En forme",
+    "romand": "Vigousse",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "vigousse"
+    ],
+    "notes": "Vigousse dérive de 'vigoureux' et est un adjectif typiquement vaudois ; dire 'je suis vigousse' après un bon repas est pratiquement une tradition locale."
+  },
+  {
+    "id": "expr_136",
+    "french": "Impeccable / Délicieux",
+    "romand": "Destra",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "destra",
+      "ça va destra"
+    ],
+    "notes": "Destra vient probablement du latin 'dextra' (main droite, habile) et a évolué en Romandie pour exprimer une approbation enthousiaste d'un bon plat ou d'un travail bien fait."
+  },
+  {
+    "id": "expr_137",
+    "french": "Avoir avantage à",
+    "romand": "Avoir meilleur temps de",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "meilleur temps",
+      "avoir meilleur"
+    ],
+    "notes": "Cette construction se traduit littéralement par 'avoir meilleur temps de' et est un calque direct du substrat arpitan (franco-provençal) qui influence encore la grammaire du français suisse."
+  },
+  {
+    "id": "expr_138",
+    "french": "Non, pas du tout",
+    "romand": "Vouah",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "vouah"
+    ],
+    "notes": "Vouah est une interjection directe signifiant 'non, pas du tout' et peut sonner un peu brusque pour les étrangers ; elle dérive probablement d'une exclamation dialectale courante dans le canton de Vaud."
+  },
+  {
+    "id": "expr_139",
+    "french": "Ouste ! / Dehors !",
+    "romand": "Ouze !",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "ouze",
+      "ouze !"
+    ],
+    "notes": "Ouze est un cri énergique utilisé pour chasser quelqu'un, étroitement lié au français 'ouste' ; il est particulièrement courant chez les générations plus âgées dans la Romandie rurale."
+  },
+  {
+    "id": "expr_140",
+    "french": "Mon Dieu !",
+    "romand": "Mon té !",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "mon té"
+    ],
+    "notes": "Mon te est une version adoucie de 'Mon Dieu' où 'te' remplace le nom divin, reflétant la tradition protestante d'éviter les invocations directes de Dieu."
+  },
+  {
+    "id": "expr_141",
+    "french": "Avoir la permission",
+    "romand": "Oser",
+    "tier": 3,
+    "lesson": "regional-sayings",
+    "alternatives": [
+      "oser"
+    ],
+    "notes": "En français suisse, 'oser' signifie 'avoir le droit' plutôt que 'avoir le courage de', ce qui crée des malentendus comiques quand les Romands parlent avec les Français (par ex. 'Est-ce que j'ose ?' signifie 'Puis-je ?')."
+  },
+  {
+    "id": "expr_142",
+    "french": "Travailler dur / Persévérer",
+    "romand": "Crocher",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "crocher"
+    ],
+    "notes": "Crocher évoque l'image de s'accrocher au travail dur comme avec un grappin ; le mot vient de l'arpitan 'crotsyi' et est admiré comme une valeur suisse fondamentale de persévérance."
+  },
+  {
+    "id": "expr_143",
+    "french": "Personne persévérante",
+    "romand": "Crocheur",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "crocheur",
+      "crocheuse"
+    ],
+    "notes": "Crocheur est la forme nominale de 'crocher' et constitue toujours un compliment en Romandie, décrivant quelqu'un avec la ténacité et l'éthique de travail que les Suisses respectent profondément."
+  },
+  {
+    "id": "expr_144",
+    "french": "Gâter / Dorloter",
+    "romand": "Cocoler",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "cocoler"
+    ],
+    "notes": "Cocoler vient de l'onomatopée de la poule qui glousse sur ses poussins, créant une image vivante de quelqu'un qui dorlote et chouchoute une autre personne."
+  },
+  {
+    "id": "expr_145",
+    "french": "Enfant choyé / Gâté",
+    "romand": "Cocolet",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "cocolet",
+      "dâdou"
+    ],
+    "notes": "Cocolet est la forme diminutive enfantine de 'cocoler', décrivant un enfant gâté ou trop choyé ; le terme porte un mélange d'affection et de taquinerie douce."
+  },
+  {
+    "id": "expr_146",
+    "french": "Pleurnicher",
+    "romand": "Niousser",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "niousser"
+    ],
+    "notes": "Niousser est une onomatopée expressive imitant le son nasal plaintif d'un enfant qui pleurniche ; il s'utilise partout en Romandie avec une pointe d'exaspération."
+  },
+  {
+    "id": "expr_147",
+    "french": "Bavarder",
+    "romand": "Barjaquer",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "barjaquer",
+      "niaffer"
+    ],
+    "notes": "Barjaquer vient probablement de l'arpitan 'bardzaqui' et capture parfaitement l'idée de papoter ou de faire des commérages, souvent utilisé pour parler des bavardages de village."
+  },
+  {
+    "id": "expr_148",
+    "french": "Lésiner / Être avare",
+    "romand": "Crépener",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "crépener",
+      "crapener"
+    ],
+    "notes": "Crepener décrit une avarice extrême et vient de racines franco-provençales ; traiter quelqu'un de 'crepeneur' est une vraie insulte en Romandie."
+  },
+  {
+    "id": "expr_149",
+    "french": "Importuner / Insister",
+    "romand": "Faire la meule",
+    "tier": 3,
+    "lesson": "character-traits",
+    "alternatives": [
+      "meuler",
+      "faire la meule"
+    ],
+    "notes": "Faire la meule signifie littéralement 'être une meule de moulin', évoquant l'image de quelqu'un qui vous use avec des plaintes ou des récriminations persistantes."
+  },
+  {
+    "id": "expr_150",
+    "french": "Excursion / Sortie",
+    "romand": "Course",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "course"
+    ],
+    "notes": "En français suisse, 'course' signifie une sortie ou une excursion plutôt qu'une compétition ; les voyages scolaires s'appellent 'courses d'école', un terme que tout enfant suisse connaît."
+  },
+  {
+    "id": "expr_151",
+    "french": "Descente d'alpage en automne",
+    "romand": "Désalpe",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "désalpe",
+      "la désalpe"
+    ],
+    "notes": "La désalpe est une tradition automnale chérie où les vaches décorées descendent des pâturages alpins vers les vallées, célébrée par des festivals, des cloches de vache et des couronnes de fleurs dans toutes les Alpes."
+  },
+  {
+    "id": "expr_152",
+    "french": "Faire la fête",
+    "romand": "Faire la viguètse",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "viguètse",
+      "la viguètse"
+    ],
+    "notes": "Faire la viguetse signifie faire la fête avec entrain et vient du dialecte arpitan ; l'expression capture l'esprit festif des célébrations villageoises romandes et des vendanges."
+  },
+  {
+    "id": "expr_153",
+    "french": "Camarades de la même année",
+    "romand": "La volée",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "volée",
+      "la volée"
+    ],
+    "notes": "La volée désigne toutes les personnes nées la même année dans un village, un concept central de la vie communautaire suisse où les cohortes d'âge célèbrent ensemble des étapes importantes tout au long de leur vie."
+  },
+  {
+    "id": "expr_154",
+    "french": "Pasteur (église réformée)",
+    "romand": "Ministre",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "ministre"
+    ],
+    "notes": "En français suisse, 'ministre' désigne un pasteur de l'Église réformée, pas un membre du gouvernement, reflétant l'influence profonde du protestantisme depuis Calvin et la Réforme en Romandie."
+  },
+  {
+    "id": "expr_155",
+    "french": "Dévot / Puritain",
+    "romand": "Mômier",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "mômier"
+    ],
+    "notes": "Momier était à l'origine un terme péjoratif pour les protestants excessivement dévots pendant le mouvement du Réveil au 19e siècle ; il s'est adouci avec le temps mais implique encore une piété excessive."
+  },
+  {
+    "id": "expr_156",
+    "french": "Secouriste / Premiers secours",
+    "romand": "Samaritain",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "samaritain"
+    ],
+    "notes": "En Suisse, 'samaritain' désigne un secouriste bénévole, pas le personnage biblique ; l'Alliance suisse des samaritains forme des intervenants communautaires depuis 1888."
+  },
+  {
+    "id": "expr_157",
+    "french": "Nounou / Assistante maternelle",
+    "romand": "Maman de jour",
+    "tier": 3,
+    "lesson": "culture-traditions",
+    "alternatives": [
+      "maman de jour"
+    ],
+    "notes": "Maman de jour désigne littéralement une gardienne d'enfants à domicile agréée, reflétant l'approche romande de la garde d'enfants familiale réglementée."
+  },
+  {
+    "id": "expr_158",
+    "french": "Boue / Gadoue",
+    "romand": "Papette",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "papette",
+      "patrigot",
+      "miauffe"
+    ],
+    "notes": "Papette décrit la boue ou la gadoue et vient probablement du franco-provençal 'papa' (aliment mou), évoquant la texture pâteuse du sol mouillé après la pluie ou la fonte des neiges."
+  },
+  {
+    "id": "expr_159",
+    "french": "Vent du sud-est sur le Léman",
+    "romand": "Vaudaire",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "vaudaire"
+    ],
+    "notes": "La vaudaire est un vent chaud de type foehn soufflant du sud-est sur le lac Léman, nommé d'après le canton de Vaud ; il peut créer des vagues spectaculaires et est bien connu des navigateurs."
+  },
+  {
+    "id": "expr_160",
+    "french": "Vent du nord sur le Léman",
+    "romand": "Morget",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "morget"
+    ],
+    "notes": "Le morget est un vent froid du nord qui souffle sur le lac Léman près de Morges, d'où il tire son nom ; les navigateurs du lac apprennent à respecter ses rafales soudaines."
+  },
+  {
+    "id": "expr_161",
+    "french": "Couverture / Couverture de lit",
+    "romand": "Couverte",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "couverte"
+    ],
+    "notes": "Couverte est une forme française ancienne signifiant couverture ou édredon qui a survécu en Romandie alors que le français standard est passé à 'couverture' ; le mot apparaît dans des textes remontant au Moyen Âge."
+  },
+  {
+    "id": "expr_162",
+    "french": "Guêpe",
+    "romand": "Vouîpe",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "vouîpe",
+      "ouîpe"
+    ],
+    "notes": "Vouipe vient directement du mot franco-provençal pour guêpe et est encore largement utilisé dans le parler romand quotidien, surtout en fin d'été quand les guêpes envahissent les repas en plein air."
+  },
+  {
+    "id": "expr_163",
+    "french": "Lapin",
+    "romand": "Counet",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "counet",
+      "couni"
+    ],
+    "notes": "Counet est un mot dialectal charmant pour lapin, souvent utilisé affectueusement avec les enfants ; il vient de l'arpitan 'conei' et n'a aucun lien avec le français standard 'lapin'."
+  },
+  {
+    "id": "expr_164",
+    "french": "Taureau (familier)",
+    "romand": "Mouni",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "mouni"
+    ],
+    "notes": "Mouni désigne un taureau dans le langage familier et vient du vocabulaire pastoral franco-provençal ; il reflète le profond héritage agricole de la Romandie alpine."
+  },
+  {
+    "id": "expr_165",
+    "french": "Taupe noire",
+    "romand": "Derbon",
+    "tier": 3,
+    "lesson": "nature-elements",
+    "alternatives": [
+      "derbon"
+    ],
+    "notes": "Derbon désigne spécifiquement une taupe noire et vient de l'arpitan 'darbon' ; dans la Romandie rurale, les derbons sont une nuisance familière dans les jardins et les pâturages."
+  },
+  {
+    "id": "expr_166",
+    "french": "Correction / Rossée",
+    "romand": "Astiquée",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "astiquée",
+      "une astiquée"
+    ],
+    "notes": "Astiquée signifie littéralement un 'polissage' mais dans l'argot romand cela signifie une raclée ou une correction, sous-entendant avec humour que quelqu'un s'est fait 'bien nettoyer'."
+  },
+  {
+    "id": "expr_167",
+    "french": "Culbute / Chute",
+    "romand": "Cupessée",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "cupessée",
+      "cupesser"
+    ],
+    "notes": "Cupessée vient de 'cul par-dessus' (tête par-dessus tête) et décrit vivement une chute ou une culbute ; c'est un mot favori des enfants romands dans les cours de récréation."
+  },
+  {
+    "id": "expr_168",
+    "french": "Gifle / Claque",
+    "romand": "Motchâ",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "motchâ",
+      "motiâ"
+    ],
+    "notes": "Motcha est un mot dialectal énergique pour une gifle ou une claque, venant du franco-provençal ; son son sec reflète l'impact qu'il décrit."
+  },
+  {
+    "id": "expr_169",
+    "french": "Grande quantité",
+    "romand": "Une tapée",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "tapée",
+      "crâlée",
+      "tralée"
+    ],
+    "notes": "Une tapée signifie littéralement 'la valeur d'une claque' et s'utilise pour décrire une grande quantité de quelque chose, similaire à 'un tas de' ou 'plein de'."
+  },
+  {
+    "id": "expr_170",
+    "french": "Diarrhée",
+    "romand": "Courante",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "courante",
+      "la courante"
+    ],
+    "notes": "Courante est une façon directe et sans détour de dire diarrhée en Romandie, venant de l'idée de 'courir' aux toilettes ; c'est plus franc que les euphémismes du français standard."
+  },
+  {
+    "id": "expr_171",
+    "french": "Vomir",
+    "romand": "Déballer",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "déballer"
+    ],
+    "notes": "Déballer signifie littéralement 'défaire un paquet' mais dans l'argot romand cela signifie vomir de façon vive et humoristique, comme si on déballait le contenu de son estomac."
+  },
+  {
+    "id": "expr_172",
+    "french": "Engourdissement / Onglée",
+    "romand": "Débattue",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "débattue",
+      "la débattue"
+    ],
+    "notes": "Débattue décrit la sensation douloureuse de picotement quand des doigts ou des orteils gelés se réchauffent, de 'se débattre' ; il n'existe pas d'équivalent en un seul mot en français standard."
+  },
+  {
+    "id": "expr_173",
+    "french": "Museau / Gueule",
+    "romand": "Mor",
+    "tier": 3,
+    "lesson": "colorful-language",
+    "alternatives": [
+      "mor",
+      "mourre"
+    ],
+    "notes": "Mor signifie museau ou gueule et s'utilise familièrement pour désigner le visage ou la bouche d'une personne ; dire à quelqu'un de 'fermer son mor' est une façon imagée de dire 'la ferme'."
+  },
+  {
+    "id": "expr_174",
+    "french": "Fonctionner mal / Être fragile",
+    "romand": "Pécloter",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "pécloter"
+    ],
+    "notes": "Pécloter décrit quelque chose qui fonctionne à peine ou une personne en santé fragile ; le mot vient du franco-provençal et n'a pas d'équivalent en français standard, comblant un vrai vide lexical."
+  },
+  {
+    "id": "expr_175",
+    "french": "Vieux vélo / Engin en mauvais état",
+    "romand": "Péclot",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "péclot"
+    ],
+    "notes": "Péclot est la forme nominale de 'pécloter' et désigne typiquement un vieux vélo branlant ou un véhicule en mauvais état, utilisé avec une exaspération affectueuse partout en Romandie."
+  },
+  {
+    "id": "expr_176",
+    "french": "Couper mal / À tort et à travers",
+    "romand": "Coupacher",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "coupacher"
+    ],
+    "notes": "Coupacher ajoute le suffixe péjoratif '-acher' à 'couper', transmettant parfaitement l'idée de tailler maladroitement plutôt que de couper proprement."
+  },
+  {
+    "id": "expr_177",
+    "french": "Défaire / Mettre en pièces",
+    "romand": "Démarmaler",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "démarmaler"
+    ],
+    "notes": "Démarmaler signifie démonter ou démolir quelque chose complètement ; le mot intensifie l'idée de destruction avec le préfixe 'dé-' et se rattache probablement à des racines arpitanes."
+  },
+  {
+    "id": "expr_178",
+    "french": "Suppléer les bosses d'un objet",
+    "romand": "Décabosser",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "décabosser"
+    ],
+    "notes": "Décabosser signifie enlever les bosses (cabosses) d'un objet, couramment utilisé pour la réparation de carrosserie ; curieusement, le français standard utilise 'débosseler' à la place."
+  },
+  {
+    "id": "expr_179",
+    "french": "Bouillote",
+    "romand": "Cruche",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "cruche"
+    ],
+    "notes": "En Romandie, une 'cruche' (littéralement un pichet) désigne une bouillotte, parce que les bouillottes en céramique originales ressemblaient à de petites cruches."
+  },
+  {
+    "id": "expr_180",
+    "french": "Boucles de cheveux",
+    "romand": "Coquillons",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "coquillons",
+      "coquillon"
+    ],
+    "notes": "Coquillons sont de petites boucles ou anglaises de cheveux, de 'coquille' décrivant leur forme en spirale ; c'est un terme affectueux souvent utilisé en parlant des cheveux des enfants."
+  },
+  {
+    "id": "expr_181",
+    "french": "Joindre les deux bouts",
+    "romand": "Donner le tour",
+    "tier": 3,
+    "lesson": "everyday-advanced",
+    "alternatives": [
+      "donner le tour"
+    ],
+    "notes": "Donner le tour signifie littéralement 'donner le tour' et est l'équivalent romand de 'joindre les deux bouts', évoquant l'image d'une clé qui tourne pour tout verrouiller en place."
+  },
+  {
+    "id": "expr_182",
+    "french": "Vermoulu / Percé de trous",
+    "romand": "Cironné",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "cironné"
+    ],
+    "notes": "Cironné décrit du bois vermoulu ou plein de petits trous, venant du vieux français 'ciron' (acarien du bois) ; c'est particulièrement utile dans une région avec tant de vieux chalets en bois."
+  },
+  {
+    "id": "expr_183",
+    "french": "Convenable / Séant",
+    "romand": "Comme il faut",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "comme il faut"
+    ],
+    "notes": "Bien que 'comme il faut' existe en français standard, en Romandie il s'utilise beaucoup plus largement comme adjectif quotidien signifiant convenable ou correct, pas seulement comme locution adverbiale."
+  },
+  {
+    "id": "expr_184",
+    "french": "Virage",
+    "romand": "Contour",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "contour"
+    ],
+    "notes": "Utiliser 'contour' pour désigner un virage dans la route est standard en français suisse mais déroute les visiteurs de France, où le mot signifie un tracé ou une silhouette à la place."
+  },
+  {
+    "id": "expr_185",
+    "french": "Vers / Près de",
+    "romand": "Contre",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "contre"
+    ],
+    "notes": "En français suisse, 'contre' signifie 'près de' ou 'vers' plutôt que 'en opposition à', un usage hérité de l'arpitan qui cause de fréquents malentendus avec les locuteurs de France."
+  },
+  {
+    "id": "expr_186",
+    "french": "Ne pas aimer du tout",
+    "romand": "Ne pas courir après",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "courir après"
+    ],
+    "notes": "Ne pas courir après (ne pas courir après quelque chose) est une façon typiquement romande et modérée de dire qu'on n'aime vraiment pas quelque chose, évitant les déclarations négatives directes."
+  },
+  {
+    "id": "expr_187",
+    "french": "Brassards (de natation)",
+    "romand": "Manchons",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "manchons"
+    ],
+    "notes": "Manchons (littéralement 'manches' ou 'manchons') désigne les brassards gonflables pour enfants, un terme propre au français suisse qui laisse perplexes les visiteurs français à la piscine."
+  },
+  {
+    "id": "expr_188",
+    "french": "Short de sport",
+    "romand": "Cuissettes",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "cuissettes"
+    ],
+    "notes": "Cuissettes (de 'cuisse') est le mot romand pour short de sport, alors qu'en France on dit simplement 'short' ; le diminutif '-ette' ajoute une touche typiquement suisse."
+  },
+  {
+    "id": "expr_189",
+    "french": "Chaussons de gymnastique",
+    "romand": "Basanes",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "basanes"
+    ],
+    "notes": "Basanes signifiait à l'origine du cuir souple et en Romandie désigne les chaussons de gym à semelle fine portés dans les écoles suisses, où les enfants se changent quotidiennement pour mettre des chaussures d'intérieur."
+  },
+  {
+    "id": "expr_190",
+    "french": "Pourboire",
+    "romand": "Bonne main",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "bonne main"
+    ],
+    "notes": "Bonne main (littéralement 'bonne main') signifie un pourboire en français suisse ; la culture du pourboire en Suisse diffère de celle de France, et l'expression reflète un geste de remerciement plus personnel."
+  },
+  {
+    "id": "expr_191",
+    "french": "Gilet / Cardigan",
+    "romand": "Jaquette",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "jaquette"
+    ],
+    "notes": "En Romandie, 'jaquette' signifie un cardigan ou un gilet, alors qu'en France le mot désigne une jaquette de cérémonie ou une jaquette de livre, menant à d'amusantes confusions vestimentaires."
+  },
+  {
+    "id": "expr_192",
+    "french": "Maillot de bain",
+    "romand": "Calosse",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "calosse"
+    ],
+    "notes": "Calosse est un mot romand informel pour maillot de bain, probablement issu d'une déformation dialectale ; il s'utilise surtout dans le langage familier chez les jeunes locuteurs de la région vaudoise."
+  },
+  {
+    "id": "expr_193",
+    "french": "Sac en papier",
+    "romand": "Poche",
+    "tier": 3,
+    "lesson": "advanced-vocabulary",
+    "alternatives": [
+      "poche",
+      "une poche"
+    ],
+    "notes": "En français suisse, 'poche' désigne un sac en papier (à la boulangerie ou au magasin), pas une poche de vêtement comme en français standard ; demander 'une poche' à Paris vous vaudra des regards perplexes."
+  },
+  {
+    "id": "expr_194",
+    "french": "Sommeiller / S'endormir assis",
+    "romand": "Donder",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "donder"
+    ],
+    "notes": "Issu du franco-provençal 'dondou' (bercer, se balancer), 'donder' évoque le doux hochement de tête de quelqu'un qui s'assoupit sur sa chaise. Les anciennes générations l'utilisaient couramment pour décrire les grands-parents qui s'endormaient après le repas dominical."
+  },
+  {
+    "id": "expr_195",
+    "french": "Être sur le point de mourir",
+    "romand": "Défunter",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "défunter"
+    ],
+    "notes": "Un verbe d'une praticité sombre, construit directement à partir de 'défunt', 'défunter' faisait jadis partie du vocabulaire quotidien rural quand la mort à domicile était chose courante. Sa franchise reflète une époque pré-moderne où l'on parlait de la mort sans détour, une attitude qui a largement disparu du français suisse moderne."
+  },
+  {
+    "id": "expr_196",
+    "french": "Dépérir / Végéter",
+    "romand": "Crevoter",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "crevoter"
+    ],
+    "notes": "Dérivé de 'crever' avec le suffixe diminutif '-oter', 'crevoter' capture un état de dépérissement lent. On l'employait pour des personnes, des animaux et même des plantes maladives, reflétant la familiarité intime du monde agraire avec le déclin."
+  },
+  {
+    "id": "expr_197",
+    "french": "Petit verre d'eau-de-vie",
+    "romand": "Cretchu",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "cretchu",
+      "verratson"
+    ],
+    "notes": "Un 'cretchû' était le petit verre d'eau-de-vie (souvent faite maison à partir de fruits) offert aux invités ou avalé par les paysans les matins froids. Le mot dérive probablement d'un diminutif patois et est étroitement lié à la tradition autrefois répandue de distillation domestique dans les villages suisses."
+  },
+  {
+    "id": "expr_198",
+    "french": "Tirelire",
+    "romand": "Crousille",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "crousille"
+    ],
+    "notes": "Du vieux français 'crousille' (petit pot), ce mot pour une tirelire ou boîte à pièces était courant dans toute la Romandie jusqu'au 20e siècle. Certains linguistes le relient à 'creux', décrivant le récipient creux où l'on glissait les pièces."
+  },
+  {
+    "id": "expr_199",
+    "french": "Croûton / Entame du pain",
+    "romand": "Crotson",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "crotson",
+      "crotchon"
+    ],
+    "notes": "Également orthographié 'crotchon', ce mot désignant le quignon croustillant du pain vient du franco-provençal 'croton'. Dans les foyers traditionnels, le crotson était soit le morceau le plus prisé (pour son croquant) soit donné au plus jeune enfant."
+  },
+  {
+    "id": "expr_200",
+    "french": "Se déshabiller",
+    "romand": "Se dézaquer",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "dézaquer",
+      "se dézaquer"
+    ],
+    "notes": "Le préfixe 'dé-' combiné à 'zaquer' (s'habiller) donne ce verbe satisfaisant pour se déshabiller. 'Zaquer' et 'dézaquer' forment une paire parfaite qui survit surtout dans le langage familial vaudois et fribourgeois, souvent utilisé avec les enfants au coucher."
+  },
+  {
+    "id": "expr_201",
+    "french": "S'habiller",
+    "romand": "Se zaquer",
+    "tier": 4,
+    "lesson": "archaic-daily",
+    "alternatives": [
+      "zaquer",
+      "se zaquer"
+    ],
+    "notes": "D'une racine franco-provençale signifiant couvrir ou équiper, 'se zaquer' est le jumeau miroir de 'se dézaquer'. Les deux mots appartenaient au vocabulaire quotidien des familles rurales et sont aujourd'hui chéris par les défenseurs du dialecte comme marqueurs de l'authentique parler romand."
+  },
+  {
+    "id": "expr_202",
+    "french": "Portail d'alpage",
+    "romand": "Clédar",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "clédar"
+    ],
+    "notes": "Du latin 'clatarium' (barrière à claire-voie), le 'clédar' est la barrière en bois iconique que l'on trouve à l'entrée des pâturages alpins du Pays-d'Enhaut et de la Gruyère. Refermer le clédar derrière soi est une règle non écrite de l'étiquette montagnarde, encore observée par les randonneurs aujourd'hui."
+  },
+  {
+    "id": "expr_203",
+    "french": "Tas de fumier",
+    "romand": "Courtine",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "courtine"
+    ],
+    "notes": "En français standard, 'courtine' désigne un rideau ou un mur de fortification, mais dans le parler rural romand il désignait spécifiquement le tas de fumier près de la grange. Ce glissement sémantique vient probablement de la position du tas contre la 'courtine' (mur d'enceinte) de la cour de ferme."
+  },
+  {
+    "id": "expr_204",
+    "french": "Bretelle de hotte",
+    "romand": "Corgeon",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "corgeon"
+    ],
+    "notes": "Le 'corgeon' était la courroie en cuir ou tressée servant à porter une 'hotte' en bois sur les épaules. Ces hottes dorsales étaient essentielles pour les vendanges dans les vignobles de Lavaux, et le corgeon devait être assez solide pour supporter des charges de 40 kilos ou plus."
+  },
+  {
+    "id": "expr_205",
+    "french": "Pesée du lait à la laiterie",
+    "romand": "Coulage",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "coulage"
+    ],
+    "notes": "Le 'coulage' était un événement clé de la vie villageoise suisse: la pesée et l'enregistrement quotidiens du lait de chaque paysan à la laiterie communale. Ce rituel déterminait la part de production fromagère de chaque foyer et était un point de rassemblement social où les nouvelles et les ragots coulaient aussi librement que le lait."
+  },
+  {
+    "id": "expr_206",
+    "french": "Houe à dents (pour la vigne)",
+    "romand": "Croc",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "croc"
+    ],
+    "notes": "À ne pas confondre avec le 'croc' français standard (croc), ce terme romand désigne une houe à dents utilisée pour travailler le sol pierreux entre les rangs de vigne. Les ouvriers vignerons de Lavaux et du Valais se reconnaissaient à la forme distinctive de leur 'croc' local."
+  },
+  {
+    "id": "expr_207",
+    "french": "Étai / Support de branche",
+    "romand": "Cote",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "cote"
+    ],
+    "notes": "Une 'cote' est un étai fourchu en bois placé sous une grosse branche d'arbre fruitier pour l'empêcher de se briser sous le poids de la récolte. La pratique de 'coter' les pommiers et poiriers était jadis une activité automnale communautaire dans les vergers romands."
+  },
+  {
+    "id": "expr_208",
+    "french": "Fermer à clé",
+    "romand": "Coter",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "coter"
+    ],
+    "notes": "Sans lien avec son homonyme signifiant 'noter', ce 'coter' romand signifie fermer une porte à clé et dérive d'un mot patois pour verrou ou loquet. Il survit dans certains foyers vaudois et fribourgeois où les locuteurs âgés disent encore 'cote la porte' plutôt que 'ferme à clé'."
+  },
+  {
+    "id": "expr_209",
+    "french": "Couloir de débardage en forêt",
+    "romand": "Dévaloir",
+    "tier": 4,
+    "lesson": "rural-traditions",
+    "alternatives": [
+      "dévaloir"
+    ],
+    "notes": "Un 'dévaloir' est un couloir abrupt dégagé dans les forêts de montagne, utilisé pour faire glisser les grumes vers le bas. Ces goulottes à gravité, parfois tapissées de neige ou d'eau, étaient vitales pour l'industrie forestière du Jura et des Préalpes avant l'avènement de l'exploitation mécanisée."
+  },
+  {
+    "id": "expr_210",
+    "french": "Mensonge / Bobard",
+    "romand": "Dzangue",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "dzangue"
+    ],
+    "notes": "Le son 'dz' au début de 'dzangue' est une marque distinctive de la phonologie franco-provençale, préservée dans de nombreux mots fribourgeois et valaisans. Ce mot pour un mensonge ou une histoire à dormir debout partage probablement ses racines avec le vieux français 'jangle' (bavardage, commérage), dont l'anglais tire 'jangle'."
+  },
+  {
+    "id": "expr_211",
+    "french": "Menteur",
+    "romand": "Dzanyeur",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "dzanyeur"
+    ],
+    "notes": "Le compagnon naturel de 'dzangue', un 'dzanyeur' est un menteur ou un bonimenteur. Le suffixe '-eur' suit les schémas français standard de noms d'agent, mais l'ouverture 'dz-' est du pur patois, faisant de ce mot un hybride linguistique révélant comment le parler romand mélange deux systèmes linguistiques."
+  },
+  {
+    "id": "expr_212",
+    "french": "Geindre / Marmonner",
+    "romand": "Dzemoter",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "dzemoter"
+    ],
+    "notes": "Se 'dzemoter', c'est grogner, gémir ou marmonner entre ses dents. Le mot porte la phonétique patoise (l'attaque 'dz-') et était souvent utilisé pour décrire le plainte continue et sourde de quelqu'un mécontent de son sort, comme le bourdonnement d'un bourdon insatisfait."
+  },
+  {
+    "id": "expr_213",
+    "french": "Donner la nausée",
+    "romand": "Doyater",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "doyater"
+    ],
+    "notes": "Ce verbe expressif pour se sentir nauséeux vient de racines franco-provençales et était autrefois courant dans les campagnes fribourgeoises et vaudoises. Son son même semble mimer la sensation de malaise qu'il décrit, en faisant un bel exemple de vocabulaire phonesthésique."
+  },
+  {
+    "id": "expr_214",
+    "french": "Hurler d'une voix aiguë",
+    "romand": "Cicler",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "cicler",
+      "sicler"
+    ],
+    "notes": "Se 'cicler', c'est hurler ou crier d'une voix perçante et aiguë. Le mot est onomatopéique, imitant le son aigu 'sss' d'un cri strident. Il s'employait surtout pour les cris d'enfants ou l'appel de certains oiseaux dans les villages de montagne."
+  },
+  {
+    "id": "expr_215",
+    "french": "Crisser / Craqueter",
+    "romand": "Crezener",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "crezener"
+    ],
+    "notes": "Un joyau onomatopéique, 'crézener' capture le son de quelque chose qui craque, grince ou racle, comme des bottes sur la neige gelée, une charnière rouillée ou des dents sur du gravier. Il appartient à une riche famille de mots sonores romands dont le français standard manque d'équivalents."
+  },
+  {
+    "id": "expr_216",
+    "french": "Croustiller",
+    "romand": "Crousser",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "crousser"
+    ],
+    "notes": "Relié à 'croûte', 'crousser' signifie crépiter et croquer, décrivant typiquement un pain bien cuit ou une peau de pomme de terre parfaitement rôtie. Ce mot était une marque d'éloge culinaire dans les cuisines rurales où une bonne croûte était le signe d'un boulanger habile."
+  },
+  {
+    "id": "expr_217",
+    "french": "Trottiner sans cesse",
+    "romand": "Courater",
+    "tier": 4,
+    "lesson": "patois-heritage",
+    "alternatives": [
+      "courater"
+    ],
+    "notes": "Se 'courater', c'est s'affairer, trotter de-ci de-là sans arrêt, souvent utilisé pour une ménagère occupée ou un enfant agité. Il dérive probablement de 'courir' avec un suffixe fréquentatif, peignant une image de mouvement perpétuel à petite échelle."
+  },
+  {
+    "id": "expr_218",
+    "french": "Vacarme / Tapage",
+    "romand": "Détèrtin",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "détèrtin"
+    ],
+    "notes": "Ce mot oublié pour un vacarme ou un tintamarre était jadis une réprimande domestique courante: 'Arrête ton détertin!' Son étymologie est incertaine, mais il peut se relier à un vieux verbe signifiant secouer ou faire du bruit, capturant le chaos d'enfants se chamaillant."
+  },
+  {
+    "id": "expr_219",
+    "french": "Marchandise sans valeur / Déchet",
+    "romand": "Coffiâ",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "coffiâ"
+    ],
+    "notes": "Une 'coffia', ce sont des marchandises sans valeur, de la camelote ou de la marchandise de mauvaise qualité. Le mot descend probablement d'un terme patois pour les cosses ou la balle, le déchet laissé après le battage du grain. C'était une insulte cinglante appliquée au travail ou aux marchandises de quelqu'un au marché du village."
+  },
+  {
+    "id": "expr_220",
+    "french": "Petite limace blanche",
+    "romand": "Coitron",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "coitron"
+    ],
+    "notes": "Ce mot hyper-spécifique pour la petite limace blanche (distincte de la grosse limace de jardin) montre comment le vocabulaire rural romand encodait des connaissances écologiques précises. Les fermiers avaient besoin de telles distinctions car le 'coitron' était une nuisance particulière dans les potagers après la pluie."
+  },
+  {
+    "id": "expr_221",
+    "french": "Serrer / Entasser",
+    "romand": "Cougner",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "cougner",
+      "cugné"
+    ],
+    "notes": "D'une racine liée à 'coin' (angle/cale), 'cougner' signifie serrer, tasser ou coincer. C'était le verbe de référence pour charger du foin sur une charrette ou entasser des gens dans un banc d'église, et survit dans quelques familles sous la forme 'on est tout cougné' (on est tous serrés)."
+  },
+  {
+    "id": "expr_222",
+    "french": "Déguenillé / Mal habillé",
+    "romand": "Dépatoillu",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "dépatoillu",
+      "dépenaillé",
+      "défreguillé"
+    ],
+    "notes": "Cet adjectif merveilleusement descriptif pour quelqu'un habillé en haillons porte le préfixe 'dé-' (défait) et une racine patoise liée à 'patoille' (chiffon). C'était une insulte rurale imagée, parfois utilisée affectueusement pour les enfants qui rentraient avec des vêtements déchirés après avoir joué dans les champs."
+  },
+  {
+    "id": "expr_223",
+    "french": "Dégringoler dans une pente",
+    "romand": "Dérupiter",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "dérupiter"
+    ],
+    "notes": "Construit de 'dé-' (en bas) et d'une racine liée à 'rupe' (falaise/pente), 'dérupiter' signifie dégringoler la tête la première sur une pente raide. Ce verbe né en montagne capture la terreur spécifique de perdre pied sur un sentier alpin, quelque chose qu'aucun mot français standard n'exprime aussi précisément."
+  },
+  {
+    "id": "expr_224",
+    "french": "Pente raide",
+    "romand": "Dérupe",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "dérupe"
+    ],
+    "notes": "La forme nominale derrière le verbe 'dérupiter', une 'dérupe' est une pente raide, souvent rocheuse. Dans les communautés montagnardes, nommer précisément de tels accidents de terrain était une question de sécurité pratique, et des mots comme 'dérupe' servaient de balises verbales à une époque avant les cartes imprimées."
+  },
+  {
+    "id": "expr_225",
+    "french": "Dévoyer / Débaucher",
+    "romand": "Dérouter",
+    "tier": 4,
+    "lesson": "forgotten-words",
+    "alternatives": [
+      "dérouter"
+    ],
+    "notes": "Alors que le français standard 'dérouter' signifie détourner ou décontenancer, le sens archaïque romand est spécifiquement moral: mener quelqu'un sur le mauvais chemin, corrompre. Cet usage reflète le fort vocabulaire moral protestant des communautés vaudoises où 'dérouter un jeune' était une accusation sérieuse."
+  },
+  {
+    "id": "expr_226",
+    "french": "Accroupi",
+    "romand": "À crépeton",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "à crépeton",
+      "à cropeton"
+    ],
+    "notes": "Cette charmante expression pour s'accroupir vient d'une racine patoise signifiant 'crête' ou 'arête' (se référant à la forme du corps quand on est accroupi). La variante 'à cropeton' est aussi attestée. Elle faisait partie du langage quotidien de générations de paysans romands travaillant près du sol dans leurs jardins."
+  },
+  {
+    "id": "expr_227",
+    "french": "Cartilage de viande / Morceau dur",
+    "romand": "Cregnôle",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "cregnôle",
+      "corniôle"
+    ],
+    "notes": "Une 'cregnole', c'est ce morceau dur et cartilagineux qu'on rencontre dans un morceau de viande. Probablement d'une racine patoise signifiant 'craquer' ou 'croquer', c'était un mot courant aux repas quand les familles abattaient leurs propres animaux et que rien n'était gaspillé."
+  },
+  {
+    "id": "expr_228",
+    "french": "Tuile faîtière",
+    "romand": "Créneau",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "créneau"
+    ],
+    "notes": "En français standard, 'créneau' désigne un parapet ou une place de parking, mais dans le vocabulaire traditionnel du bâtiment romand, il désignait spécifiquement la tuile faîtière courbe couronnant un toit. Ce sens spécialisé survit chez les couvreurs âgés et dans la documentation du patrimoine bâti."
+  },
+  {
+    "id": "expr_229",
+    "french": "Bévue / Sottise",
+    "romand": "Crevée",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "crevée"
+    ],
+    "notes": "Sans lien avec 'crève' (un rhume), une 'crevée' dans ce sens archaïque signifie une bévue ou une erreur stupide. Le mot peut dériver de l'idée de quelque chose qui 'éclate' ou tourne mal. C'était une manière douce de gronder: 'Tu as fait une belle crevée!' (Tu as vraiment raté ton coup!)."
+  },
+  {
+    "id": "expr_230",
+    "french": "Faculté de comprendre",
+    "romand": "Comprenette",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "comprenette"
+    ],
+    "notes": "Un mot affectueux et joueur pour désigner sa capacité à comprendre les choses, comme dans 'il a la comprenette un peu lente' (il comprend un peu lentement). Construit à partir de 'comprendre' avec un suffixe diminutif, il transforme l'intelligence en quelque chose de presque tangible et attendrissant."
+  },
+  {
+    "id": "expr_231",
+    "french": "Le tout / En gros / Au jugé",
+    "romand": "Totubotu",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "totubotu",
+      "tubotu",
+      "otubotu"
+    ],
+    "notes": "Ce mot remarquable signifiant 'grosso modo' ou 'en gros' proviendrait d'une contraction patoise de 'tout ou bout ou tout' (tout d'un bout à l'autre). Son son compressé, presque absurde, en fait l'un des mots les plus distinctifs et intraduisibles de tout le vocabulaire romand."
+  },
+  {
+    "id": "expr_232",
+    "french": "Être très fatigué / Peiner",
+    "romand": "Pas pouvoir yètse",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "yètse",
+      "pas yètse"
+    ],
+    "notes": "Cette phrase, littéralement 'ne peut pas yetse', utilise l'auxiliaire franco-provençal 'yetse' (être/arriver à). Dire 'je ne peux pas yetse' exprime un épuisement total ou une incapacité. C'est l'une des traces les plus claires de grammaire patoise encore enchâssée dans la syntaxe du français romand."
+  },
+  {
+    "id": "expr_233",
+    "french": "Chanter sans paroles (yodel)",
+    "romand": "Youtser",
+    "tier": 4,
+    "lesson": "rare-expressions",
+    "alternatives": [
+      "youtser",
+      "une youtse"
+    ],
+    "notes": "Dérivé de l'allemand suisse 'Jutz' (un cri de yodel), 'youtser' signifie chanter sans paroles dans le style du yodel. La 'youtse' est spécifiquement le terme romand pour le yodel, distinguant la tradition francophone de son homologue germanophone de l'autre côté du Röstigraben."
+  },
+  {
+    "id": "expr_234",
+    "french": "Borne incendie",
+    "romand": "Borne hydrante",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "borne hydrante"
+    ],
+    "notes": "C'est le terme administratif officiel suisse pour une borne hydrante, utilisé dans tous les règlements municipaux et codes de prévention incendie de Romandie. Bien qu'il sonne technique, c'est le terme courant quotidien en Suisse, et utiliser le français 'bouche d'incendie' vous marquerait comme étranger."
+  },
+  {
+    "id": "expr_235",
+    "french": "Accès à une propriété",
+    "romand": "Dévestiture",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "dévestiture"
+    ],
+    "notes": "Un terme juridique du droit foncier suisse, la 'dévestiture' désigne le droit d'accès (allée ou chemin) à une propriété traversant le terrain d'autrui. Elle apparaît dans les documents du registre foncier et les contrats immobiliers, et les avocats suisses l'utilisent couramment là où le droit français dirait 'servitude de passage'."
+  },
+  {
+    "id": "expr_236",
+    "french": "Défaire les andains",
+    "romand": "Désandagner",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "désandagner"
+    ],
+    "notes": "Un 'andain' est un rang d'herbe fauchée laissé à sécher dans un champ. 'Désandagner', c'est étaler ces rangs avec une fourche pour qu'ils sèchent uniformément avant d'être ramassés en foin. Ce verbe encode une étape précise du processus de fenaison qui était central à la vie agricole alpine."
+  },
+  {
+    "id": "expr_237",
+    "french": "Vente aux enchères",
+    "romand": "Mise",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "mise",
+      "miser"
+    ],
+    "notes": "Dans la tradition juridique et commerciale romande, une 'mise' désigne spécifiquement une vente aux enchères publique. Le mot vient de 'mettre' au sens de mettre des biens en vente. Les 'mises' villageoises étaient des événements sociaux majeurs où tout changeait de mains, du bétail aux objets ménagers."
+  },
+  {
+    "id": "expr_238",
+    "french": "Mesure de surface pour vignes",
+    "romand": "Ouvrier",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "ouvrier"
+    ],
+    "notes": "Un 'ouvrier' de vigne est une ancienne unité suisse de superficie égale à environ 430 mètres carrés, représentant la surface qu'un ouvrier pouvait entretenir en une journée. Elle est encore utilisée aujourd'hui dans les régions viticoles vaudoises et valaisannes, apparaissant dans les annonces immobilières et ventes de vignobles aux côtés des mesures métriques."
+  },
+  {
+    "id": "expr_239",
+    "french": "Parcelle de vigne",
+    "romand": "Parchet",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "parchet"
+    ],
+    "notes": "Un 'parchet' est une parcelle ou un lopin spécifique de vigne, du latin 'particella'. Le mot est encore activement utilisé par les vignerons des vignobles UNESCO de Lavaux, où les parchets séculaires sont identifiés par leur nom et leur terroir unique farouchement gardé."
+  },
+  {
+    "id": "expr_240",
+    "french": "Pierre à aiguiser la faux",
+    "romand": "Molette",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "molette"
+    ],
+    "notes": "La 'molette' est la pierre à aiguiser portée dans un support en bois rempli d'eau (le 'coffin') à la ceinture du faucheur, utilisée pour affûter la lame de la faux entre les passages. Le son rythmique de la pierre sur l'acier était jadis la bande-son des matins d'été dans les prairies romandes."
+  },
+  {
+    "id": "expr_241",
+    "french": "Chaudière à lessive ancienne",
+    "romand": "Couleuse",
+    "tier": 4,
+    "lesson": "specialized-terms",
+    "alternatives": [
+      "couleuse"
+    ],
+    "notes": "Avant les machines à laver, la 'couleuse' était une grande lessiveuse en cuivre ou en fonte utilisée pour le linge de maison. On empilait le linge avec de la cendre et on y 'coulait' de l'eau bouillante. La journée de lessive communautaire avec la couleuse était un événement majeur de la vie sociale villageoise."
+  },
+  {
+    "id": "expr_242",
+    "french": "Torchon / Chiffon à poussière",
+    "romand": "Patte",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "patte",
+      "patte à poussière"
+    ],
+    "notes": "Dans les foyers romands, 'patte' désignait un chiffon à poussière, pas une patte d'animal. Probablement d'une racine signifiant 'morceau d'étoffe', c'était le mot standard à Vaud et Genève pour ce que les Parisiens appelleraient un 'chiffon'. L'expression 'passer la patte' (faire la poussière) était du vocabulaire ménager quotidien."
+  },
+  {
+    "id": "expr_243",
+    "french": "Cotonnade",
+    "romand": "Cotonne",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "cotonne"
+    ],
+    "notes": "Un terme simple mais archaïque pour du tissu de coton ou de la toile de coton, 'cotonné' était courant dans le parler romand quand les textiles de coton étaient encore une marchandise notable. Il reflète l'époque où les types de tissus étaient centraux à l'économie domestique et au vocabulaire quotidien des femmes."
+  },
+  {
+    "id": "expr_244",
+    "french": "Couche / Lange de bébé",
+    "romand": "Pattin",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "pattin"
+    ],
+    "notes": "Avant les couches jetables, le 'pattin' était la couche en tissu ou lange utilisé pour les bébés. Dérivé de 'patte' (étoffe/chiffon), c'était un mot que toute mère romande connaissait. Le lavage interminable des 'pattins' était un trait définitoire de la jeune parentalité dans les foyers suisses pré-modernes."
+  },
+  {
+    "id": "expr_245",
+    "french": "Seille à une poignée",
+    "romand": "Mître",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "mître"
+    ],
+    "notes": "Une 'mitre' est un seau en bois à une seule anse, distinct d'un seau à deux anses. C'était un équipement laitier essentiel dans les fermes alpines, utilisé pour traire et transporter le lait au chalet. La conception spécifique à une anse permettait de porter d'une main sur les sentiers de montagne escarpés."
+  },
+  {
+    "id": "expr_246",
+    "french": "Masque (de carnaval)",
+    "romand": "Visagère",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "visagère"
+    ],
+    "notes": "Une 'visagère' est littéralement une 'chose-visage', un nom délicieusement logique pour un masque. Il était utilisé surtout pour les masques de carnaval lors des célébrations des Brandons (carnaval de Carême) dans les villes vaudoises, où les cortèges masqués élaborés ont des racines remontant au Moyen Âge."
+  },
+  {
+    "id": "expr_247",
+    "french": "Horloge comtoise",
+    "romand": "Morbier",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "morbier"
+    ],
+    "notes": "Nommée d'après la ville de Morbier dans le Jura français voisin, cette haute horloge à balancier au cadran émaillé distinctif était un élément incontournable des fermes romandes. Appeler toute horloge grand-père une 'morbier' est devenu standard dans la région, quel que soit le lieu de fabrication de l'horloge."
+  },
+  {
+    "id": "expr_248",
+    "french": "Harmonica",
+    "romand": "Musique à bouche",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "musique à bouche"
+    ],
+    "notes": "Ce calque littéral signifiant 'musique de bouche' est un nom charmant et transparent pour l'harmonica. Il reflète l'allemand 'Mundharmonika' et illustre la zone culturelle bilingue où le français suisse a absorbé des schémas de dénomination germaniques pour les objets quotidiens."
+  },
+  {
+    "id": "expr_249",
+    "french": "Moufle",
+    "romand": "Mitaine",
+    "tier": 4,
+    "lesson": "old-household",
+    "alternatives": [
+      "mitaine",
+      "mitaines"
+    ],
+    "notes": "Alors que le français standard utilise 'mitaine' pour un gant sans doigts, dans l'usage romand il désigne une moufle complète. Cette différence sémantique a causé la confusion de générations de touristes français achetant du matériel d'hiver dans les stations de montagne suisses, s'attendant à des gants sans doigts et recevant des moufles chaudes et fermées."
+  },
+  {
+    "id": "expr_250",
+    "french": "Nuque (grassouillette)",
+    "romand": "Cotson",
+    "tier": 4,
+    "lesson": "body-archaic",
+    "alternatives": [
+      "cotson"
+    ],
+    "notes": "Un 'cotson' décrit spécifiquement une nuque dodue et charnue, souvent utilisé affectueusement pour les bébés ou les personnes corpulentes. Le mot porte une qualité tactile, presque onomatopéique, suggérant la chair molle et rembourrée à l'arrière du cou qui invite une douce pression."
+  },
+  {
+    "id": "expr_251",
+    "french": "Crâne / Tête",
+    "romand": "Crémol",
+    "tier": 4,
+    "lesson": "body-archaic",
+    "alternatives": [
+      "crémol",
+      "bobéchon"
+    ],
+    "notes": "Un vieux terme d'argot pour la tête ou le crâne, 'crémol' s'utilisait comme l'anglais 'noggin' ou 'dome'. L'alternative 'bobechon' (de 'bobine', signifiant visage/bobine) servait le même but ludique. Les deux mots appartiennent à une riche tradition de vocabulaire corporel humoristique romand qui est presque éteint."
+  },
+  {
+    "id": "expr_252",
+    "french": "Articulations des doigts",
+    "romand": "Nilles",
+    "tier": 4,
+    "lesson": "body-archaic",
+    "alternatives": [
+      "nilles"
+    ],
+    "notes": "Les 'nilles' sont les articulations des jointures des doigts, un mot si spécifique que la plupart des locuteurs romands modernes l'ont entièrement perdu. Il descend probablement d'une racine germanique liée aux boutons ou bosses, et faisait partie du vocabulaire anatomique populaire précis que les communautés rurales maintenaient pour les descriptions médicales pratiques."
+  },
+  {
+    "id": "expr_253",
+    "french": "Morve",
+    "romand": "Moque",
+    "tier": 4,
+    "lesson": "body-archaic",
+    "alternatives": [
+      "moque"
+    ],
+    "notes": "Un mot franc et terreux pour la morve nasale, 'moque' était du vocabulaire enfantin courant dans les familles romandes. Probablement lié à une racine signifiant 'mouillé' ou 'visqueux', il appartient à la catégorie de mots corporels qui étaient librement utilisés en dialecte mais considérés trop grossiers pour la société polie, précipitant sa disparition du langage quotidien."
+  }
+]
