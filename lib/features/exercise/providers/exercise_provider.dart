@@ -8,6 +8,7 @@ import 'package:ca_joue/core/content/tier_model.dart';
 import 'package:ca_joue/core/database/database_provider.dart';
 import 'package:ca_joue/core/database/tables.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
+import 'package:ca_joue/core/progress/points_provider.dart';
 import 'package:ca_joue/core/spaced_repetition/mastery_calculator.dart';
 import 'package:ca_joue/core/spaced_repetition/review_provider.dart';
 import 'package:ca_joue/core/spaced_repetition/sm2_engine.dart';
@@ -38,8 +39,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     if (lessonId == reviewLessonId) {
       _expressions = await ref.watch(dueExpressionsProvider.future);
     } else {
-      _expressions =
-          await ref.watch(expressionsByLessonProvider(lessonId).future);
+      _expressions = await ref.watch(
+        expressionsByLessonProvider(lessonId).future,
+      );
     }
 
     _currentIndex = startIndex.clamp(0, _expressions.length);
@@ -53,8 +55,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
   /// Determines whether to show discovery or active state for an expression.
   Future<ExerciseState> _stateForExpression(Expression expression) async {
-    final isFirst =
-        await ref.read(isFirstEncounterProvider(expression.id).future);
+    final isFirst = await ref.read(
+      isFirstEncounterProvider(expression.id).future,
+    );
 
     if (isFirst) {
       return ExerciseDiscovery(
@@ -96,8 +99,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       );
     }
 
-    final distractorList =
-        await ref.read(distractorsProvider(expression).future);
+    final distractorList = await ref.read(
+      distractorsProvider(expression).future,
+    );
     final options = [...distractorList, expression.romand]..shuffle(Random());
 
     return ExerciseActive(
@@ -113,8 +117,7 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     final currentState = state.value;
     if (currentState is! ExerciseDiscovery) return;
 
-    final nextState =
-        await _activeStateForExpression(currentState.expression);
+    final nextState = await _activeStateForExpression(currentState.expression);
     if (ref.mounted) state = AsyncData(nextState);
   }
 
@@ -126,6 +129,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     final isCorrect = answer == currentState.expression.romand;
 
     await _writeProgress(currentState.expression.id, isCorrect: isCorrect);
+    if (isCorrect) {
+      await ref.read(totalPointsProvider.notifier).increment();
+    }
 
     if (ref.mounted) {
       state = AsyncData(
@@ -161,6 +167,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     }
 
     await _writeProgress(expression.id, isCorrect: isCorrect);
+    if (isCorrect) {
+      await ref.read(totalPointsProvider.notifier).increment();
+    }
 
     if (ref.mounted) {
       state = AsyncData(
@@ -230,8 +239,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
     // Invalidate tier progress to get fresh data including latest writes.
     ref.invalidate(completedCountByTierProvider(tier));
-    final completedInTier =
-        await ref.read(completedCountByTierProvider(tier).future);
+    final completedInTier = await ref.read(
+      completedCountByTierProvider(tier).future,
+    );
 
     final isTierComplete = completedInTier >= totalInTier;
     final tierName = Tier.nameForTier(tier);

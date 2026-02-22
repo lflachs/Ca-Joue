@@ -1,6 +1,7 @@
 import 'package:ca_joue/core/content/content_provider.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/overall_progress_provider.dart';
+import 'package:ca_joue/core/progress/points_provider.dart';
 import 'package:ca_joue/features/home/widgets/review_cta.dart';
 import 'package:ca_joue/features/home/widgets/stat_card.dart';
 import 'package:ca_joue/features/home/widgets/tier_row.dart';
@@ -55,6 +56,8 @@ class HomeScreen extends ConsumerWidget {
               0,
               (sum, t) => sum + t.expressionCount,
             );
+            final pointsAsync = ref.watch(totalPointsProvider);
+            final points = pointsAsync.value ?? 0;
 
             return Padding(
               padding: CaJoueSpacing.horizontal,
@@ -84,10 +87,24 @@ class HomeScreen extends ConsumerWidget {
 
                   const SizedBox(height: CaJoueSpacing.xl),
 
-                  // -- Overall progress --
-                  StatCard(
-                    value: '$completed/$total',
-                    label: 'expressions',
+                  // -- Stats row --
+                  Row(
+                    children: [
+                      Expanded(
+                        child: StatCard(
+                          value: '$completed/$total',
+                          label: 'expressions',
+                        ),
+                      ),
+                      const SizedBox(width: CaJoueSpacing.sm),
+                      Expanded(
+                        child: StatCard(
+                          value: '$points',
+                          label: 'points',
+                          valueColor: CaJoueColors.gold,
+                        ),
+                      ),
+                    ],
                   ),
 
                   const SizedBox(height: CaJoueSpacing.lg),
