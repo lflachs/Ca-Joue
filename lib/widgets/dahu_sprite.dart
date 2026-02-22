@@ -28,23 +28,22 @@ class DahuSprite extends StatefulWidget {
   State<DahuSprite> createState() => _DahuSpriteState();
 }
 
-class _DahuSpriteState extends State<DahuSprite>
-    with TickerProviderStateMixin {
+class _DahuSpriteState extends State<DahuSprite> with TickerProviderStateMixin {
   // -- Character sprite sheet --
   static const int _charCols = 6;
-  static const int _charFrameW = 128;
-  static const int _charFrameH = 199;
+  static const int _charFrameW = 256;
+  static const int _charFrameH = 399;
   static const double _charFps = 10;
 
   // -- Flag sprite sheet (single row) --
   static const int _flagFrames = 14;
-  static const int _flagFrameW = 29;
-  static const int _flagFrameH = 23;
+  static const int _flagFrameW = 57;
+  static const int _flagFrameH = 46;
   static const double _flagFps = 10;
 
-  // Flag position in the 128x199 character space.
-  static const double _flagX = 15.6;
-  static const double _flagY = 63.5;
+  // Flag position in the 256x399 character space.
+  static const double _flagX = 31.2;
+  static const double _flagY = 127.0;
 
   // -- Sections --
   static const List<_Section> _sections = [
@@ -135,8 +134,7 @@ class _DahuSpriteState extends State<DahuSprite>
       // Ease back to frame 0 (if section doesn't start at 0).
       if (section.start > 0) {
         final returnDur = Duration(
-          milliseconds:
-              (section.start / _charFps * 1000).round(),
+          milliseconds: (section.start / _charFps * 1000).round(),
         );
         setState(() => _phase = _PlayPhase.returning);
         _charPlayback.duration = returnDur;
@@ -164,10 +162,7 @@ class _DahuSpriteState extends State<DahuSprite>
       case _PlayPhase.reverse:
         final t = _charPlayback.value.clamp(0.0, 0.999);
         final local = (t * _currentSection.length).floor();
-        return _currentSection.start +
-            _currentSection.length -
-            1 -
-            local;
+        return _currentSection.start + _currentSection.length - 1 - local;
       case _PlayPhase.returning:
         // Ease from section start back to frame 0.
         final t = Curves.easeOut.transform(
@@ -246,7 +241,7 @@ class _DahuPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint();
+    final paint = Paint()..filterQuality = FilterQuality.medium;
     final scaleX = size.width / _DahuSpriteState._charFrameW;
     final scaleY = size.height / _DahuSpriteState._charFrameH;
 
