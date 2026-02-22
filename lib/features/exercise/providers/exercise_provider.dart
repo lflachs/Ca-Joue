@@ -8,6 +8,7 @@ import 'package:ca_joue/core/content/tier_model.dart';
 import 'package:ca_joue/core/database/database_provider.dart';
 import 'package:ca_joue/core/database/tables.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
+import 'package:ca_joue/core/spaced_repetition/mastery_calculator.dart';
 import 'package:ca_joue/core/spaced_repetition/review_provider.dart';
 import 'package:ca_joue/core/spaced_repetition/sm2_engine.dart';
 import 'package:ca_joue/features/exercise/models/exercise_state.dart';
@@ -66,14 +67,26 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     return _activeStateForExpression(expression);
   }
 
-  /// Builds the active exercise state based on the per-expression type.
+  /// Builds the active exercise state based on mastery-driven type selection.
   Future<ExerciseState> _activeStateForExpression(
     Expression expression,
   ) async {
-    final exerciseType = exerciseTypeForIndex(
-      _currentIndex,
-      _expressions.length,
+    // Read progress to determine mastery-based exercise type.
+    final db = await ref.read(databaseProvider.future);
+    final progressRows = await db.query(
+      Tables.progress,
+      columns: [Tables.progRepetitions],
+      where: '${Tables.progExpressionId} = ?',
+      whereArgs: [expression.id],
+      limit: 1,
     );
+    final repetitions = progressRows.isEmpty
+        ? 0
+        : progressRows.first[Tables.progRepetitions]! as int;
+    final prob = typingProbability(repetitions);
+    final exerciseType = Random().nextDouble() < prob
+        ? ExerciseType.typing
+        : ExerciseType.multipleChoice;
 
     if (exerciseType == ExerciseType.typing) {
       return ExerciseTypingActive(
@@ -287,15 +300,4 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     ref.invalidate(isFirstEncounterProvider(expressionId));
   }
 
-  /// Returns the exercise type for a given expression index.
-  ///
-  /// First ~60% of expressions use multiple choice, the rest use typing.
-  /// Story 3.3 will refine this with mastery-based selection.
-  static ExerciseType exerciseTypeForIndex(int index, int total) {
-    if (total <= 1) return ExerciseType.multipleChoice;
-    final mcCutoff = (total * 0.6).ceil();
-    return index < mcCutoff
-        ? ExerciseType.multipleChoice
-        : ExerciseType.typing;
-  }
 }

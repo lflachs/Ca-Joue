@@ -1,66 +1,39 @@
-import 'package:ca_joue/features/exercise/models/exercise_state.dart';
-import 'package:ca_joue/features/exercise/providers/exercise_provider.dart';
+import 'package:ca_joue/core/spaced_repetition/mastery_calculator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('ExerciseNotifier.exerciseTypeForIndex', () {
-    test('returns MC for single expression', () {
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(0, 1),
-        ExerciseType.multipleChoice,
-      );
-    });
-
-    test('returns MC then typing for 2 expressions', () {
-      // ceil(2 * 0.6) = 2, so index 0 is MC, index 1 is MC
-      // Actually: ceil(2 * 0.6) = ceil(1.2) = 2
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(0, 2),
-        ExerciseType.multipleChoice,
-      );
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(1, 2),
-        ExerciseType.multipleChoice,
-      );
-    });
-
-    test('returns MC for first 60% and typing for rest with 10 expressions',
-        () {
-      // ceil(10 * 0.6) = 6, so indices 0-5 are MC, 6-9 are typing
-      for (var i = 0; i < 6; i++) {
+  // Threshold values (0→0.0, 1→0.15, ..., 5→0.95) are tested in
+  // mastery_calculator_test.dart. These tests verify behavioral properties.
+  group('Mastery-based exercise type selection', () {
+    test('probability increases monotonically with repetitions', () {
+      var previous = -1.0;
+      for (var reps = 0; reps <= 5; reps++) {
+        final prob = typingProbability(reps);
         expect(
-          ExerciseNotifier.exerciseTypeForIndex(i, 10),
-          ExerciseType.multipleChoice,
-          reason: 'Index $i should be MC',
+          prob,
+          greaterThan(previous),
+          reason: 'Probability at $reps reps should exceed $previous',
         );
+        previous = prob;
       }
-      for (var i = 6; i < 10; i++) {
+    });
+
+    test('probability is never exactly 1.0 (MC always possible)', () {
+      // Even at maximum mastery, there is a 5% chance of MC.
+      for (var reps = 0; reps <= 100; reps++) {
         expect(
-          ExerciseNotifier.exerciseTypeForIndex(i, 10),
-          ExerciseType.typing,
-          reason: 'Index $i should be typing',
+          typingProbability(reps),
+          lessThanOrEqualTo(0.95),
+          reason: 'Probability at $reps reps should not exceed 0.95',
         );
       }
     });
 
-    test('handles 5 expressions correctly', () {
-      // ceil(5 * 0.6) = 3, so indices 0-2 are MC, 3-4 are typing
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(0, 5),
-        ExerciseType.multipleChoice,
-      );
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(2, 5),
-        ExerciseType.multipleChoice,
-      );
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(3, 5),
-        ExerciseType.typing,
-      );
-      expect(
-        ExerciseNotifier.exerciseTypeForIndex(4, 5),
-        ExerciseType.typing,
-      );
+    test('transition is not abrupt between 2 and 3 reps', () {
+      final prob2 = typingProbability(2);
+      final prob3 = typingProbability(3);
+      // Gap should be <= 0.30 (gradual, not 0.0 to 1.0 jump).
+      expect(prob3 - prob2, closeTo(0.30, 0.001));
     });
   });
 }
