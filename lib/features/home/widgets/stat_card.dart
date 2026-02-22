@@ -30,10 +30,14 @@ class StatCard extends StatelessWidget {
       label: '$label: $value',
       excludeSemantics: true,
       child: Container(
-        padding: const EdgeInsets.all(CaJoueSpacing.md),
+        padding: const EdgeInsets.symmetric(
+          horizontal: CaJoueSpacing.md,
+          vertical: CaJoueSpacing.lg,
+        ),
         decoration: BoxDecoration(
-          color: CaJoueColors.cream,
+          color: CaJoueColors.snow,
           borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: CaJoueColors.warmGrey, width: 0.5),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,10 +46,11 @@ class StatCard extends StatelessWidget {
             Text(
               value,
               style: GoogleFonts.inter(
-                fontSize: 24,
+                fontSize: 28,
                 fontWeight: FontWeight.w700,
               ).copyWith(color: valueColor),
             ),
+            const SizedBox(height: CaJoueSpacing.xs),
             Text(
               label.toUpperCase(),
               style: CaJoueTypography.uiCaption.copyWith(
