@@ -9,6 +9,7 @@ import 'package:ca_joue/core/database/database_provider.dart';
 import 'package:ca_joue/core/database/tables.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/points_provider.dart';
+import 'package:ca_joue/core/progress/streak_provider.dart';
 import 'package:ca_joue/core/spaced_repetition/mastery_calculator.dart';
 import 'package:ca_joue/core/spaced_repetition/review_provider.dart';
 import 'package:ca_joue/core/spaced_repetition/sm2_engine.dart';
@@ -201,6 +202,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
         await ref.read(sessionPositionProvider.notifier).clearPosition();
       }
 
+      // Record session completion for streak tracking.
+      await ref.read(streakProvider.notifier).recordSession();
+
       if (!ref.mounted) return;
       state = AsyncData(await _buildCompleteState());
       return;
@@ -309,5 +313,4 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     // Invalidate first-encounter cache so discovery cards update.
     ref.invalidate(isFirstEncounterProvider(expressionId));
   }
-
 }
