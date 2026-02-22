@@ -33,13 +33,14 @@ class TierRow extends StatelessWidget {
     final status = isLocked
         ? 'locked'
         : isCompleted
-            ? 'completed'
-            : 'active';
+        ? 'completed'
+        : 'active';
 
     return GestureDetector(
       onTap: tier.isUnlocked ? onTap : null,
       child: Semantics(
-        label: '${tier.name}, $completedCount of '
+        label:
+            '${tier.name}, $completedCount of '
             '${tier.expressionCount} expressions, $status',
         child: Container(
           decoration: const BoxDecoration(
@@ -59,8 +60,8 @@ class TierRow extends StatelessWidget {
                     color: isCompleted
                         ? CaJoueColors.gold
                         : isActive
-                            ? CaJoueColors.red
-                            : CaJoueColors.warmGrey,
+                        ? CaJoueColors.red
+                        : CaJoueColors.warmGrey,
                   ),
                 ),
               ),
@@ -68,18 +69,14 @@ class TierRow extends StatelessWidget {
               Text(
                 tier.name,
                 style: CaJoueTypography.uiBody.copyWith(
-                  color: isLocked
-                      ? CaJoueColors.stone
-                      : CaJoueColors.slate,
+                  color: isLocked ? CaJoueColors.stone : CaJoueColors.slate,
                 ),
               ),
               const Spacer(),
               Text(
                 '$completedCount/${tier.expressionCount}',
                 style: CaJoueTypography.uiBody.copyWith(
-                  color: isLocked
-                      ? CaJoueColors.stone
-                      : CaJoueColors.slate,
+                  color: isLocked ? CaJoueColors.stone : CaJoueColors.slate,
                 ),
               ),
             ],

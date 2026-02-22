@@ -36,8 +36,9 @@ class Expression {
       romand: row['romand'] as String,
       tier: row['tier'] as int,
       lesson: row['lesson'] as String,
-      alternatives:
-          List<String>.from(jsonDecode(row['alternatives'] as String) as List),
+      alternatives: List<String>.from(
+        jsonDecode(row['alternatives'] as String) as List,
+      ),
       notes: row['notes'] as String? ?? '',
     );
   }

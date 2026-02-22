@@ -50,8 +50,9 @@ Future<List<Tier>> allTiers(Ref ref) async {
     if (tierNum == 1) {
       isUnlocked = true;
     } else {
-      final prevComplete =
-          await ref.watch(isTierCompleteProvider(tierNum - 1).future);
+      final prevComplete = await ref.watch(
+        isTierCompleteProvider(tierNum - 1).future,
+      );
       isUnlocked = prevComplete;
     }
 

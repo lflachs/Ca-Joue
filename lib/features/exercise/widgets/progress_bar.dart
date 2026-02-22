@@ -21,8 +21,9 @@ class ProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fraction =
-        totalExpressions > 0 ? (progressIndex + 1) / totalExpressions : 0.0;
+    final fraction = totalExpressions > 0
+        ? (progressIndex + 1) / totalExpressions
+        : 0.0;
 
     final reducedMotion = MediaQuery.disableAnimationsOf(context);
 
@@ -86,11 +87,13 @@ class _AnimatedFractionallySizedBoxState
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _widthFactor = visitor(
-      _widthFactor,
-      widget.widthFactor,
-      (dynamic value) => Tween<double>(begin: value as double),
-    ) as Tween<double>?;
+    _widthFactor =
+        visitor(
+              _widthFactor,
+              widget.widthFactor,
+              (dynamic value) => Tween<double>(begin: value as double),
+            )
+            as Tween<double>?;
   }
 
   @override

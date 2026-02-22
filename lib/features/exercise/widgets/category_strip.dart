@@ -36,7 +36,8 @@ class CategoryStrip extends StatelessWidget {
     );
 
     return Semantics(
-      label: 'Lecon: $lessonName, expression '
+      label:
+          'Lecon: $lessonName, expression '
           '${progressIndex + 1} sur $totalExpressions',
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 12),

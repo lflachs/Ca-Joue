@@ -39,8 +39,7 @@ class _CtaButtonState extends State<CtaButton> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: isDisabled ? CaJoueColors.warmGrey : CaJoueColors.slate,
-          borderRadius:
-              BorderRadius.circular(CaJoueAnimations.buttonRadius),
+          borderRadius: BorderRadius.circular(CaJoueAnimations.buttonRadius),
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -50,8 +49,9 @@ class _CtaButtonState extends State<CtaButton> {
           child: Text(
             widget.label,
             style: CaJoueTypography.uiButton.copyWith(
-              color: const Color(0xFFFFFFFF)
-                  .withValues(alpha: isDisabled ? 0.5 : 1.0),
+              color: const Color(
+                0xFFFFFFFF,
+              ).withValues(alpha: isDisabled ? 0.5 : 1.0),
             ),
           ),
         ),
@@ -62,9 +62,7 @@ class _CtaButtonState extends State<CtaButton> {
       label: widget.label,
       button: true,
       child: GestureDetector(
-        onTapDown: isDisabled
-            ? null
-            : (_) => setState(() => _isPressed = true),
+        onTapDown: isDisabled ? null : (_) => setState(() => _isPressed = true),
         onTapUp: isDisabled
             ? null
             : (_) {

@@ -75,8 +75,8 @@ class LessonRow extends StatelessWidget {
     final status = isCompleted
         ? 'terminée'
         : isStarted
-            ? 'en cours'
-            : 'disponible';
+        ? 'en cours'
+        : 'disponible';
     final icon = _lessonIcons[lesson.name] ?? LucideIcons.bookOpen;
 
     return GestureDetector(
@@ -162,8 +162,8 @@ class LessonRow extends StatelessWidget {
                       isCompleted
                           ? 'Terminée'
                           : isStarted
-                              ? '$completedCount/$total expressions'
-                              : '$total expressions',
+                          ? '$completedCount/$total expressions'
+                          : '$total expressions',
                       style: CaJoueTypography.uiCaption.copyWith(
                         color: isCompleted
                             ? CaJoueColors.gold
@@ -235,6 +235,5 @@ class _ProgressRingPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_ProgressRingPainter oldDelegate) =>
-      oldDelegate.progress != progress ||
-      oldDelegate.fillColor != fillColor;
+      oldDelegate.progress != progress || oldDelegate.fillColor != fillColor;
 }

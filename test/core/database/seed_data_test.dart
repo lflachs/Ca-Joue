@@ -31,8 +31,9 @@ void main() {
   group('SeedData', () {
     test('seeds expressions from JSON asset', () async {
       // Load the actual asset for testing
-      final jsonString =
-          await rootBundle.loadString('assets/data/expressions.json');
+      final jsonString = await rootBundle.loadString(
+        'assets/data/expressions.json',
+      );
       expect(jsonString, isNotEmpty);
 
       await SeedData.seedIfNeeded(db);

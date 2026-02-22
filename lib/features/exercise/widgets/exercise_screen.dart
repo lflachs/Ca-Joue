@@ -72,15 +72,16 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
       ),
     );
 
-    _dahuTilt = Tween<double>(
-      begin: 0,
-      end: 6 * math.pi / 180,
-    ).animate(
-      CurvedAnimation(
-        parent: _dahuController,
-        curve: CaJoueAnimations.ambientCurve,
-      ),
-    );
+    _dahuTilt =
+        Tween<double>(
+          begin: 0,
+          end: 6 * math.pi / 180,
+        ).animate(
+          CurvedAnimation(
+            parent: _dahuController,
+            curve: CaJoueAnimations.ambientCurve,
+          ),
+        );
   }
 
   @override
@@ -209,17 +210,20 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   ? Duration.zero
                   : CaJoueAnimations.feedback,
               child: switch (state) {
-                ExerciseLoading() =>
-                  const SizedBox.shrink(key: ValueKey('loading')),
+                ExerciseLoading() => const SizedBox.shrink(
+                  key: ValueKey('loading'),
+                ),
                 ExerciseDiscovery() => _buildDiscovery(state),
-                ExerciseActive() =>
-                  _buildActive(state, reducedMotion),
-                ExerciseFeedback() =>
-                  _buildFeedback(state, reducedMotion),
-                ExerciseTypingActive() =>
-                  _buildTypingActive(state, reducedMotion),
-                ExerciseTypingFeedback() =>
-                  _buildTypingFeedback(state, reducedMotion),
+                ExerciseActive() => _buildActive(state, reducedMotion),
+                ExerciseFeedback() => _buildFeedback(state, reducedMotion),
+                ExerciseTypingActive() => _buildTypingActive(
+                  state,
+                  reducedMotion,
+                ),
+                ExerciseTypingFeedback() => _buildTypingFeedback(
+                  state,
+                  reducedMotion,
+                ),
                 ExerciseComplete() => _buildComplete(state),
               },
             );
@@ -251,8 +255,10 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
               onDismiss: () => unawaited(
                 ref
                     .read(
-                      exerciseProvider(widget.lessonId, widget.startIndex)
-                          .notifier,
+                      exerciseProvider(
+                        widget.lessonId,
+                        widget.startIndex,
+                      ).notifier,
                     )
                     .dismissDiscovery(),
               ),
@@ -386,8 +392,9 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   padding: CaJoueSpacing.horizontal,
                   child: Text(
                     state.expression.french,
-                    style: CaJoueTypography.expressionTitle
-                        .copyWith(color: CaJoueColors.slate),
+                    style: CaJoueTypography.expressionTitle.copyWith(
+                      color: CaJoueColors.slate,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -507,8 +514,9 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   padding: CaJoueSpacing.horizontal,
                   child: Text(
                     state.expression.french,
-                    style: CaJoueTypography.expressionTitle
-                        .copyWith(color: CaJoueColors.slate),
+                    style: CaJoueTypography.expressionTitle.copyWith(
+                      color: CaJoueColors.slate,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -604,7 +612,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                     state.isCorrect
                         ? 'Correct, ça joue!'
                         : 'Incorrect, la bonne réponse'
-                            ' est ${state.correctAnswer}',
+                              ' est ${state.correctAnswer}',
                     style: const TextStyle(fontSize: 0),
                   ),
                 ),
@@ -655,17 +663,13 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                 AnimatedBuilder(
                   animation: _dahuController,
                   builder: (context, child) {
-                    if (isFeedback &&
-                        isCorrect &&
-                        !reducedMotion) {
+                    if (isFeedback && isCorrect && !reducedMotion) {
                       return Transform.translate(
                         offset: Offset(0, _dahuBob.value),
                         child: child,
                       );
                     }
-                    if (isFeedback &&
-                        !isCorrect &&
-                        !reducedMotion) {
+                    if (isFeedback && !isCorrect && !reducedMotion) {
                       return Transform(
                         alignment: Alignment.bottomCenter,
                         transform: Matrix4.rotationZ(
@@ -688,8 +692,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   padding: CaJoueSpacing.horizontal,
                   child: Text(
                     'Quelle est l\'expression romande ?',
-                    style:
-                        CaJoueTypography.uiLabel.copyWith(
+                    style: CaJoueTypography.uiLabel.copyWith(
                       color: CaJoueColors.stone,
                       letterSpacing: 0.08 * 11,
                     ),
@@ -703,8 +706,9 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   padding: CaJoueSpacing.horizontal,
                   child: Text(
                     expression.french,
-                    style: CaJoueTypography.expressionTitle
-                        .copyWith(color: CaJoueColors.slate),
+                    style: CaJoueTypography.expressionTitle.copyWith(
+                      color: CaJoueColors.slate,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -716,19 +720,13 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   padding: CaJoueSpacing.horizontal,
                   child: Column(
                     children: [
-                      for (var i = 0;
-                          i < options.length;
-                          i++) ...[
-                        if (i > 0)
-                          const SizedBox(height: 10),
+                      for (var i = 0; i < options.length; i++) ...[
+                        if (i > 0) const SizedBox(height: 10),
                         AnswerButton(
                           text: options[i],
-                          buttonState:
-                              buttonStates[options[i]]!,
+                          buttonState: buttonStates[options[i]]!,
                           index: i,
-                          onTap: onTap != null
-                              ? () => onTap(options[i])
-                              : null,
+                          onTap: onTap != null ? () => onTap(options[i]) : null,
                         ),
                       ],
                     ],
@@ -740,8 +738,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   const SizedBox(height: CaJoueSpacing.md),
                   Text(
                     feedbackText,
-                    style:
-                        CaJoueTypography.uiBody.copyWith(
+                    style: CaJoueTypography.uiBody.copyWith(
                       color: CaJoueColors.dusk,
                     ),
                   ),
@@ -754,7 +751,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                       isCorrect
                           ? 'Correct'
                           : 'Incorrect, la bonne reponse'
-                              ' est ${expression.romand}',
+                                ' est ${expression.romand}',
                       style: const TextStyle(fontSize: 0),
                     ),
                   ),

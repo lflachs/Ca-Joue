@@ -18,7 +18,8 @@ enum DahuSize {
   wrongFeedback(width: 60, height: 72),
 
   /// The size of the Dahu widget for the completion screen.
-  completion(width: 160, height: 192);
+  completion(width: 160, height: 192)
+  ;
 
   const DahuSize({required this.width, required this.height});
 

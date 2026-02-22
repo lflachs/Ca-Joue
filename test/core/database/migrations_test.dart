@@ -57,10 +57,10 @@ void main() {
       test('expressions table has correct columns', () async {
         await Migrations.runAll(db, 0, 1);
 
-        final columns =
-            await db.rawQuery('PRAGMA table_info(${Tables.expressions})');
-        final columnNames =
-            columns.map((c) => c['name']! as String).toSet();
+        final columns = await db.rawQuery(
+          'PRAGMA table_info(${Tables.expressions})',
+        );
+        final columnNames = columns.map((c) => c['name']! as String).toSet();
 
         expect(
           columnNames,

@@ -82,8 +82,7 @@ final router = GoRouter(
     GoRoute(
       path: '/tier/:tierNum',
       redirect: (context, state) {
-        final tierNum =
-            int.tryParse(state.pathParameters['tierNum'] ?? '');
+        final tierNum = int.tryParse(state.pathParameters['tierNum'] ?? '');
         if (tierNum == null || tierNum < 1 || tierNum > 4) {
           return '/home';
         }
@@ -101,7 +100,8 @@ final router = GoRouter(
       path: '/exercise/:lessonId',
       pageBuilder: (context, state) {
         final lessonId = state.pathParameters['lessonId'] ?? '';
-        final startIndex = int.tryParse(
+        final startIndex =
+            int.tryParse(
               state.uri.queryParameters['startIndex'] ?? '',
             ) ??
             0;

@@ -20,14 +20,14 @@ abstract final class SeedData {
   }
 
   static Future<void> _seedExpressions(Database db) async {
-    final jsonString =
-        await rootBundle.loadString('assets/data/expressions.json');
+    final jsonString = await rootBundle.loadString(
+      'assets/data/expressions.json',
+    );
     final jsonList = jsonDecode(jsonString) as List;
 
     final batch = db.batch();
     for (final json in jsonList) {
-      final expression =
-          Expression.fromJson(json as Map<String, dynamic>);
+      final expression = Expression.fromJson(json as Map<String, dynamic>);
       batch.insert(Tables.expressions, expression.toRow());
     }
     await batch.commit(noResult: true);

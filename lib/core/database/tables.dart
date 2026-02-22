@@ -80,7 +80,8 @@ abstract final class Tables {
   // -- CREATE TABLE SQL --
 
   /// SQL to create the expressions table.
-  static const String createExpressions = '''
+  static const String createExpressions =
+      '''
     CREATE TABLE $expressions (
       $exprId TEXT PRIMARY KEY,
       $exprFrench TEXT NOT NULL,
@@ -93,7 +94,8 @@ abstract final class Tables {
   ''';
 
   /// SQL to create the progress table.
-  static const String createProgress = '''
+  static const String createProgress =
+      '''
     CREATE TABLE $progress (
       $progExpressionId TEXT PRIMARY KEY,
       $progEasinessFactor REAL NOT NULL DEFAULT 2.5,
@@ -106,7 +108,8 @@ abstract final class Tables {
   ''';
 
   /// SQL to create the sessions table.
-  static const String createSessions = '''
+  static const String createSessions =
+      '''
     CREATE TABLE $sessions (
       $sessId INTEGER PRIMARY KEY DEFAULT 1,
       $sessStreakCount INTEGER NOT NULL DEFAULT 0,

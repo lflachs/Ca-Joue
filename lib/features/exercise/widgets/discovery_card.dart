@@ -39,7 +39,8 @@ class DiscoveryCard extends StatelessWidget {
     final hasNotes = expression.notes.isNotEmpty;
 
     return Semantics(
-      label: 'Nouvelle expression: ${expression.romand}. '
+      label:
+          'Nouvelle expression: ${expression.romand}. '
           'En francais: ${expression.french}.'
           '${hasNotes ? ' Contexte: ${expression.notes}' : ''}',
       excludeSemantics: true,

@@ -85,21 +85,23 @@ void main() {
       expect(ef, greaterThan(2.5));
     });
 
-    test('quality 3 (barely correct): EF decreases slightly, interval advances',
-        () {
-      final result = calculateSm2(
-        easinessFactor: 2.5,
-        interval: 0,
-        repetitions: 0,
-        quality: 3,
-        now: now,
-      );
+    test(
+      'quality 3 (barely correct): EF decreases slightly, interval advances',
+      () {
+        final result = calculateSm2(
+          easinessFactor: 2.5,
+          interval: 0,
+          repetitions: 0,
+          quality: 3,
+          now: now,
+        );
 
-      expect(result.repetitions, 1);
-      expect(result.interval, 1.0);
-      // q=3: EF + (0.1 - 2*(0.08 + 2*0.02)) = EF + (0.1 - 0.24) = EF - 0.14
-      expect(result.easinessFactor, closeTo(2.36, 0.01));
-    });
+        expect(result.repetitions, 1);
+        expect(result.interval, 1.0);
+        // q=3: EF + (0.1 - 2*(0.08 + 2*0.02)) = EF + (0.1 - 0.24) = EF - 0.14
+        expect(result.easinessFactor, closeTo(2.36, 0.01));
+      },
+    );
 
     test('quality 4 (neutral): EF stays exactly the same', () {
       final result = calculateSm2(
@@ -292,20 +294,22 @@ void main() {
   });
 
   group('calculateSm2 — default initial values', () {
-    test('matches Progress.initial() defaults (EF=2.5, interval=0, reps=0)',
-        () {
-      final result = calculateSm2(
-        easinessFactor: 2.5,
-        interval: 0,
-        repetitions: 0,
-        quality: sm2QualityCorrect,
-        now: now,
-      );
+    test(
+      'matches Progress.initial() defaults (EF=2.5, interval=0, reps=0)',
+      () {
+        final result = calculateSm2(
+          easinessFactor: 2.5,
+          interval: 0,
+          repetitions: 0,
+          quality: sm2QualityCorrect,
+          now: now,
+        );
 
-      expect(result.repetitions, 1);
-      expect(result.interval, 1.0);
-      expect(result.easinessFactor, 2.6);
-    });
+        expect(result.repetitions, 1);
+        expect(result.interval, 1.0);
+        expect(result.easinessFactor, 2.6);
+      },
+    );
   });
 
   group('calculateSm2 — quality constants', () {

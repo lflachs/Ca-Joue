@@ -14,17 +14,19 @@ Future<List<String>> distractors(
   Ref ref,
   Expression current,
 ) async {
-  final tierExpressions =
-      await ref.watch(expressionsByTierProvider(current.tier).future);
+  final tierExpressions = await ref.watch(
+    expressionsByTierProvider(current.tier).future,
+  );
 
   final rng = Random();
 
   // Same-lesson candidates first (closest theme).
-  final sameLessonCandidates = tierExpressions
-      .where((e) => e.id != current.id && e.lesson == current.lesson)
-      .map((e) => e.romand)
-      .toList()
-    ..shuffle(rng);
+  final sameLessonCandidates =
+      tierExpressions
+          .where((e) => e.id != current.id && e.lesson == current.lesson)
+          .map((e) => e.romand)
+          .toList()
+        ..shuffle(rng);
 
   if (sameLessonCandidates.length >= 3) {
     return sameLessonCandidates.sublist(0, 3);
@@ -34,11 +36,12 @@ Future<List<String>> distractors(
   final picked = [...sameLessonCandidates];
   final remaining = 3 - picked.length;
 
-  final tierCandidates = tierExpressions
-      .where((e) => e.id != current.id && e.lesson != current.lesson)
-      .map((e) => e.romand)
-      .toList()
-    ..shuffle(rng);
+  final tierCandidates =
+      tierExpressions
+          .where((e) => e.id != current.id && e.lesson != current.lesson)
+          .map((e) => e.romand)
+          .toList()
+        ..shuffle(rng);
 
   picked.addAll(tierCandidates.take(remaining));
 

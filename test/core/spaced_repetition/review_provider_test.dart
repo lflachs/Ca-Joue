@@ -285,8 +285,7 @@ void main() {
         Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
       });
 
-      final expressions =
-          await queryDueExpressions(db, now.toIso8601String());
+      final expressions = await queryDueExpressions(db, now.toIso8601String());
 
       expect(expressions.length, 2);
       expect(expressions[0].id, 'expr_002'); // 1 rep first
@@ -316,8 +315,7 @@ void main() {
         Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
       });
 
-      final expressions =
-          await queryDueExpressions(db, now.toIso8601String());
+      final expressions = await queryDueExpressions(db, now.toIso8601String());
 
       expect(expressions.length, 2);
       expect(expressions[0].id, 'expr_002'); // EF 1.5 first
@@ -346,8 +344,7 @@ void main() {
         Tables.progLastReviewed: DateTime(2026, 2, 14).toIso8601String(),
       });
 
-      final expressions =
-          await queryDueExpressions(db, now.toIso8601String());
+      final expressions = await queryDueExpressions(db, now.toIso8601String());
 
       expect(expressions.length, 2);
       // Most overdue first, even though it has higher mastery.

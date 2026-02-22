@@ -30,36 +30,41 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final (bgColor, borderColor, textColor, fontWeight, decoration) =
-        switch (buttonState) {
+    final (
+      bgColor,
+      borderColor,
+      textColor,
+      fontWeight,
+      decoration,
+    ) = switch (buttonState) {
       AnswerButtonState.defaultState => (
-          const Color(0xFFFFFFFF),
-          CaJoueColors.cream,
-          CaJoueColors.slate,
-          FontWeight.w400,
-          TextDecoration.none,
-        ),
+        const Color(0xFFFFFFFF),
+        CaJoueColors.cream,
+        CaJoueColors.slate,
+        FontWeight.w400,
+        TextDecoration.none,
+      ),
       AnswerButtonState.correct => (
-          CaJoueColors.gold,
-          CaJoueColors.gold,
-          const Color(0xFFFFFFFF),
-          FontWeight.w500,
-          TextDecoration.none,
-        ),
+        CaJoueColors.gold,
+        CaJoueColors.gold,
+        const Color(0xFFFFFFFF),
+        FontWeight.w500,
+        TextDecoration.none,
+      ),
       AnswerButtonState.incorrect => (
-          CaJoueColors.dusk,
-          CaJoueColors.dusk,
-          const Color(0xFFFFFFFF),
-          FontWeight.w400,
-          TextDecoration.lineThrough,
-        ),
+        CaJoueColors.dusk,
+        CaJoueColors.dusk,
+        const Color(0xFFFFFFFF),
+        FontWeight.w400,
+        TextDecoration.lineThrough,
+      ),
       AnswerButtonState.dimmed => (
-          const Color(0xFFFFFFFF),
-          CaJoueColors.cream,
-          CaJoueColors.stone,
-          FontWeight.w400,
-          TextDecoration.none,
-        ),
+        const Color(0xFFFFFFFF),
+        CaJoueColors.cream,
+        CaJoueColors.stone,
+        FontWeight.w400,
+        TextDecoration.none,
+      ),
     };
 
     final String semanticLabel;
@@ -82,8 +87,7 @@ class AnswerButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: bgColor,
             border: Border.all(color: borderColor, width: 2),
-            borderRadius:
-                BorderRadius.circular(CaJoueAnimations.buttonRadius),
+            borderRadius: BorderRadius.circular(CaJoueAnimations.buttonRadius),
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.symmetric(

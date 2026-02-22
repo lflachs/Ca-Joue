@@ -19,8 +19,7 @@ class ReviewCta extends ConsumerWidget {
     final reducedMotion = MediaQuery.disableAnimationsOf(context);
 
     return AnimatedSwitcher(
-      duration:
-          reducedMotion ? Duration.zero : CaJoueAnimations.feedback,
+      duration: reducedMotion ? Duration.zero : CaJoueAnimations.feedback,
       transitionBuilder: (child, animation) {
         return FadeTransition(
           opacity: animation,
@@ -34,8 +33,7 @@ class ReviewCta extends ConsumerWidget {
           ? const SizedBox.shrink(key: ValueKey('review-empty'))
           : Padding(
               key: const ValueKey('review-cta'),
-              padding:
-                  const EdgeInsets.only(bottom: CaJoueSpacing.md),
+              padding: const EdgeInsets.only(bottom: CaJoueSpacing.md),
               child: Semantics(
                 label:
                     '$count expressions \u00e0 revoir.'
@@ -50,8 +48,7 @@ class ReviewCta extends ConsumerWidget {
                     ),
                     decoration: const BoxDecoration(
                       color: CaJoueColors.slate,
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(14)),
+                      borderRadius: BorderRadius.all(Radius.circular(14)),
                     ),
                     child: Row(
                       children: [
@@ -61,17 +58,14 @@ class ReviewCta extends ConsumerWidget {
                               children: [
                                 TextSpan(
                                   text: '$count',
-                                  style: CaJoueTypography.uiBody
-                                      .copyWith(
+                                  style: CaJoueTypography.uiBody.copyWith(
                                     color: CaJoueColors.red,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
                                 TextSpan(
-                                  text:
-                                      ' expressions \u00e0 revoir',
-                                  style: CaJoueTypography.uiBody
-                                      .copyWith(
+                                  text: ' expressions \u00e0 revoir',
+                                  style: CaJoueTypography.uiBody.copyWith(
                                     color: CaJoueColors.snow,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -84,8 +78,7 @@ class ReviewCta extends ConsumerWidget {
                           opacity: 0.5,
                           child: Text(
                             '\u203A',
-                            style: CaJoueTypography.expressionTitle
-                                .copyWith(
+                            style: CaJoueTypography.expressionTitle.copyWith(
                               color: CaJoueColors.snow,
                             ),
                           ),

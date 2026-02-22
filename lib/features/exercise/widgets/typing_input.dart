@@ -48,17 +48,17 @@ class TypingInput extends StatelessWidget {
   final ValueChanged<String>? onSubmitted;
 
   Color get _borderColor => switch (inputState) {
-        TypingInputState.unfocused => CaJoueColors.cream,
-        TypingInputState.focused => CaJoueColors.slate,
-        TypingInputState.correct => CaJoueColors.gold,
-        TypingInputState.wrong => CaJoueColors.dusk,
-      };
+    TypingInputState.unfocused => CaJoueColors.cream,
+    TypingInputState.focused => CaJoueColors.slate,
+    TypingInputState.correct => CaJoueColors.gold,
+    TypingInputState.wrong => CaJoueColors.dusk,
+  };
 
   Color get _backgroundColor => switch (inputState) {
-        TypingInputState.correct => CaJoueColors.goldSoft,
-        TypingInputState.wrong => CaJoueColors.cream,
-        _ => const Color(0xFFFFFFFF),
-      };
+    TypingInputState.correct => CaJoueColors.goldSoft,
+    TypingInputState.wrong => CaJoueColors.cream,
+    _ => const Color(0xFFFFFFFF),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,8 @@ class TypingInput extends StatelessWidget {
           textAlign: TextAlign.center,
           keyboardType: TextInputType.text,
           cursorOpacityAnimates: !reducedMotion,
-          readOnly: inputState == TypingInputState.correct ||
+          readOnly:
+              inputState == TypingInputState.correct ||
               inputState == TypingInputState.wrong,
           onSubmitted: onSubmitted,
         ),

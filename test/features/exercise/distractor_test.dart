@@ -82,8 +82,9 @@ void main() {
         whereArgs: [1],
       );
       final first = rows.first;
-      final candidates =
-          rows.where((r) => r[Tables.exprId] != first[Tables.exprId]);
+      final candidates = rows.where(
+        (r) => r[Tables.exprId] != first[Tables.exprId],
+      );
       expect(candidates.length, greaterThanOrEqualTo(3));
     });
   });

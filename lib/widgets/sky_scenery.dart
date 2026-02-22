@@ -23,8 +23,7 @@ class SkyScenery extends StatefulWidget {
   State<SkyScenery> createState() => _SkySceneryState();
 }
 
-class _SkySceneryState extends State<SkyScenery>
-    with TickerProviderStateMixin {
+class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollOffset = 0;
 

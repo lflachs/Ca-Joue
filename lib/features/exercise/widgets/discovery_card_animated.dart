@@ -26,8 +26,7 @@ class DiscoveryCardAnimated extends StatefulWidget {
   final VoidCallback onDismiss;
 
   @override
-  State<DiscoveryCardAnimated> createState() =>
-      _DiscoveryCardAnimatedState();
+  State<DiscoveryCardAnimated> createState() => _DiscoveryCardAnimatedState();
 }
 
 class _DiscoveryCardAnimatedState extends State<DiscoveryCardAnimated>
@@ -65,15 +64,16 @@ class _DiscoveryCardAnimatedState extends State<DiscoveryCardAnimated>
       ),
     );
 
-    _contextSlide = Tween<Offset>(
-      begin: const Offset(0, 8),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: const Interval(0.5, 1, curve: Curves.easeOut),
-      ),
-    );
+    _contextSlide =
+        Tween<Offset>(
+          begin: const Offset(0, 8),
+          end: Offset.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: _controller,
+            curve: const Interval(0.5, 1, curve: Curves.easeOut),
+          ),
+        );
   }
 
   @override
