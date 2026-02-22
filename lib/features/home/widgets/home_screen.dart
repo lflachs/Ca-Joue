@@ -1,6 +1,8 @@
 import 'package:ca_joue/core/content/content_provider.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
+import 'package:ca_joue/core/progress/overall_progress_provider.dart';
 import 'package:ca_joue/features/home/widgets/review_cta.dart';
+import 'package:ca_joue/features/home/widgets/stat_card.dart';
 import 'package:ca_joue/features/home/widgets/tier_row.dart';
 import 'package:ca_joue/theme/ca_joue_theme.dart';
 import 'package:ca_joue/widgets/cta_button.dart';
@@ -20,87 +22,104 @@ class HomeScreen extends ConsumerWidget {
 
     return SkyScenery(
       child: SafeArea(
-            child: tiersAsync.when(
-              loading: SizedBox.shrink,
-              error: (err, stack) => Center(
-                child: Padding(
-                  padding: CaJoueSpacing.horizontal,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        err.toString(),
-                        style: CaJoueTypography.uiBody.copyWith(
-                          color: CaJoueColors.stone,
-                        ),
-                      ),
-                      const SizedBox(height: CaJoueSpacing.md),
-                      CtaButton(
-                        label: 'Reessayer',
-                        fullWidth: false,
-                        onPressed: () =>
-                            ref.invalidate(allTiersProvider),
-                      ),
-                    ],
+        child: tiersAsync.when(
+          loading: SizedBox.shrink,
+          error: (err, stack) => Center(
+            child: Padding(
+              padding: CaJoueSpacing.horizontal,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    err.toString(),
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                    ),
                   ),
-                ),
-              ),
-              data: (tiers) => Padding(
-                padding: CaJoueSpacing.horizontal,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const SizedBox(height: CaJoueSpacing.xl),
-
-                    // -- Greeting --
-                    Text(
-                      'Salut',
-                      style: CaJoueTypography.appTitle.copyWith(
-                        color: CaJoueColors.slate,
-                      ),
-                    ),
-
-                    const SizedBox(height: CaJoueSpacing.xs),
-
-                    // -- Subtitle --
-                    Text(
-                      'Continue ton chemin',
-                      style: CaJoueTypography.uiBody.copyWith(
-                        color: CaJoueColors.stone,
-                      ),
-                    ),
-
-                    const SizedBox(height: CaJoueSpacing.xl),
-
-                    // -- Review CTA (conditional, self-spacing) --
-                    const ReviewCta(),
-
-                    // -- Tier list --
-                    ...tiers.map((tier) {
-                      final completedAsync = ref.watch(
-                        completedCountByTierProvider(tier.number),
-                      );
-                      final completedCount =
-                          completedAsync.value ?? 0;
-                      return TierRow(
-                        tier: tier,
-                        completedCount: completedCount,
-                        onTap: tier.isUnlocked
-                            ? () => context.push(
-                                  '/tier/${tier.number}',
-                                )
-                            : null,
-                      );
-                    }),
-
-                    // Space for the mountain scenery at the bottom.
-                    const SizedBox(height: 220),
-                  ],
-                ),
+                  const SizedBox(height: CaJoueSpacing.md),
+                  CtaButton(
+                    label: 'Reessayer',
+                    fullWidth: false,
+                    onPressed: () => ref.invalidate(allTiersProvider),
+                  ),
+                ],
               ),
             ),
           ),
+          data: (tiers) {
+            final overallAsync = ref.watch(
+              totalCompletedExpressionsProvider,
+            );
+            final completed = overallAsync.value ?? 0;
+            final total = tiers.fold<int>(
+              0,
+              (sum, t) => sum + t.expressionCount,
+            );
+
+            return Padding(
+              padding: CaJoueSpacing.horizontal,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: CaJoueSpacing.xl),
+
+                  // -- Greeting --
+                  Text(
+                    'Salut',
+                    style: CaJoueTypography.appTitle.copyWith(
+                      color: CaJoueColors.slate,
+                    ),
+                  ),
+
+                  const SizedBox(height: CaJoueSpacing.xs),
+
+                  // -- Subtitle --
+                  Text(
+                    'Continue ton chemin',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                    ),
+                  ),
+
+                  const SizedBox(height: CaJoueSpacing.xl),
+
+                  // -- Overall progress --
+                  StatCard(
+                    value: '$completed/$total',
+                    label: 'expressions',
+                  ),
+
+                  const SizedBox(height: CaJoueSpacing.lg),
+
+                  // -- Review CTA (conditional, self-spacing) --
+                  const ReviewCta(),
+
+                  // -- Tier list --
+                  ...tiers.map((tier) {
+                    final completedAsync = ref.watch(
+                      completedCountByTierProvider(tier.number),
+                    );
+                    final completedCount = completedAsync.value ?? 0;
+                    return TierRow(
+                      tier: tier,
+                      completedCount: completedCount,
+                      onTap: tier.isUnlocked
+                          ? () => context.push(
+                              '/tier/${tier.number}',
+                            )
+                          : null,
+                    );
+                  }),
+
+                  // Space for the mountain scenery at the bottom.
+                  const SizedBox(height: 220),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
