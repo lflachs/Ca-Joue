@@ -7,11 +7,11 @@ const _skyTop = Color(0xFF8ECAE6);
 const _skyMid = Color(0xFFB8E2F0);
 const _skyBottom = Color(0xFFD1F8F7);
 
-/// A decorative background with drifting SVG clouds, parallax SVG mountains,
+/// A decorative background with drifting SVG clouds, SVG mountains,
 /// and Dahu mascot.
 ///
-/// The [child] is placed inside a scrollable area. Scrolling drives a subtle
-/// parallax on the mountain and cloud layers.
+/// The [child] is placed inside a scrollable area. The scenery layers
+/// stay fixed while the content scrolls over them.
 class SkyScenery extends StatefulWidget {
   /// Creates a [SkyScenery] that wraps [child] with the animated scene.
   const SkyScenery({required this.child, super.key});
@@ -25,7 +25,6 @@ class SkyScenery extends StatefulWidget {
 
 class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
-  double _scrollOffset = 0;
 
   late final AnimationController _cloud1Controller;
   late final AnimationController _cloud2Controller;
@@ -34,8 +33,6 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(_onScroll);
-
     _cloud1Controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 55),
@@ -52,17 +49,9 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
     )..repeat();
   }
 
-  void _onScroll() {
-    setState(() {
-      _scrollOffset = _scrollController.offset;
-    });
-  }
-
   @override
   void dispose() {
-    _scrollController
-      ..removeListener(_onScroll)
-      ..dispose();
+    _scrollController.dispose();
     _cloud1Controller.dispose();
     _cloud2Controller.dispose();
     _cloud3Controller.dispose();
@@ -94,7 +83,7 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
             _DriftingCloud(
               controller: _cloud1Controller,
               screenWidth: screenWidth,
-              top: screenHeight * 0.52 - _scrollOffset * 0.05,
+              top: screenHeight * 0.52,
               scale: 0.38,
               opacity: 0.95,
               startOffset: 0.0,
@@ -102,7 +91,7 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
             _DriftingCloud(
               controller: _cloud2Controller,
               screenWidth: screenWidth,
-              top: screenHeight * 0.72 - _scrollOffset * 0.03,
+              top: screenHeight * 0.72,
               scale: 0.22,
               opacity: 0.7,
               startOffset: 0.6,
@@ -110,18 +99,18 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
             _DriftingCloud(
               controller: _cloud3Controller,
               screenWidth: screenWidth,
-              top: screenHeight * 0.62 - _scrollOffset * 0.04,
+              top: screenHeight * 0.62,
               scale: 0.30,
               opacity: 0.8,
               startOffset: 0.33,
             ),
           ],
 
-          // -- Mountains SVG (back layer, slower parallax) --
+          // -- Mountains SVG (back layer) --
           Positioned(
             left: -screenWidth * 0.15,
             right: -screenWidth * 0.15,
-            bottom: 10 - _scrollOffset * 0.12,
+            bottom: 10,
             height: mountainHeight,
             child: SvgPicture.asset(
               'assets/images/mountains.svg',
@@ -129,7 +118,7 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
             ),
           ),
 
-          // -- Foreground SVG (village/trees, faster parallax) --
+          // -- Foreground SVG (village/trees) --
           Positioned(
             left: -screenWidth * 0.05,
             right: -screenWidth * 0.1,
@@ -143,7 +132,7 @@ class _SkySceneryState extends State<SkyScenery> with TickerProviderStateMixin {
 
           // -- Animated Dahu on the landscape --
           Positioned(
-            bottom: foregroundHeight * 0.02 - _scrollOffset * 0.18,
+            bottom: foregroundHeight * 0.02,
             right: screenWidth * 0.03,
             child: Transform.flip(
               flipX: true,
