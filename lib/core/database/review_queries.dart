@@ -17,7 +17,8 @@ abstract final class ReviewQueries {
     return result.first['c']! as int;
   }
 
-  /// Returns rows for expressions due for review, most overdue first.
+  /// Returns rows for expressions due for review, prioritized by overdue-ness
+  /// then mastery (lower mastery = higher priority).
   static Future<List<Map<String, Object?>>> dueExpressionRows(
     Database db,
     String now,
@@ -28,7 +29,9 @@ abstract final class ReviewQueries {
       'ON e.${Tables.exprId} = p.${Tables.progExpressionId} '
       'WHERE p.${Tables.progNextReview} IS NOT NULL '
       'AND p.${Tables.progNextReview} <= ? '
-      'ORDER BY p.${Tables.progNextReview} ASC',
+      'ORDER BY p.${Tables.progNextReview} ASC, '
+      'p.${Tables.progRepetitions} ASC, '
+      'p.${Tables.progEasinessFactor} ASC',
       [now],
     );
   }

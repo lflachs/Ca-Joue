@@ -261,6 +261,101 @@ void main() {
     });
   });
 
+  group('mastery-weighted ordering', () {
+    test('same next_review: fewer repetitions appears first', () async {
+      final now = DateTime(2026, 2, 16);
+      final sameReview = DateTime(2026, 2, 14).toIso8601String();
+
+      // expr_001: 3 reps (higher mastery).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_001',
+        Tables.progEasinessFactor: 2.5,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 3,
+        Tables.progNextReview: sameReview,
+        Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
+      });
+      // expr_002: 1 rep (lower mastery — should appear first).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_002',
+        Tables.progEasinessFactor: 2.5,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 1,
+        Tables.progNextReview: sameReview,
+        Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
+      });
+
+      final expressions =
+          await queryDueExpressions(db, now.toIso8601String());
+
+      expect(expressions.length, 2);
+      expect(expressions[0].id, 'expr_002'); // 1 rep first
+      expect(expressions[1].id, 'expr_001'); // 3 reps second
+    });
+
+    test('same next_review and reps: lower EF appears first', () async {
+      final now = DateTime(2026, 2, 16);
+      final sameReview = DateTime(2026, 2, 14).toIso8601String();
+
+      // expr_001: high EF (easier).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_001',
+        Tables.progEasinessFactor: 2.5,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 2,
+        Tables.progNextReview: sameReview,
+        Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
+      });
+      // expr_002: low EF (struggling — should appear first).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_002',
+        Tables.progEasinessFactor: 1.5,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 2,
+        Tables.progNextReview: sameReview,
+        Tables.progLastReviewed: DateTime(2026, 2, 13).toIso8601String(),
+      });
+
+      final expressions =
+          await queryDueExpressions(db, now.toIso8601String());
+
+      expect(expressions.length, 2);
+      expect(expressions[0].id, 'expr_002'); // EF 1.5 first
+      expect(expressions[1].id, 'expr_001'); // EF 2.5 second
+    });
+
+    test('overdue-ness still takes priority over mastery weighting', () async {
+      final now = DateTime(2026, 2, 16);
+
+      // expr_001: very overdue (Feb 10), high mastery (5 reps).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_001',
+        Tables.progEasinessFactor: 2.5,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 5,
+        Tables.progNextReview: DateTime(2026, 2, 10).toIso8601String(),
+        Tables.progLastReviewed: DateTime(2026, 2, 9).toIso8601String(),
+      });
+      // expr_002: slightly overdue (Feb 15), low mastery (0 reps).
+      await db.insert(Tables.progress, {
+        Tables.progExpressionId: 'expr_002',
+        Tables.progEasinessFactor: 1.3,
+        Tables.progInterval: 1,
+        Tables.progRepetitions: 0,
+        Tables.progNextReview: DateTime(2026, 2, 15).toIso8601String(),
+        Tables.progLastReviewed: DateTime(2026, 2, 14).toIso8601String(),
+      });
+
+      final expressions =
+          await queryDueExpressions(db, now.toIso8601String());
+
+      expect(expressions.length, 2);
+      // Most overdue first, even though it has higher mastery.
+      expect(expressions[0].id, 'expr_001');
+      expect(expressions[1].id, 'expr_002');
+    });
+  });
+
   group('reviewLessonId constant', () {
     test('has the expected sentinel value', () {
       expect(reviewLessonId, '__review__');
