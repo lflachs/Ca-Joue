@@ -40,22 +40,30 @@ class StatCard extends StatelessWidget {
           border: Border.all(color: CaJoueColors.warmGrey, width: 0.5),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              value,
-              style: GoogleFonts.inter(
-                fontSize: 28,
-                fontWeight: FontWeight.w700,
-              ).copyWith(color: valueColor),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                value,
+                maxLines: 1,
+                style: GoogleFonts.inter(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                ).copyWith(color: valueColor),
+              ),
             ),
             const SizedBox(height: CaJoueSpacing.xs),
-            Text(
-              label.toUpperCase(),
-              style: CaJoueTypography.uiCaption.copyWith(
-                color: CaJoueColors.stone,
-                letterSpacing: 0.6,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                label.toUpperCase(),
+                maxLines: 1,
+                style: CaJoueTypography.uiCaption.copyWith(
+                  color: CaJoueColors.stone,
+                  letterSpacing: 0.6,
+                ),
               ),
             ),
           ],

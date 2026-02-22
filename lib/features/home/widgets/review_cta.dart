@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-/// Prominent call-to-action when expressions are due for review.
+/// Call-to-action when expressions are due for review.
 ///
 /// Displays on the home screen with a slate background, red count, and
 /// white text. Hidden when no expressions are due (returns [SizedBox.shrink]).

@@ -2,8 +2,8 @@ import 'package:ca_joue/core/content/content_provider.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/overall_progress_provider.dart';
 import 'package:ca_joue/core/progress/points_provider.dart';
+import 'package:ca_joue/core/progress/streak_provider.dart';
 import 'package:ca_joue/features/home/widgets/review_cta.dart';
-import 'package:ca_joue/features/home/widgets/stat_card.dart';
 import 'package:ca_joue/features/home/widgets/tier_row.dart';
 import 'package:ca_joue/theme/ca_joue_theme.dart';
 import 'package:ca_joue/widgets/cta_button.dart';
@@ -11,6 +11,7 @@ import 'package:ca_joue/widgets/sky_scenery.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 /// The home screen showing greeting and tier navigation.
 class HomeScreen extends ConsumerWidget {
@@ -58,6 +59,10 @@ class HomeScreen extends ConsumerWidget {
             );
             final pointsAsync = ref.watch(totalPointsProvider);
             final points = pointsAsync.value ?? 0;
+            final streakAsync = ref.watch(streakProvider);
+            final streakCount = streakAsync.value?.count ?? 0;
+
+            final fraction = total > 0 ? completed / total : 0.0;
 
             return Padding(
               padding: CaJoueSpacing.horizontal,
@@ -65,46 +70,91 @@ class HomeScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: CaJoueSpacing.xl),
+                  const SizedBox(height: CaJoueSpacing.md),
 
-                  // -- Greeting --
-                  Text(
-                    'Salut',
-                    style: CaJoueTypography.appTitle.copyWith(
-                      color: CaJoueColors.slate,
-                    ),
+                  // -- Greeting row with inline stats --
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Salut',
+                        style: CaJoueTypography.appTitle.copyWith(
+                          color: CaJoueColors.slate,
+                        ),
+                      ),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Row(
+                          children: [
+                            Icon(
+                              LucideIcons.flame,
+                              size: 18,
+                              color: streakCount > 0
+                                  ? CaJoueColors.red
+                                  : CaJoueColors.stone,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              '$streakCount',
+                              style: CaJoueTypography.uiBody.copyWith(
+                                color: CaJoueColors.stone,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(width: 14),
+                            Icon(
+                              LucideIcons.star,
+                              size: 18,
+                              color: points > 0
+                                  ? CaJoueColors.gold
+                                  : CaJoueColors.stone,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              '$points',
+                              style: CaJoueTypography.uiBody.copyWith(
+                                color: CaJoueColors.stone,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
 
                   const SizedBox(height: CaJoueSpacing.xs),
 
-                  // -- Subtitle --
-                  Text(
-                    'Continue ton chemin',
-                    style: CaJoueTypography.uiBody.copyWith(
-                      color: CaJoueColors.stone,
-                    ),
-                  ),
-
-                  const SizedBox(height: CaJoueSpacing.xl),
-
-                  // -- Stats row --
+                  // -- Progress line --
                   Row(
                     children: [
-                      Expanded(
-                        child: StatCard(
-                          value: '$completed/$total',
-                          label: 'expressions',
-                        ),
-                      ),
-                      const SizedBox(width: CaJoueSpacing.sm),
-                      Expanded(
-                        child: StatCard(
-                          value: '$points',
-                          label: 'points',
-                          valueColor: CaJoueColors.gold,
+                      Text(
+                        '$completed/$total expressions',
+                        style: CaJoueTypography.uiBody.copyWith(
+                          color: CaJoueColors.stone,
                         ),
                       ),
                     ],
+                  ),
+
+                  const SizedBox(height: CaJoueSpacing.sm),
+
+                  // -- Progress bar --
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(3),
+                    child: SizedBox(
+                      height: 5,
+                      child: Stack(
+                        children: [
+                          Container(color: CaJoueColors.cream),
+                          FractionallySizedBox(
+                            widthFactor: fraction,
+                            child: Container(color: CaJoueColors.gold),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
 
                   const SizedBox(height: CaJoueSpacing.lg),
