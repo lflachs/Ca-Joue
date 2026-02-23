@@ -83,42 +83,49 @@ class HomeScreen extends ConsumerWidget {
                         ),
                       ),
                       const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Row(
-                          children: [
-                            Icon(
-                              LucideIcons.flame,
-                              size: 18,
-                              color: streakCount > 0
-                                  ? CaJoueColors.red
-                                  : CaJoueColors.stone,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              '$streakCount',
-                              style: CaJoueTypography.uiBody.copyWith(
-                                color: CaJoueColors.stone,
-                                fontWeight: FontWeight.w600,
+                      Semantics(
+                        label:
+                            '$streakCount jours de série, $points points',
+                        excludeSemantics: true,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            children: [
+                              Icon(
+                                LucideIcons.flame,
+                                size: 18,
+                                color: streakCount > 0
+                                    ? CaJoueColors.red
+                                    : CaJoueColors.stone,
                               ),
-                            ),
-                            const SizedBox(width: 14),
-                            Icon(
-                              LucideIcons.star,
-                              size: 18,
-                              color: points > 0
-                                  ? CaJoueColors.gold
-                                  : CaJoueColors.stone,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              '$points',
-                              style: CaJoueTypography.uiBody.copyWith(
-                                color: CaJoueColors.stone,
-                                fontWeight: FontWeight.w600,
+                              const SizedBox(width: 4),
+                              Text(
+                                '$streakCount',
+                                style: CaJoueTypography.uiBody.copyWith(
+                                  color: streakCount > 0
+                                      ? CaJoueColors.red
+                                      : CaJoueColors.stone,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(width: 14),
+                              Icon(
+                                LucideIcons.star,
+                                size: 18,
+                                color: points > 0
+                                    ? CaJoueColors.gold
+                                    : CaJoueColors.stone,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                '$points',
+                                style: CaJoueTypography.uiBody.copyWith(
+                                  color: CaJoueColors.stone,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
