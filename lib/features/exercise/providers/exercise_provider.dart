@@ -39,6 +39,14 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     // Review mode: load due expressions instead of lesson expressions.
     if (lessonId == reviewLessonId) {
       _expressions = await ref.watch(dueExpressionsProvider.future);
+    } else if (isPracticeMode(lessonId)) {
+      final tierNum = practiceTierNum(lessonId);
+      if (tierNum != null) {
+        _expressions = [
+          ...await ref.watch(expressionsByTierProvider(tierNum).future),
+        ];
+        _expressions.shuffle(Random());
+      }
     } else {
       _expressions = await ref.watch(
         expressionsByLessonProvider(lessonId).future,
@@ -197,8 +205,8 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     _currentIndex++;
 
     if (_currentIndex >= _expressions.length) {
-      // Review sessions don't save/clear session position.
-      if (_lessonId != reviewLessonId) {
+      // Review and practice sessions don't save/clear session position.
+      if (_lessonId != reviewLessonId && !isPracticeMode(_lessonId)) {
         await ref.read(sessionPositionProvider.notifier).clearPosition();
       }
 
@@ -210,8 +218,8 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       return;
     }
 
-    // Review sessions don't save mid-session position.
-    if (_lessonId != reviewLessonId) {
+    // Review and practice sessions don't save mid-session position.
+    if (_lessonId != reviewLessonId && !isPracticeMode(_lessonId)) {
       await ref
           .read(sessionPositionProvider.notifier)
           .savePosition(_lessonId, _currentIndex);
@@ -235,6 +243,17 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       );
     }
 
+    // Practice mode: simple completion, tiers are already done.
+    if (isPracticeMode(_lessonId)) {
+      final tierNum = practiceTierNum(_lessonId) ?? 1;
+      return ExerciseComplete(
+        lessonId: _lessonId,
+        expressionsCount: _expressions.length,
+        isTierComplete: false,
+        tierName: Tier.nameForTier(tierNum),
+      );
+    }
+
     final tier = _expressions.isNotEmpty ? _expressions.first.tier : 1;
 
     // Count all expressions in this tier and how many are complete.
@@ -248,6 +267,7 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     );
 
     final isTierComplete = completedInTier >= totalInTier;
+    final isAllComplete = isTierComplete && tier >= 4;
     final tierName = Tier.nameForTier(tier);
 
     return ExerciseComplete(
@@ -256,6 +276,7 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       isTierComplete: isTierComplete,
       tierName: tierName,
       nextTierName: tier < 4 ? Tier.nameForTier(tier + 1) : null,
+      isAllComplete: isAllComplete,
     );
   }
 

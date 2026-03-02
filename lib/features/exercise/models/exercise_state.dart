@@ -148,6 +148,7 @@ class ExerciseComplete extends ExerciseState {
     required this.isTierComplete,
     required this.tierName,
     this.nextTierName,
+    this.isAllComplete = false,
   });
 
   /// The lesson that was completed.
@@ -164,6 +165,9 @@ class ExerciseComplete extends ExerciseState {
 
   /// Display name of the next tier, if one exists and was just unlocked.
   final String? nextTierName;
+
+  /// Whether ALL 253 expressions have been completed (final tier done).
+  final bool isAllComplete;
 }
 
 /// The type of exercise to present.

@@ -11,6 +11,28 @@ part 'review_provider.g.dart';
 /// expressions due for review instead of a specific lesson's expressions.
 const String reviewLessonId = '__review__';
 
+/// Lesson ID prefix sentinel used to signal practice mode.
+///
+/// When a `lessonId` starts with this prefix, the exercise system loads
+/// all expressions for the embedded tier number instead of a specific lesson.
+/// Example: `'__practice_tier_2__'` loads all tier-2 expressions.
+const String practiceLessonIdPrefix = '__practice_tier_';
+
+/// Returns `true` if [lessonId] represents a free practice session.
+bool isPracticeMode(String lessonId) =>
+    lessonId.startsWith(practiceLessonIdPrefix);
+
+/// Extracts the tier number from a practice sentinel string.
+///
+/// Returns the tier number (e.g. 2 from `'__practice_tier_2__'`),
+/// or `null` if the string is not a valid practice sentinel.
+int? practiceTierNum(String lessonId) {
+  if (!isPracticeMode(lessonId)) return null;
+  final stripped = lessonId.substring(practiceLessonIdPrefix.length);
+  final numStr = stripped.replaceAll('_', '');
+  return int.tryParse(numStr);
+}
+
 /// Returns the count of expressions currently due for review.
 ///
 /// An expression is due when its next review date is in the past

@@ -93,6 +93,29 @@ void main() {
       expect(state.nextTierName, 'Au Quotidien');
     });
 
+    test('ExerciseComplete isAllComplete defaults to false', () {
+      const state = ExerciseComplete(
+        lessonId: 'everyday-greetings',
+        expressionsCount: 8,
+        isTierComplete: false,
+        tierName: 'Les Bases',
+      );
+      expect(state.isAllComplete, isFalse);
+    });
+
+    test('ExerciseComplete all-complete variant', () {
+      const state = ExerciseComplete(
+        lessonId: 'final-lesson',
+        expressionsCount: 12,
+        isTierComplete: true,
+        tierName: "L'Aiguille",
+        isAllComplete: true,
+      );
+      expect(state.isAllComplete, isTrue);
+      expect(state.isTierComplete, isTrue);
+      expect(state.nextTierName, isNull);
+    });
+
     test('sealed switch covers all states', () {
       final states = <ExerciseState>[
         const ExerciseLoading(),

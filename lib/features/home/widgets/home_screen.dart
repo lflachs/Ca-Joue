@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ca_joue/core/content/content_provider.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/overall_progress_provider.dart';
@@ -84,8 +86,7 @@ class HomeScreen extends ConsumerWidget {
                       ),
                       const Spacer(),
                       Semantics(
-                        label:
-                            '$streakCount jours de série, $points points',
+                        label: '$streakCount jours de série, $points points',
                         excludeSemantics: true,
                         child: Padding(
                           padding: const EdgeInsets.only(bottom: 10),
@@ -164,6 +165,26 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   ),
 
+                  // -- Post-completion message --
+                  if (completed >= total && total > 0)
+                    Semantics(
+                      excludeSemantics: true,
+                      label:
+                          'Toutes les expressions apprises.'
+                          ' Revise quand tu veux.',
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: CaJoueSpacing.sm,
+                        ),
+                        child: Text(
+                          'Revise quand tu veux',
+                          style: CaJoueTypography.uiCaption.copyWith(
+                            color: CaJoueColors.stone,
+                          ),
+                        ),
+                      ),
+                    ),
+
                   const SizedBox(height: CaJoueSpacing.lg),
 
                   // -- Review CTA (conditional, self-spacing) --
@@ -179,9 +200,19 @@ class HomeScreen extends ConsumerWidget {
                       tier: tier,
                       completedCount: completedCount,
                       onTap: tier.isUnlocked
-                          ? () => context.push(
-                              '/tier/${tier.number}',
-                            )
+                          ? () {
+                              final isPostCompletion =
+                                  completed >= total && total > 0;
+                              if (isPostCompletion) {
+                                unawaited(
+                                  context.push('/practice/${tier.number}'),
+                                );
+                              } else {
+                                unawaited(
+                                  context.push('/tier/${tier.number}'),
+                                );
+                              }
+                            }
                           : null,
                     );
                   }),

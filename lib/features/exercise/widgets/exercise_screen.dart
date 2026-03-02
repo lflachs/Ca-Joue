@@ -45,12 +45,13 @@ class ExerciseScreen extends ConsumerStatefulWidget {
 }
 
 class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
-    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
+    with TickerProviderStateMixin, WidgetsBindingObserver {
   Timer? _advanceTimer;
   late final AnimationController _dahuController;
   late final Animation<double> _dahuBob;
   late final Animation<double> _dahuTilt;
   bool _hapticFired = false;
+  AnimationController? _celebrationController;
   late final TextEditingController _typingController;
   late final FocusNode _typingFocusNode;
 
@@ -88,6 +89,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _advanceTimer?.cancel();
+    _celebrationController?.dispose();
     _dahuController.dispose();
     _typingController.dispose();
     _typingFocusNode.dispose();
@@ -102,14 +104,17 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     }
   }
 
-  /// Returns "Revision" for review mode, else the lesson name.
-  String get _lessonDisplayName => widget.lessonId == reviewLessonId
-      ? 'Revision'
-      : LessonNames.of(widget.lessonId);
+  /// Returns display name based on mode: Revision, Pratique, or lesson name.
+  String get _lessonDisplayName {
+    if (widget.lessonId == reviewLessonId) return 'Revision';
+    if (isPracticeMode(widget.lessonId)) return 'Pratique';
+    return LessonNames.of(widget.lessonId);
+  }
 
   void _saveCurrentPosition() {
-    // Review sessions don't persist position.
+    // Review and practice sessions don't persist position.
     if (widget.lessonId == reviewLessonId) return;
+    if (isPracticeMode(widget.lessonId)) return;
 
     final current = ref
         .read(exerciseProvider(widget.lessonId, widget.startIndex))
@@ -764,15 +769,27 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
   }
 
   Widget _buildComplete(ExerciseComplete state) {
+    if (state.isAllComplete) {
+      return _buildGrandFinale(state);
+    }
     if (state.isTierComplete) {
       return _buildTierComplete(state);
     }
 
     final isReview = state.lessonId == reviewLessonId;
-    final title = isReview ? 'Revision terminee !' : 'Lecon terminee !';
-    final subtitle = isReview
-        ? '${state.expressionsCount} expressions revisees'
-        : '${state.expressionsCount} expressions apprises';
+    final isPractice = isPracticeMode(state.lessonId);
+    final String title;
+    final String subtitle;
+    if (isReview) {
+      title = 'Revision terminee !';
+      subtitle = '${state.expressionsCount} expressions revisees';
+    } else if (isPractice) {
+      title = 'Pratique terminee !';
+      subtitle = '${state.expressionsCount} expressions revues';
+    } else {
+      title = 'Lecon terminee !';
+      subtitle = '${state.expressionsCount} expressions apprises';
+    }
 
     return Center(
       key: const ValueKey('complete'),
@@ -807,6 +824,103 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
               liveRegion: true,
               child: Text(
                 '$title $subtitle',
+                style: const TextStyle(fontSize: 0),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildGrandFinale(ExerciseComplete state) {
+    final reducedMotion = MediaQuery.disableAnimationsOf(context);
+
+    // Lazily initialize celebration animation controller.
+    if (_celebrationController == null) {
+      _celebrationController = AnimationController(
+        vsync: this,
+        duration: CaJoueAnimations.loader,
+      );
+      if (reducedMotion) {
+        _celebrationController!.value = 1.0;
+      } else {
+        unawaited(_celebrationController!.forward());
+      }
+    }
+
+    final controller = _celebrationController!;
+
+    final dahuFade = CurvedAnimation(
+      parent: controller,
+      curve: const Interval(0, 0.5, curve: Curves.easeOut),
+    );
+    final dahuScale = Tween<double>(begin: 0.85, end: 1).animate(
+      CurvedAnimation(
+        parent: controller,
+        curve: const Interval(0, 0.5, curve: Curves.easeOut),
+      ),
+    );
+    final titleFade = CurvedAnimation(
+      parent: controller,
+      curve: const Interval(0.3, 0.8, curve: Curves.easeOut),
+    );
+    final subtitleFade = CurvedAnimation(
+      parent: controller,
+      curve: const Interval(0.5, 1, curve: Curves.easeOut),
+    );
+
+    return Center(
+      key: const ValueKey('grand-finale'),
+      child: Padding(
+        padding: CaJoueSpacing.horizontal,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FadeTransition(
+              opacity: dahuFade,
+              child: ScaleTransition(
+                scale: dahuScale,
+                child: const Dahu(size: DahuSize.completion),
+              ),
+            ),
+            const SizedBox(height: CaJoueSpacing.xl),
+            FadeTransition(
+              opacity: titleFade,
+              child: Text(
+                'Tu parles comme un vrai Romand !',
+                style: CaJoueTypography.expressionTitle.copyWith(
+                  color: CaJoueColors.slate,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+              ),
+            ),
+            const SizedBox(height: CaJoueSpacing.sm),
+            FadeTransition(
+              opacity: subtitleFade,
+              child: Column(
+                children: [
+                  Text(
+                    '${state.expressionsCount} expressions apprises',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.gold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: CaJoueSpacing.xl),
+                  CtaButton(
+                    label: 'Continuer',
+                    onPressed: () => context.go('/home', extra: 'slideDown'),
+                  ),
+                ],
+              ),
+            ),
+            Semantics(
+              liveRegion: true,
+              child: Text(
+                'Félicitations ! Tu parles comme un vrai'
+                ' Romand ! ${state.expressionsCount} expressions apprises.',
                 style: const TextStyle(fontSize: 0),
               ),
             ),

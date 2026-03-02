@@ -125,6 +125,25 @@ final router = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: '/practice/:tierNum',
+      redirect: (context, state) {
+        final tierNum = int.tryParse(state.pathParameters['tierNum'] ?? '');
+        if (tierNum == null || tierNum < 1 || tierNum > 4) {
+          return '/home';
+        }
+        return null;
+      },
+      pageBuilder: (context, state) {
+        final tierNum = int.parse(state.pathParameters['tierNum']!);
+        return _iosModal(
+          key: state.pageKey,
+          child: ExerciseScreen(
+            lessonId: '$practiceLessonIdPrefix${tierNum}__',
+          ),
+        );
+      },
+    ),
   ],
 );
 
