@@ -201,6 +201,52 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     }
   }
 
+  /// Skips the current expression, counting it as incorrect.
+  ///
+  /// Transitions to the feedback state showing the correct answer,
+  /// then the normal advance flow handles re-queuing and progression.
+  Future<void> skip() async {
+    final currentState = state.value;
+
+    final Expression expression;
+    if (currentState is ExerciseActive) {
+      expression = currentState.expression;
+    } else if (currentState is ExerciseTypingActive) {
+      expression = currentState.expression;
+    } else {
+      return;
+    }
+
+    await _writeProgress(expression.id, isCorrect: false);
+
+    if (!ref.mounted) return;
+
+    if (currentState is ExerciseActive) {
+      state = AsyncData(
+        ExerciseFeedback(
+          expression: expression,
+          options: currentState.options,
+          selectedAnswer: '',
+          correctAnswer: expression.romand,
+          isCorrect: false,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
+    } else if (currentState is ExerciseTypingActive) {
+      state = AsyncData(
+        ExerciseTypingFeedback(
+          expression: expression,
+          userAnswer: '',
+          correctAnswer: expression.romand,
+          isCorrect: false,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
+    }
+  }
+
   /// Advances to the next expression or completes the lesson.
   Future<void> advance() async {
     final currentState = state.value;
@@ -236,6 +282,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
       // Record session completion for streak tracking.
       await ref.read(streakProvider.notifier).recordSession();
+
+      // Refresh due count so home screen reflects latest state.
+      ref.invalidate(dueExpressionCountProvider);
 
       if (!ref.mounted) return;
       state = AsyncData(await _buildCompleteState());

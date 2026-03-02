@@ -433,6 +433,25 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                     onPressed: _submitTypingAnswer,
                   ),
                 ),
+                const SizedBox(height: CaJoueSpacing.md),
+                GestureDetector(
+                  onTap: () => unawaited(
+                    ref
+                        .read(
+                          exerciseProvider(
+                            widget.lessonId,
+                            widget.startIndex,
+                          ).notifier,
+                        )
+                        .skip(),
+                  ),
+                  child: Text(
+                    'Je ne sais pas',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -563,14 +582,16 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   GoldBadge(reducedMotion: reducedMotion),
                 ] else ...[
                   // Incorrect: show feedback cards.
-                  Padding(
-                    padding: CaJoueSpacing.horizontal,
-                    child: FeedbackCard(
-                      variant: FeedbackCardVariant.wrong,
-                      text: state.userAnswer,
+                  if (state.userAnswer.isNotEmpty) ...[
+                    Padding(
+                      padding: CaJoueSpacing.horizontal,
+                      child: FeedbackCard(
+                        variant: FeedbackCardVariant.wrong,
+                        text: state.userAnswer,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: CaJoueSpacing.sm),
+                    const SizedBox(height: CaJoueSpacing.sm),
+                  ],
                   Padding(
                     padding: CaJoueSpacing.horizontal,
                     child: FeedbackCard(
@@ -737,6 +758,29 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                     ],
                   ),
                 ),
+
+                // Skip button (only in active state).
+                if (!isFeedback) ...[
+                  const SizedBox(height: CaJoueSpacing.md),
+                  GestureDetector(
+                    onTap: () => unawaited(
+                      ref
+                          .read(
+                            exerciseProvider(
+                              widget.lessonId,
+                              widget.startIndex,
+                            ).notifier,
+                          )
+                          .skip(),
+                    ),
+                    child: Text(
+                      'Je ne sais pas',
+                      style: CaJoueTypography.uiBody.copyWith(
+                        color: CaJoueColors.stone,
+                      ),
+                    ),
+                  ),
+                ],
 
                 // Incorrect feedback text.
                 if (feedbackText != null) ...[
