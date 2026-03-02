@@ -785,7 +785,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
       subtitle = '${state.expressionsCount} expressions revisees';
     } else if (isPractice) {
       title = 'Pratique terminee !';
-      subtitle = '${state.expressionsCount} expressions revues';
+      subtitle = '${state.expressionsCount} expressions maitrisees';
     } else {
       title = 'Lecon terminee !';
       subtitle = '${state.expressionsCount} expressions apprises';

@@ -190,6 +190,57 @@ class HomeScreen extends ConsumerWidget {
                   // -- Review CTA (conditional, self-spacing) --
                   const ReviewCta(),
 
+                  // -- Practice all button --
+                  if (completed > 0)
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: CaJoueSpacing.md,
+                      ),
+                      child: Semantics(
+                        label: 'Pratique libre. Appuie pour pratiquer'
+                            ' toutes les expressions.',
+                        button: true,
+                        child: GestureDetector(
+                          onTap: () => context.push('/practice'),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 18,
+                              horizontal: 20,
+                            ),
+                            decoration: const BoxDecoration(
+                              color: CaJoueColors.cream,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'Pratique libre',
+                                    style: CaJoueTypography.uiBody.copyWith(
+                                      color: CaJoueColors.slate,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.4,
+                                  child: Text(
+                                    '\u203A',
+                                    style: CaJoueTypography.expressionTitle
+                                        .copyWith(
+                                      color: CaJoueColors.slate,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
                   // -- Tier list --
                   ...tiers.map((tier) {
                     final completedAsync = ref.watch(
@@ -201,9 +252,7 @@ class HomeScreen extends ConsumerWidget {
                       completedCount: completedCount,
                       onTap: tier.isUnlocked
                           ? () {
-                              final isPostCompletion =
-                                  completed >= total && total > 0;
-                              if (isPostCompletion) {
+                              if (completedCount >= tier.expressionCount) {
                                 unawaited(
                                   context.push('/practice/${tier.number}'),
                                 );

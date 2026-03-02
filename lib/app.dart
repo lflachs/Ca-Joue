@@ -126,6 +126,17 @@ final router = GoRouter(
       },
     ),
     GoRoute(
+      path: '/practice',
+      pageBuilder: (context, state) {
+        return _iosModal(
+          key: state.pageKey,
+          child: const ExerciseScreen(
+            lessonId: practiceAllLessonId,
+          ),
+        );
+      },
+    ),
+    GoRoute(
       path: '/practice/:tierNum',
       redirect: (context, state) {
         final tierNum = int.tryParse(state.pathParameters['tierNum'] ?? '');

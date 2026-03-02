@@ -114,3 +114,47 @@ final class DueExpressionsProvider
 }
 
 String _$dueExpressionsHash() => r'5cc3c1cf8fa96e7e0509043dafdda0b03edbe2eb';
+
+/// Returns all expressions the user has encountered so far.
+
+@ProviderFor(seenExpressions)
+const seenExpressionsProvider = SeenExpressionsProvider._();
+
+/// Returns all expressions the user has encountered so far.
+
+final class SeenExpressionsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Expression>>,
+          List<Expression>,
+          FutureOr<List<Expression>>
+        >
+    with $FutureModifier<List<Expression>>, $FutureProvider<List<Expression>> {
+  /// Returns all expressions the user has encountered so far.
+  const SeenExpressionsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'seenExpressionsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$seenExpressionsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Expression>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Expression>> create(Ref ref) {
+    return seenExpressions(ref);
+  }
+}
+
+String _$seenExpressionsHash() => r'6b70d12b2e572f5c3c732db0dbb029d5944886c6';

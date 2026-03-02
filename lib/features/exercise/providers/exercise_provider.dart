@@ -30,6 +30,7 @@ part 'exercise_provider.g.dart';
 class ExerciseNotifier extends _$ExerciseNotifier {
   List<Expression> _expressions = [];
   int _currentIndex = 0;
+  int _originalCount = 0;
   String _lessonId = '';
 
   @override
@@ -39,6 +40,11 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     // Review mode: load due expressions instead of lesson expressions.
     if (lessonId == reviewLessonId) {
       _expressions = await ref.watch(dueExpressionsProvider.future);
+    } else if (lessonId == practiceAllLessonId) {
+      _expressions = [
+        ...await ref.watch(seenExpressionsProvider.future),
+      ];
+      _expressions.shuffle(Random());
     } else if (isPracticeMode(lessonId)) {
       final tierNum = practiceTierNum(lessonId);
       if (tierNum != null) {
@@ -53,6 +59,7 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       );
     }
 
+    _originalCount = _expressions.length;
     _currentIndex = startIndex.clamp(0, _expressions.length);
 
     if (_expressions.isEmpty || _currentIndex >= _expressions.length) {
@@ -202,6 +209,23 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       return;
     }
 
+    // Re-queue missed expressions in practice mode.
+    if (isPracticeMode(_lessonId)) {
+      final isCorrect = switch (currentState) {
+        ExerciseFeedback(:final isCorrect) => isCorrect,
+        ExerciseTypingFeedback(:final isCorrect) => isCorrect,
+        _ => true,
+      };
+      if (!isCorrect) {
+        final expression = switch (currentState) {
+          ExerciseFeedback(:final expression) => expression,
+          ExerciseTypingFeedback(:final expression) => expression,
+          _ => null,
+        };
+        if (expression != null) _expressions.add(expression);
+      }
+    }
+
     _currentIndex++;
 
     if (_currentIndex >= _expressions.length) {
@@ -243,12 +267,22 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       );
     }
 
+    // Practice-all mode: simple completion.
+    if (_lessonId == practiceAllLessonId) {
+      return ExerciseComplete(
+        lessonId: _lessonId,
+        expressionsCount: _originalCount,
+        isTierComplete: false,
+        tierName: 'Pratique',
+      );
+    }
+
     // Practice mode: simple completion, tiers are already done.
     if (isPracticeMode(_lessonId)) {
       final tierNum = practiceTierNum(_lessonId) ?? 1;
       return ExerciseComplete(
         lessonId: _lessonId,
-        expressionsCount: _expressions.length,
+        expressionsCount: _originalCount,
         isTierComplete: false,
         tierName: Tier.nameForTier(tierNum),
       );

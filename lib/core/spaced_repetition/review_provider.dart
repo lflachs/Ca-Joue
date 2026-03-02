@@ -18,9 +18,13 @@ const String reviewLessonId = '__review__';
 /// Example: `'__practice_tier_2__'` loads all tier-2 expressions.
 const String practiceLessonIdPrefix = '__practice_tier_';
 
+/// Lesson ID sentinel for "practice all seen expressions" mode.
+const String practiceAllLessonId = '__practice_all__';
+
 /// Returns `true` if [lessonId] represents a free practice session.
 bool isPracticeMode(String lessonId) =>
-    lessonId.startsWith(practiceLessonIdPrefix);
+    lessonId.startsWith(practiceLessonIdPrefix) ||
+    lessonId == practiceAllLessonId;
 
 /// Extracts the tier number from a practice sentinel string.
 ///
@@ -55,5 +59,13 @@ Future<List<Expression>> dueExpressions(Ref ref) async {
   final db = await ref.watch(databaseProvider.future);
   final now = DateTime.now().toIso8601String();
   final rows = await ReviewQueries.dueExpressionRows(db, now);
+  return rows.map(Expression.fromRow).toList();
+}
+
+/// Returns all expressions the user has encountered so far.
+@riverpod
+Future<List<Expression>> seenExpressions(Ref ref) async {
+  final db = await ref.watch(databaseProvider.future);
+  final rows = await ReviewQueries.seenExpressionRows(db);
   return rows.map(Expression.fromRow).toList();
 }

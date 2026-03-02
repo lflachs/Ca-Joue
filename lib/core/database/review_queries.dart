@@ -35,4 +35,17 @@ abstract final class ReviewQueries {
       [now],
     );
   }
+
+  /// Returns rows for all expressions the user has encountered
+  /// (i.e. that have a progress record), regardless of review date.
+  static Future<List<Map<String, Object?>>> seenExpressionRows(
+    Database db,
+  ) async {
+    return db.rawQuery(
+      'SELECT e.* FROM ${Tables.expressions} e '
+      'INNER JOIN ${Tables.progress} p '
+      'ON e.${Tables.exprId} = p.${Tables.progExpressionId} '
+      'ORDER BY e.${Tables.exprTier} ASC, e.${Tables.exprLesson} ASC',
+    );
+  }
 }
