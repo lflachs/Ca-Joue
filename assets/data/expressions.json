@@ -222,9 +222,9 @@
     ],
     "notes": "Le 'goûter de dix heures' est une tradition suisse bien-aimée, surtout dans les écoles et lieux de travail, où une pause en milieu de matinée avec un petit en-cas est culturellement attendue. Elle reflète l'approche structurée des repas en Suisse.",
     "sentences": [
-      "Tu as pris quelque chose pour ___ ?",
-      "À la récré, les enfants mangent ___ dans la cour.",
-      "N'oublie pas de mettre une pomme pour ___ !"
+      "Tu as pris quelque chose pour ___ ?|||les dix-heures",
+      "À la récré, les enfants mangent ___ dans la cour.|||les dix-heures",
+      "N'oublie pas de mettre une pomme pour ___ !|||les dix-heures"
     ]
   },
   {
@@ -239,8 +239,8 @@
     "notes": "Littéralement 'l'heure vivante,' cette expression poétique signifie 'l'heure actuelle' ou 'maintenant.' Elle vient probablement de l'idée que le temps est vivant et présent, et donne au français romand une saveur charmante et philosophique.",
     "sentences": [
       "Il est quelle ___ ? J'ai oublié ma montre.|||heure vivante",
-      "À ___, il est déjà midi passé.",
-      "Dis-moi ___ , on est en retard ou pas ?"
+      "À ___, il est déjà midi passé.|||l'heure vivante",
+      "Dis-moi ___ , on est en retard ou pas ?|||l'heure vivante"
     ]
   },
   {
@@ -854,9 +854,9 @@
     ],
     "notes": "Venant peut-être de l'allemand 'Scheni' ou d'origines francoprovençales, 'cheni' couvre tout, d'une chambre en désordre au désordre général. C'est l'un des mots romands les plus utilisés dans les foyers familiaux.",
     "sentences": [
-      "Range ta chambre, c'est le ___ là-dedans !",
-      "Quel ___ après la fête hier soir !",
-      "Tu ne peux pas vivre dans ce ___ !"
+      "Range ta chambre, c'est le ___ là-dedans !|||cheni",
+      "Quel ___ après la fête hier soir !|||cheni",
+      "Tu ne peux pas vivre dans ce ___ !|||cheni"
     ]
   },
   {
@@ -956,9 +956,9 @@
     ],
     "notes": "Du grec 'galatas' via le vieux français, le 'galetas' en Romandie est simplement le grenier, alors qu'en français standard il porte un sens péjoratif de taudis misérable. En Suisse, c'est un mot neutre et quotidien.",
     "sentences": [
-      "Monte au ___ chercher les valises de Noël.",
-      "Il y a plein de vieux cartons dans le ___ .",
-      "On a rangé le sapin de Noël au ___ ."
+      "Monte au ___ chercher les valises de Noël.|||galetas",
+      "Il y a plein de vieux cartons dans le ___ .|||galetas",
+      "On a rangé le sapin de Noël au ___ .|||galetas"
     ]
   },
   {
@@ -1186,9 +1186,9 @@
     ],
     "notes": "'La molle' (la molle/flasque) est l'argot suisse romand pour la paresse ou le manque de motivation. Dire 'j'ai la molle' est l'equivalent local de 'j'ai la flemme' -- je n'ai pas envie de bouger.",
     "sentences": [
-      "J'ai ___ , je ne vais pas au fitness ce soir.",
-      "Avec cette chaleur, tout le monde a ___ .",
-      "Il a ___ de se lever le dimanche matin."
+      "J'ai ___ , je ne vais pas au fitness ce soir.|||la molle",
+      "Avec cette chaleur, tout le monde a ___ .|||la molle",
+      "Il a ___ de se lever le dimanche matin.|||la molle"
     ]
   },
   {
@@ -1337,9 +1337,9 @@
     ],
     "notes": "Le Jass (ou Yass) est le jeu de cartes national de la Suisse, joue avec un jeu special de 36 cartes presentant des ecussons, des grelots, des glands et des fleurs. Il est si central dans la culture suisse que la television suisse diffuse une emission hebdomadaire de Jass depuis des decennies.",
     "sentences": [
-      "Tu sais jouer au ___ ? Viens, on fait une partie !",
-      "Le dimanche après-midi, on joue au ___ en famille.",
-      "Il triche toujours au ___ , ce frouillon !"
+      "Tu sais jouer au ___ ? Viens, on fait une partie !|||yass",
+      "Le dimanche après-midi, on joue au ___ en famille.|||yass",
+      "Il triche toujours au ___ , ce frouillon !|||yass"
     ]
   },
   {
@@ -2527,9 +2527,9 @@
     ],
     "notes": "La volée désigne toutes les personnes nées la même année dans un village, un concept central de la vie communautaire suisse où les cohortes d'âge célèbrent ensemble des étapes importantes tout au long de leur vie.",
     "sentences": [
-      "On est de la même ___ , on avait 20 ans en 2000.",
-      "Toute la ___ se retrouve pour les 50 ans.",
-      "La ___ 1985 organise un souper au village."
+      "On est de la même ___ , on avait 20 ans en 2000.|||volée",
+      "Toute la ___ se retrouve pour les 50 ans.|||volée",
+      "La ___ 1985 organise un souper au village.|||volée"
     ]
   },
   {
