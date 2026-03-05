@@ -11,7 +11,7 @@ class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._();
 
   /// Current database schema version.
-  static const int _version = 2;
+  static const int _version = 3;
 
   Database? _database;
 

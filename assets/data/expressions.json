@@ -188,8 +188,8 @@
     ],
     "notes": "Dans les cafés et restaurants suisses, le vin se commande couramment au décilitre (1 dl = 100 ml), une habitude de mesure uniquement suisse. Un 'deci' est un petit verre standard, parfait pour la pause de midi.",
     "sentences": [
-      "Je prendrais ___ de blanc avec le poisson.",
-      "On commande ___ de Chasselas pour commencer ?",
+      "Je prendrais ___ de blanc avec le poisson.|||un déci",
+      "On commande ___ de Chasselas pour commencer ?|||un déci",
       "Deux ___ de Fendant, s'il vous plaît !|||décis"
     ]
   },
@@ -205,9 +205,9 @@
     ],
     "notes": "Commander 'un demi' en Romandie vous donne un demi-litre de vin, pas un demi de bière comme ce serait le cas en France. Cette différence a surpris bien des touristes français qui s'attendaient à une bière.",
     "sentences": [
-      "Pour la table, on prend ___ de rouge ?",
-      "Un ___ de Dôle pour accompagner la raclette, merci.",
-      "Tu veux ___ ou juste un déci ?"
+      "Pour la table, on prend ___ de rouge ?|||un demi",
+      "Un ___ de Dôle pour accompagner la raclette, merci.|||demi",
+      "Tu veux ___ ou juste un déci ?|||un demi"
     ]
   },
   {
@@ -287,9 +287,9 @@
     ],
     "notes": "Un 'renversé' est un café au lait où les proportions sont inversées: plus de lait que de café, littéralement 'renversé.' C'est un classique des cafés romands et en commander un est un rite de passage pour les nouveaux venus.",
     "sentences": [
-      "Je prendrais ___ , s'il vous plaît.",
-      "Un ___ et un croissant, la commande classique du matin.",
-      "Tu veux un café noir ou ___ ?"
+      "Je prendrais ___ , s'il vous plaît.|||un renversé",
+      "Un ___ et un croissant, la commande classique du matin.|||renversé",
+      "Tu veux un café noir ou ___ ?|||un renversé"
     ]
   },
   {
@@ -554,8 +554,8 @@
     "notes": "De l'allemand 'parken,' 'se parquer' remplace le français standard 'se garer.' Ça fait partie d'un modèle plus large de vocabulaire automobile influencé par l'allemand en Romandie.",
     "sentences": [
       "Tu t'es ___ où finalement ?|||parqué",
-      "Impossible de ___ en ville le samedi.",
-      "On peut ___ devant le restaurant."
+      "Impossible de ___ en ville le samedi.|||se parquer",
+      "On peut ___ devant le restaurant.|||se parquer"
     ]
   },
   {
@@ -686,7 +686,7 @@
     "sentences": [
       "J'ai ___ à cause de mes chaussures neuves.|||une gonfle",
       "Après la rando, il avait ___ à chaque pied.|||une gonfle",
-      "Mets un pansement sur ta ___ ."
+      "Mets un pansement sur ta ___ .|||gonfle"
     ]
   },
   {
@@ -803,9 +803,9 @@
     ],
     "notes": "Une 'chotte' est un petit abri ou surplomb, qu'on trouve souvent le long des sentiers de randonnée ou dans les vignobles. Le mot est profondément lié à la culture suisse du plein air où trouver un abri contre le temps de montagne soudain est une nécessité pratique.",
     "sentences": [
-      "Viens te mettre à la ___ , tu vas être trempé !",
-      "On a trouvé une ___ pour s'abriter de l'orage.",
-      "Restez à la ___ jusqu'à ce que la pluie passe."
+      "Viens te mettre à la ___ , tu vas être trempé !|||chotte",
+      "On a trouvé une ___ pour s'abriter de l'orage.|||chotte",
+      "Restez à la ___ jusqu'à ce que la pluie passe.|||chotte"
     ]
   },
   {
@@ -905,9 +905,9 @@
     ],
     "notes": "Un 'bobet' est un imbécile attachant ou une personne bête, utilisé plus affectueusement que durement. Ça vient du francoprovençal et c'est le genre d'insulte douce qu'on pourrait utiliser avec un ami qui a enfermé ses clés dans sa voiture.",
     "sentences": [
-      "J'ai oublié mes clés dans la voiture, quel ___ !",
-      "Mais quel ___ , il a mis du sel au lieu du sucre !",
-      "Arrête de faire le ___ , concentre-toi !"
+      "J'ai oublié mes clés dans la voiture, quel ___ !|||bobet",
+      "Mais quel ___ , il a mis du sel au lieu du sucre !|||bobet",
+      "Arrête de faire le ___ , concentre-toi !|||bobet"
     ]
   },
   {
@@ -922,9 +922,9 @@
     ],
     "notes": "Une 'gouille' est une flaque, mais peut aussi désigner un petit étang naturel dans les Alpes. Le mot a des racines francoprovençales et est un favori des enfants suisses qui adorent y barboter après la pluie.",
     "sentences": [
-      "Les enfants sautent dans les ___ après la pluie.",
-      "Attention à la ___ devant l'entrée !",
-      "Il y a une grande ___ au milieu du chemin."
+      "Les enfants sautent dans les ___ après la pluie.|||gouilles",
+      "Attention à la ___ devant l'entrée !|||gouille",
+      "Il y a une grande ___ au milieu du chemin.|||gouille"
     ]
   },
   {
@@ -1286,9 +1286,9 @@
     ],
     "notes": "De l'ancien francais 'godet' (une petite coupe), ce mot survit en Suisse romande pour designer n'importe quel verre a boire. 'Prendre un godet' est une invitation a boire un verre ensemble, soulignant la culture conviviale de la boisson en Romandie.",
     "sentences": [
-      "On va prendre un ___ après le travail ?",
-      "Allez, un petit ___ entre amis, ça fait du bien.",
-      "Il a bu un ___ de trop hier soir."
+      "On va prendre un ___ après le travail ?|||godet",
+      "Allez, un petit ___ entre amis, ça fait du bien.|||godet",
+      "Il a bu un ___ de trop hier soir.|||godet"
     ]
   },
   {
@@ -1354,9 +1354,9 @@
     ],
     "notes": "A l'origine une grande cruche a vin en etain utilisee dans les corporations et societes suisses, la 'channe' en est venue a signifier un trophee ou une coupe ceremonielle. La channe valaisanne traditionnelle, avec sa forme distinctive, est encore utilisee pour servir le vin lors des fetes.",
     "sentences": [
-      "L'équipe a gagné une belle ___ au tournoi.",
-      "On a sorti la ___ pour trinquer au mariage.",
-      "La ___ en étain est un symbole valaisan."
+      "L'équipe a gagné une belle ___ au tournoi.|||channe",
+      "On a sorti la ___ pour trinquer au mariage.|||channe",
+      "La ___ en étain est un symbole valaisan.|||channe"
     ]
   },
   {
@@ -1371,9 +1371,9 @@
     ],
     "notes": "Emprunte directement au suisse allemand 'Witz' (blague), c'est un exemple parfait de la facon dont le francais romand absorbe le vocabulaire germano-suisse. Il reflete la realite bilingue quotidienne de la vie pres du Roestigraben (la frontiere culturelle franco-allemande).",
     "sentences": [
-      "Il m'a raconté un ___ tellement drôle au bistrot.",
-      "C'est un bon ___ , mais je l'ai déjà entendu.",
-      "Tu connais le ___ du Valaisan et du Vaudois ?"
+      "Il m'a raconté un ___ tellement drôle au bistrot.|||witz",
+      "C'est un bon ___ , mais je l'ai déjà entendu.|||witz",
+      "Tu connais le ___ du Valaisan et du Vaudois ?|||witz"
     ]
   },
   {
@@ -1538,9 +1538,9 @@
     ],
     "notes": "Une 'rincee' est une averse soudaine et intense -- le genre qui vous trempe jusqu'aux os en quelques secondes. Le mot vient de 'rincer' et suggere avec humour que la nature a decide de vous donner un bon lavage.",
     "sentences": [
-      "On a pris ___ en rentrant de la rando.",
-      "Quelle ___ ! On était trempés en cinq secondes.",
-      "Dépêche-toi, on va se prendre une ___ !"
+      "On a pris ___ en rentrant de la rando.|||une rincée",
+      "Quelle ___ ! On était trempés en cinq secondes.|||rincée",
+      "Dépêche-toi, on va se prendre une ___ !|||rincée"
     ]
   },
   {
@@ -1555,9 +1555,9 @@
     ],
     "notes": "'Cramine' decrit un froid mordant, glacial jusqu'aux os, du franco-provencal 'cramina'. Quiconque a vecu un hiver dans une vallee jurassienne ou un vent de bise balayant le Leman sait exactement ce que ce mot signifie.",
     "sentences": [
-      "Quelle ___ ce matin, moins dix degrés !",
-      "Avec cette ___ , les routes sont gelées.",
-      "Je ne sors pas, c'est la ___ dehors."
+      "Quelle ___ ce matin, moins dix degrés !|||cramine",
+      "Avec cette ___ , les routes sont gelées.|||cramine",
+      "Je ne sors pas, c'est la ___ dehors.|||cramine"
     ]
   },
   {
@@ -1704,9 +1704,9 @@
     ],
     "notes": "'De la gogne' signifie un travail bacle, mal fait. Quand un Romand dit 'c'est de la gogne', il rejette quelque chose comme de l'artisanat de pacotille -- une insulte serieuse dans une culture qui se targue de precision et de qualite.",
     "sentences": [
-      "Ce meuble en kit, c'est ___ , il tient même pas debout.",
-      "Son travail de peinture, c'est ___ , regarde ces coulures.",
-      "Ils ont fait ___ avec cette réparation."
+      "Ce meuble en kit, c'est ___ , il tient même pas debout.|||de la gogne",
+      "Son travail de peinture, c'est ___ , regarde ces coulures.|||de la gogne",
+      "Ils ont fait ___ avec cette réparation.|||de la gogne"
     ]
   },
   {
@@ -2148,7 +2148,7 @@
     ],
     "notes": "'Se reduire' en Suisse romande signifie ranger ou se mettre au lit, assez different du sens francais standard de 'se reduire'. Dire aux enfants 'il faut se reduire' signifie qu'il est temps de ranger et d'aller au lit.",
     "sentences": [
-      "Les enfants, c'est l'heure de ___ , au lit !",
+      "Les enfants, c'est l'heure de ___ , au lit !|||se réduire",
       "Il faut ___ les jouets avant le souper.|||réduire",
       "Allez, on ___ tout et on va dormir.|||réduit"
     ]
@@ -2792,9 +2792,9 @@
     ],
     "notes": "Une tapée signifie littéralement 'la valeur d'une claque' et s'utilise pour décrire une grande quantité de quelque chose, similaire à 'un tas de' ou 'plein de'.",
     "sentences": [
-      "Il y avait ___ de monde au marché ce matin.",
-      "On a ramassé ___ de champignons en forêt.",
-      "Elle a reçu ___ de messages pour son anniversaire."
+      "Il y avait ___ de monde au marché ce matin.|||une tapée",
+      "On a ramassé ___ de champignons en forêt.|||une tapée",
+      "Elle a reçu ___ de messages pour son anniversaire.|||une tapée"
     ]
   },
   {
@@ -3298,7 +3298,7 @@
     "sentences": [
       "Allez les enfants, on ___ , c'est l'heure du bain !|||se dézaque",
       "Il s'est ___ en vitesse pour sauter dans le lac.|||dézaqué",
-      "Aide le petit à ___ , il n'y arrive pas seul."
+      "Aide le petit à ___ , il n'y arrive pas seul.|||se dézaquer"
     ]
   },
   {

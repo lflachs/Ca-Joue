@@ -24,6 +24,8 @@ abstract final class Migrations {
         await _v1(db);
       case 2:
         await _v2(db);
+      case 3:
+        await _v3(db);
       default:
         throw ArgumentError('Unknown migration version: $version');
     }
@@ -51,6 +53,11 @@ abstract final class Migrations {
         "ADD COLUMN ${Tables.exprSentences} TEXT NOT NULL DEFAULT '[]'",
       );
     }
+    await SeedData.reseedSentences(db);
+  }
+
+  /// Version 3: Reseed sentences with ||| answer overrides.
+  static Future<void> _v3(Database db) async {
     await SeedData.reseedSentences(db);
   }
 }
