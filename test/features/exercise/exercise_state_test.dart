@@ -168,6 +168,10 @@ void main() {
           ExerciseFeedback() => 'feedback',
           ExerciseTypingActive() => 'typing-active',
           ExerciseTypingFeedback() => 'typing-feedback',
+          ExerciseBlankActive() => 'blank-active',
+          ExerciseBlankFeedback() => 'blank-feedback',
+          ExerciseBlankTypingActive() => 'blank-typing-active',
+          ExerciseBlankTypingFeedback() => 'blank-typing-feedback',
           ExerciseComplete() => 'complete',
         };
         expect(label, isNotEmpty);
@@ -231,8 +235,8 @@ void main() {
   });
 
   group('ExerciseType', () {
-    test('has exactly 2 values', () {
-      expect(ExerciseType.values, hasLength(2));
+    test('has exactly 4 values', () {
+      expect(ExerciseType.values, hasLength(4));
     });
 
     test('contains multipleChoice and typing', () {

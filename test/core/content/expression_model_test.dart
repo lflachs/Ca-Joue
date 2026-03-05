@@ -13,6 +13,7 @@ void main() {
       'lesson': 'everyday-greetings',
       'alternatives': ['ça joue', 'ca joue'],
       'notes': 'Fun cultural note.',
+      'sentences': ['On se voit demain, ___ ?', 'Oui, ___ !'],
     };
 
     final sampleRow = {
@@ -23,6 +24,7 @@ void main() {
       'lesson': 'everyday-greetings',
       'alternatives': jsonEncode(['ça joue', 'ca joue']),
       'notes': 'Fun cultural note.',
+      'sentences': jsonEncode(['On se voit demain, ___ ?', 'Oui, ___ !']),
     };
 
     group('fromJson', () {

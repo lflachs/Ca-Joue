@@ -103,7 +103,7 @@ void main() {
 
       test('throws for unknown version', () async {
         expect(
-          () => Migrations.runAll(db, 0, 99),
+          () => Migrations.runAll(db, 2, 99),
           throwsA(isA<ArgumentError>()),
         );
       });

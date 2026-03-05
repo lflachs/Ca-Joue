@@ -127,6 +127,10 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
       ExerciseFeedback(:final progressIndex) => progressIndex,
       ExerciseTypingActive(:final progressIndex) => progressIndex,
       ExerciseTypingFeedback(:final progressIndex) => progressIndex,
+      ExerciseBlankActive(:final progressIndex) => progressIndex,
+      ExerciseBlankFeedback(:final progressIndex) => progressIndex,
+      ExerciseBlankTypingActive(:final progressIndex) => progressIndex,
+      ExerciseBlankTypingFeedback(:final progressIndex) => progressIndex,
       ExerciseLoading() || ExerciseComplete() => null,
     };
 
@@ -158,7 +162,10 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     required bool reducedMotion,
   }) {
     if (reducedMotion) return;
-    if (state is ExerciseFeedback || state is ExerciseTypingFeedback) {
+    if (state is ExerciseFeedback ||
+        state is ExerciseTypingFeedback ||
+        state is ExerciseBlankFeedback ||
+        state is ExerciseBlankTypingFeedback) {
       if (!_dahuController.isAnimating) {
         unawaited(_dahuController.repeat(reverse: true));
       }
@@ -226,6 +233,22 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                   reducedMotion,
                 ),
                 ExerciseTypingFeedback() => _buildTypingFeedback(
+                  state,
+                  reducedMotion,
+                ),
+                ExerciseBlankActive() => _buildBlankActive(
+                  state,
+                  reducedMotion,
+                ),
+                ExerciseBlankFeedback() => _buildBlankFeedback(
+                  state,
+                  reducedMotion,
+                ),
+                ExerciseBlankTypingActive() => _buildBlankTypingActive(
+                  state,
+                  reducedMotion,
+                ),
+                ExerciseBlankTypingFeedback() => _buildBlankTypingFeedback(
                   state,
                   reducedMotion,
                 ),
@@ -611,6 +634,552 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
                 const SizedBox(height: CaJoueSpacing.lg),
 
                 // Continuer button (no auto-advance for typing).
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: CtaButton(
+                    label: 'Continuer',
+                    onPressed: () {
+                      _typingController.clear();
+                      unawaited(
+                        ref
+                            .read(
+                              exerciseProvider(
+                                widget.lessonId,
+                                widget.startIndex,
+                              ).notifier,
+                            )
+                            .advance(),
+                      );
+                    },
+                  ),
+                ),
+
+                // Accessibility announcement.
+                Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    state.isCorrect
+                        ? 'Correct, ça joue!'
+                        : 'Incorrect, la bonne réponse'
+                              ' est ${state.correctAnswer}',
+                    style: const TextStyle(fontSize: 0),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// Builds a sentence with `___` rendered as a highlighted gap or filled text.
+  Widget _buildSentenceText(String sentence, {String? filledAnswer}) {
+    final parts = sentence.split('___');
+    final spans = <InlineSpan>[];
+
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].isNotEmpty) {
+        spans.add(
+          TextSpan(
+            text: parts[i],
+            style: CaJoueTypography.uiBody.copyWith(
+              color: CaJoueColors.slate,
+              fontSize: 17,
+              height: 1.6,
+            ),
+          ),
+        );
+      }
+      // Insert blank or filled answer between parts (not after last).
+      if (i < parts.length - 1) {
+        if (filledAnswer != null) {
+          spans.add(
+            TextSpan(
+              text: filledAnswer,
+              style: CaJoueTypography.uiBody.copyWith(
+                color: CaJoueColors.gold,
+                fontSize: 17,
+                fontWeight: FontWeight.w700,
+                height: 1.6,
+              ),
+            ),
+          );
+        } else {
+          spans.add(
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: Container(
+                width: 80,
+                height: 28,
+                decoration: BoxDecoration(
+                  color: CaJoueColors.cream,
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    color: CaJoueColors.stone.withValues(alpha: 0.3),
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
+      }
+    }
+
+    return Padding(
+      padding: CaJoueSpacing.horizontal,
+      child: Text.rich(
+        TextSpan(children: spans),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  void _submitBlankTypingAnswer() {
+    final text = _typingController.text;
+    if (text.trim().isEmpty) return;
+    unawaited(
+      ref
+          .read(
+            exerciseProvider(widget.lessonId, widget.startIndex).notifier,
+          )
+          .submitBlankTypingAnswer(text),
+    );
+  }
+
+  Widget _buildBlankActive(ExerciseBlankActive state, bool reducedMotion) {
+    _hapticFired = false;
+    return Column(
+      key: ValueKey('blank-active-${state.expression.id}'),
+      children: [
+        CategoryStrip(
+          lessonName: _lessonDisplayName,
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+          onBack: () => context.pop(),
+        ),
+        const SizedBox(height: CaJoueSpacing.sm),
+        ProgressBar(
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(
+              top: 20,
+              bottom: CaJoueSpacing.xl,
+            ),
+            child: Column(
+              children: [
+                const Dahu(size: DahuSize.exercise),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Instruction.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: Text(
+                    'Complete la phrase',
+                    style: CaJoueTypography.uiLabel.copyWith(
+                      color: CaJoueColors.stone,
+                      letterSpacing: 0.08 * 11,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+
+                // Sentence with blank.
+                _buildSentenceText(state.sentence),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // MC answer buttons.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: Column(
+                    children: [
+                      for (var i = 0; i < state.options.length; i++) ...[
+                        if (i > 0) const SizedBox(height: 10),
+                        AnswerButton(
+                          text: state.options[i],
+                          buttonState: AnswerButtonState.defaultState,
+                          index: i,
+                          onTap: () => unawaited(
+                            ref
+                                .read(
+                                  exerciseProvider(
+                                    widget.lessonId,
+                                    widget.startIndex,
+                                  ).notifier,
+                                )
+                                .submitBlankAnswer(state.options[i]),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+                GestureDetector(
+                  onTap: () => unawaited(
+                    ref
+                        .read(
+                          exerciseProvider(
+                            widget.lessonId,
+                            widget.startIndex,
+                          ).notifier,
+                        )
+                        .skip(),
+                  ),
+                  child: Text(
+                    'Je ne sais pas',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBlankFeedback(ExerciseBlankFeedback state, bool reducedMotion) {
+    // Haptic on correct (once per feedback).
+    if (state.isCorrect && !_hapticFired) {
+      _hapticFired = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(HapticFeedback.lightImpact());
+      });
+    }
+
+    return Column(
+      key: ValueKey('blank-feedback-${state.expression.id}'),
+      children: [
+        CategoryStrip(
+          lessonName: _lessonDisplayName,
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+          onBack: () => context.pop(),
+        ),
+        const SizedBox(height: CaJoueSpacing.sm),
+        ProgressBar(
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(
+              top: 20,
+              bottom: CaJoueSpacing.xl,
+            ),
+            child: Column(
+              children: [
+                // Dahu with animation.
+                AnimatedBuilder(
+                  animation: _dahuController,
+                  builder: (context, child) {
+                    if (state.isCorrect && !reducedMotion) {
+                      return Transform.translate(
+                        offset: Offset(0, _dahuBob.value),
+                        child: child,
+                      );
+                    }
+                    if (!state.isCorrect && !reducedMotion) {
+                      return Transform(
+                        alignment: Alignment.bottomCenter,
+                        transform: Matrix4.rotationZ(_dahuTilt.value),
+                        child: child,
+                      );
+                    }
+                    return child!;
+                  },
+                  child: const Dahu(size: DahuSize.exercise),
+                ),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Sentence with blank filled.
+                _buildSentenceText(
+                  state.sentence,
+                  filledAnswer: state.correctAnswer,
+                ),
+
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                if (state.isCorrect) ...[
+                  GoldBadge(reducedMotion: reducedMotion),
+                ] else ...[
+                  Text(
+                    'Pas tout à fait...',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.dusk,
+                    ),
+                  ),
+                ],
+
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Continuer button (no auto-advance for blank exercises).
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: CtaButton(
+                    label: 'Continuer',
+                    onPressed: () => unawaited(
+                      ref
+                          .read(
+                            exerciseProvider(
+                              widget.lessonId,
+                              widget.startIndex,
+                            ).notifier,
+                          )
+                          .advance(),
+                    ),
+                  ),
+                ),
+
+                // Accessibility announcement.
+                Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    state.isCorrect
+                        ? 'Correct, ça joue!'
+                        : 'Incorrect, la bonne réponse'
+                              ' est ${state.correctAnswer}',
+                    style: const TextStyle(fontSize: 0),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBlankTypingActive(
+    ExerciseBlankTypingActive state,
+    bool reducedMotion,
+  ) {
+    _hapticFired = false;
+
+    // Auto-focus the typing input.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (!_typingFocusNode.hasFocus) {
+        _typingFocusNode.requestFocus();
+      }
+    });
+
+    return Column(
+      key: ValueKey('blank-typing-active-${state.expression.id}'),
+      children: [
+        CategoryStrip(
+          lessonName: _lessonDisplayName,
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+          onBack: () => context.pop(),
+        ),
+        const SizedBox(height: CaJoueSpacing.sm),
+        ProgressBar(
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(
+              top: 20,
+              bottom: CaJoueSpacing.xl,
+            ),
+            child: Column(
+              children: [
+                const Dahu(size: DahuSize.exercise),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Instruction.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: Text(
+                    'Complete la phrase',
+                    style: CaJoueTypography.uiLabel.copyWith(
+                      color: CaJoueColors.stone,
+                      letterSpacing: 0.08 * 11,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+
+                // Sentence with blank.
+                _buildSentenceText(state.sentence),
+                const SizedBox(height: CaJoueSpacing.sm),
+
+                // Hint: French meaning.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: Text(
+                    '= ${state.expression.french}',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Typing input.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: ListenableBuilder(
+                    listenable: _typingFocusNode,
+                    builder: (context, _) {
+                      return TypingInput(
+                        controller: _typingController,
+                        focusNode: _typingFocusNode,
+                        inputState: _typingFocusNode.hasFocus
+                            ? TypingInputState.focused
+                            : TypingInputState.unfocused,
+                        reducedMotion: reducedMotion,
+                        onSubmitted: (_) => _submitBlankTypingAnswer(),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+
+                // Valider button.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: CtaButton(
+                    label: 'Valider',
+                    onPressed: _submitBlankTypingAnswer,
+                  ),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+                GestureDetector(
+                  onTap: () => unawaited(
+                    ref
+                        .read(
+                          exerciseProvider(
+                            widget.lessonId,
+                            widget.startIndex,
+                          ).notifier,
+                        )
+                        .skip(),
+                  ),
+                  child: Text(
+                    'Je ne sais pas',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBlankTypingFeedback(
+    ExerciseBlankTypingFeedback state,
+    bool reducedMotion,
+  ) {
+    // Haptic on correct (once per feedback).
+    if (state.isCorrect && !_hapticFired) {
+      _hapticFired = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(HapticFeedback.lightImpact());
+      });
+    }
+
+    return Column(
+      key: ValueKey('blank-typing-feedback-${state.expression.id}'),
+      children: [
+        CategoryStrip(
+          lessonName: _lessonDisplayName,
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+          onBack: () => context.pop(),
+        ),
+        const SizedBox(height: CaJoueSpacing.sm),
+        ProgressBar(
+          progressIndex: state.progressIndex,
+          totalExpressions: state.totalExpressions,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(
+              top: 20,
+              bottom: CaJoueSpacing.xl,
+            ),
+            child: Column(
+              children: [
+                // Dahu with animation.
+                AnimatedBuilder(
+                  animation: _dahuController,
+                  builder: (context, child) {
+                    if (state.isCorrect && !reducedMotion) {
+                      return Transform.translate(
+                        offset: Offset(0, _dahuBob.value),
+                        child: child,
+                      );
+                    }
+                    if (!state.isCorrect && !reducedMotion) {
+                      return Transform(
+                        alignment: Alignment.bottomCenter,
+                        transform: Matrix4.rotationZ(_dahuTilt.value),
+                        child: child,
+                      );
+                    }
+                    return child!;
+                  },
+                  child: const Dahu(size: DahuSize.exercise),
+                ),
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Sentence with blank filled.
+                _buildSentenceText(
+                  state.sentence,
+                  filledAnswer: state.correctAnswer,
+                ),
+
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                if (state.isCorrect) ...[
+                  GoldBadge(reducedMotion: reducedMotion),
+                ] else ...[
+                  if (state.userAnswer.isNotEmpty) ...[
+                    Padding(
+                      padding: CaJoueSpacing.horizontal,
+                      child: FeedbackCard(
+                        variant: FeedbackCardVariant.wrong,
+                        text: state.userAnswer,
+                      ),
+                    ),
+                    const SizedBox(height: CaJoueSpacing.sm),
+                  ],
+                  Padding(
+                    padding: CaJoueSpacing.horizontal,
+                    child: FeedbackCard(
+                      variant: FeedbackCardVariant.correct,
+                      text: state.correctAnswer,
+                    ),
+                  ),
+                  const SizedBox(height: CaJoueSpacing.md),
+                  Text(
+                    'Pas tout à fait...',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.dusk,
+                    ),
+                  ),
+                ],
+
+                const SizedBox(height: CaJoueSpacing.lg),
+
+                // Continuer button.
                 Padding(
                   padding: CaJoueSpacing.horizontal,
                   child: CtaButton(

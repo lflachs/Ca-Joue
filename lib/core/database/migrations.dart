@@ -1,3 +1,4 @@
+import 'package:ca_joue/core/database/seed_data.dart';
 import 'package:ca_joue/core/database/tables.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -21,6 +22,8 @@ abstract final class Migrations {
     switch (version) {
       case 1:
         await _v1(db);
+      case 2:
+        await _v2(db);
       default:
         throw ArgumentError('Unknown migration version: $version');
     }
@@ -31,5 +34,23 @@ abstract final class Migrations {
     await db.execute(Tables.createExpressions);
     await db.execute(Tables.createProgress);
     await db.execute(Tables.createSessions);
+  }
+
+  /// Version 2: Add sentences column to expressions.
+  static Future<void> _v2(Database db) async {
+    // Check if the column already exists (fresh installs get it from v1).
+    final columns = await db.rawQuery(
+      'PRAGMA table_info(${Tables.expressions})',
+    );
+    final hasColumn = columns.any(
+      (c) => c['name'] == Tables.exprSentences,
+    );
+    if (!hasColumn) {
+      await db.execute(
+        'ALTER TABLE ${Tables.expressions} '
+        "ADD COLUMN ${Tables.exprSentences} TEXT NOT NULL DEFAULT '[]'",
+      );
+    }
+    await SeedData.reseedSentences(db);
   }
 }

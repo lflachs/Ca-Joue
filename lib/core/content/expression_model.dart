@@ -11,6 +11,7 @@ class Expression {
     required this.lesson,
     required this.alternatives,
     required this.notes,
+    this.sentences = const [],
   });
 
   /// Creates an [Expression] from a JSON map (asset loading).
@@ -23,12 +24,15 @@ class Expression {
       lesson: json['lesson'] as String,
       alternatives: List<String>.from(json['alternatives'] as List),
       notes: json['notes'] as String? ?? '',
+      sentences: json['sentences'] != null
+          ? List<String>.from(json['sentences'] as List)
+          : const [],
     );
   }
 
   /// Creates an [Expression] from a SQLite row.
   ///
-  /// Alternatives are stored as a JSON string in the database.
+  /// Alternatives and sentences are stored as JSON strings in the database.
   factory Expression.fromRow(Map<String, dynamic> row) {
     return Expression(
       id: row['id'] as String,
@@ -40,6 +44,11 @@ class Expression {
         jsonDecode(row['alternatives'] as String) as List,
       ),
       notes: row['notes'] as String? ?? '',
+      sentences: row['sentences'] != null
+          ? List<String>.from(
+              jsonDecode(row['sentences'] as String) as List,
+            )
+          : const [],
     );
   }
 
@@ -64,6 +73,9 @@ class Expression {
   /// Cultural backstory, etymology, or usage notes.
   final String notes;
 
+  /// Fill-in-the-blank sentences using `___` as the placeholder.
+  final List<String> sentences;
+
   /// Converts to a JSON map.
   Map<String, dynamic> toJson() {
     return {
@@ -74,12 +86,13 @@ class Expression {
       'lesson': lesson,
       'alternatives': alternatives,
       'notes': notes,
+      'sentences': sentences,
     };
   }
 
   /// Converts to a SQLite row map.
   ///
-  /// Alternatives are encoded as a JSON string for storage.
+  /// Alternatives and sentences are encoded as JSON strings for storage.
   Map<String, dynamic> toRow() {
     return {
       'id': id,
@@ -89,6 +102,7 @@ class Expression {
       'lesson': lesson,
       'alternatives': jsonEncode(alternatives),
       'notes': notes,
+      'sentences': jsonEncode(sentences),
     };
   }
 }

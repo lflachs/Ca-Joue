@@ -37,6 +37,9 @@ abstract final class Tables {
   /// Cultural notes / backstory.
   static const String exprNotes = 'notes';
 
+  /// JSON-encoded list of fill-in-the-blank sentences.
+  static const String exprSentences = 'sentences';
+
   // -- Progress columns --
 
   /// Foreign key to expressions.id.
@@ -89,7 +92,8 @@ abstract final class Tables {
       $exprTier INTEGER NOT NULL,
       $exprLesson TEXT NOT NULL,
       $exprAlternatives TEXT NOT NULL DEFAULT '[]',
-      $exprNotes TEXT NOT NULL DEFAULT ''
+      $exprNotes TEXT NOT NULL DEFAULT '',
+      $exprSentences TEXT NOT NULL DEFAULT '[]'
     )
   ''';
 

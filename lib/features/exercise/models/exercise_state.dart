@@ -170,13 +170,147 @@ class ExerciseComplete extends ExerciseState {
   final bool isAllComplete;
 }
 
+/// The user is choosing from four MC options to fill a sentence blank.
+class ExerciseBlankActive extends ExerciseState {
+  /// Creates an [ExerciseBlankActive] state.
+  const ExerciseBlankActive({
+    required this.expression,
+    required this.sentence,
+    required this.correctAnswer,
+    required this.options,
+    required this.progressIndex,
+    required this.totalExpressions,
+  });
+
+  /// The current expression being quizzed.
+  final Expression expression;
+
+  /// The sentence template containing `___` as placeholder.
+  final String sentence;
+
+  /// The correct answer for this blank (may differ from expression.romand).
+  final String correctAnswer;
+
+  /// Four Romand answer options (one correct, three distractors), shuffled.
+  final List<String> options;
+
+  /// Zero-based index of the current expression in the lesson.
+  final int progressIndex;
+
+  /// Total number of expressions in the lesson.
+  final int totalExpressions;
+}
+
+/// The user has answered a blank MC exercise and feedback is displayed.
+class ExerciseBlankFeedback extends ExerciseState {
+  /// Creates an [ExerciseBlankFeedback] state.
+  const ExerciseBlankFeedback({
+    required this.expression,
+    required this.sentence,
+    required this.selectedAnswer,
+    required this.correctAnswer,
+    required this.isCorrect,
+    required this.progressIndex,
+    required this.totalExpressions,
+  });
+
+  /// The current expression.
+  final Expression expression;
+
+  /// The sentence template containing `___` as placeholder.
+  final String sentence;
+
+  /// The answer the user selected.
+  final String selectedAnswer;
+
+  /// The correct Romand answer.
+  final String correctAnswer;
+
+  /// Whether the user's answer was correct.
+  final bool isCorrect;
+
+  /// Zero-based index of the current expression in the lesson.
+  final int progressIndex;
+
+  /// Total number of expressions in the lesson.
+  final int totalExpressions;
+}
+
+/// The user is typing an answer to fill a sentence blank.
+class ExerciseBlankTypingActive extends ExerciseState {
+  /// Creates an [ExerciseBlankTypingActive] state.
+  const ExerciseBlankTypingActive({
+    required this.expression,
+    required this.sentence,
+    required this.correctAnswer,
+    required this.progressIndex,
+    required this.totalExpressions,
+  });
+
+  /// The current expression being quizzed.
+  final Expression expression;
+
+  /// The sentence template containing `___` as placeholder.
+  final String sentence;
+
+  /// The correct answer for this blank (may differ from expression.romand).
+  final String correctAnswer;
+
+  /// Zero-based index of the current expression in the lesson.
+  final int progressIndex;
+
+  /// Total number of expressions in the lesson.
+  final int totalExpressions;
+}
+
+/// The user has submitted a typed blank answer and feedback is displayed.
+class ExerciseBlankTypingFeedback extends ExerciseState {
+  /// Creates an [ExerciseBlankTypingFeedback] state.
+  const ExerciseBlankTypingFeedback({
+    required this.expression,
+    required this.sentence,
+    required this.userAnswer,
+    required this.correctAnswer,
+    required this.isCorrect,
+    required this.progressIndex,
+    required this.totalExpressions,
+  });
+
+  /// The current expression.
+  final Expression expression;
+
+  /// The sentence template containing `___` as placeholder.
+  final String sentence;
+
+  /// The answer the user typed.
+  final String userAnswer;
+
+  /// The correct Romand answer (with proper accents for display).
+  final String correctAnswer;
+
+  /// Whether the user's answer was correct.
+  final bool isCorrect;
+
+  /// Zero-based index of the current expression in the lesson.
+  final int progressIndex;
+
+  /// Total number of expressions in the lesson.
+  final int totalExpressions;
+}
+
 /// The type of exercise to present.
 enum ExerciseType {
   /// Four-option multiple choice quiz.
   multipleChoice,
 
+  /// Fill-in-the-blank with multiple choice options.
+  blankMultipleChoice,
+
   /// Free-text typing with accent-forgiving validation.
   typing,
+
+  /// Fill-in-the-blank with free-text typing.
+  blankTyping,
 }
 
 /// Visual state of an answer button.

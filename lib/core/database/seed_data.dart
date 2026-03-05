@@ -33,6 +33,30 @@ abstract final class SeedData {
     await batch.commit(noResult: true);
   }
 
+  /// Updates existing expression rows with sentence data from the JSON asset.
+  ///
+  /// Called during migration v2 to backfill sentences for existing installs.
+  static Future<void> reseedSentences(Database db) async {
+    final jsonString = await rootBundle.loadString(
+      'assets/data/expressions.json',
+    );
+    final jsonList = jsonDecode(jsonString) as List;
+
+    final batch = db.batch();
+    for (final json in jsonList) {
+      final map = json as Map<String, dynamic>;
+      final id = map['id'] as String;
+      final sentences = map['sentences'] as List? ?? [];
+      batch.update(
+        Tables.expressions,
+        {Tables.exprSentences: jsonEncode(sentences)},
+        where: '${Tables.exprId} = ?',
+        whereArgs: [id],
+      );
+    }
+    await batch.commit(noResult: true);
+  }
+
   static Future<void> _seedInitialSession(Database db) async {
     await db.insert(Tables.sessions, {
       Tables.sessId: 1,

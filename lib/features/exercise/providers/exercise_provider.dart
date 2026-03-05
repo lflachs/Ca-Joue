@@ -102,30 +102,65 @@ class ExerciseNotifier extends _$ExerciseNotifier {
     final repetitions = progressRows.isEmpty
         ? 0
         : progressRows.first[Tables.progRepetitions]! as int;
-    final prob = typingProbability(repetitions);
-    final exerciseType = Random().nextDouble() < prob
-        ? ExerciseType.typing
-        : ExerciseType.multipleChoice;
+    final hasSentences = expression.sentences.isNotEmpty;
+    final exerciseType = exerciseTypeForRepetitions(
+      repetitions,
+      hasSentences: hasSentences,
+    );
 
-    if (exerciseType == ExerciseType.typing) {
-      return ExerciseTypingActive(
-        expression: expression,
-        progressIndex: _currentIndex,
-        totalExpressions: _expressions.length,
-      );
+    switch (exerciseType) {
+      case ExerciseType.typing:
+        return ExerciseTypingActive(
+          expression: expression,
+          progressIndex: _currentIndex,
+          totalExpressions: _expressions.length,
+        );
+
+      case ExerciseType.blankMultipleChoice:
+        final raw = expression.sentences[
+            Random().nextInt(expression.sentences.length)];
+        final (sentenceText, sentenceAnswer) = _parseSentence(raw);
+        final correctAnswer = sentenceAnswer ?? expression.romand;
+        final distractorList = await ref.read(
+          distractorsProvider(expression).future,
+        );
+        final options = [...distractorList, correctAnswer]
+          ..shuffle(Random());
+        return ExerciseBlankActive(
+          expression: expression,
+          sentence: sentenceText,
+          correctAnswer: correctAnswer,
+          options: options,
+          progressIndex: _currentIndex,
+          totalExpressions: _expressions.length,
+        );
+
+      case ExerciseType.blankTyping:
+        final raw = expression.sentences[
+            Random().nextInt(expression.sentences.length)];
+        final (sentenceText, sentenceAnswer) = _parseSentence(raw);
+        final correctAnswer = sentenceAnswer ?? expression.romand;
+        return ExerciseBlankTypingActive(
+          expression: expression,
+          sentence: sentenceText,
+          correctAnswer: correctAnswer,
+          progressIndex: _currentIndex,
+          totalExpressions: _expressions.length,
+        );
+
+      case ExerciseType.multipleChoice:
+        final distractorList = await ref.read(
+          distractorsProvider(expression).future,
+        );
+        final options = [...distractorList, expression.romand]
+          ..shuffle(Random());
+        return ExerciseActive(
+          expression: expression,
+          options: options,
+          progressIndex: _currentIndex,
+          totalExpressions: _expressions.length,
+        );
     }
-
-    final distractorList = await ref.read(
-      distractorsProvider(expression).future,
-    );
-    final options = [...distractorList, expression.romand]..shuffle(Random());
-
-    return ExerciseActive(
-      expression: expression,
-      options: options,
-      progressIndex: _currentIndex,
-      totalExpressions: _expressions.length,
-    );
   }
 
   /// Transitions from discovery card to active exercise.
@@ -156,6 +191,76 @@ class ExerciseNotifier extends _$ExerciseNotifier {
           options: currentState.options,
           selectedAnswer: answer,
           correctAnswer: currentState.expression.romand,
+          isCorrect: isCorrect,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
+    }
+  }
+
+  /// Processes the user's blank MC answer and transitions to feedback state.
+  Future<void> submitBlankAnswer(String answer) async {
+    final currentState = state.value;
+    if (currentState is! ExerciseBlankActive) return;
+
+    final isCorrect = answer == currentState.correctAnswer;
+
+    await _writeProgress(currentState.expression.id, isCorrect: isCorrect);
+    if (isCorrect) {
+      await ref.read(totalPointsProvider.notifier).increment();
+    }
+
+    if (ref.mounted) {
+      state = AsyncData(
+        ExerciseBlankFeedback(
+          expression: currentState.expression,
+          sentence: currentState.sentence,
+          selectedAnswer: answer,
+          correctAnswer: currentState.correctAnswer,
+          isCorrect: isCorrect,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
+    }
+  }
+
+  /// Processes the user's blank typing answer with accent-aware validation.
+  Future<void> submitBlankTypingAnswer(String userInput) async {
+    final currentState = state.value;
+    if (currentState is! ExerciseBlankTypingActive) return;
+
+    final expression = currentState.expression;
+    final correctAnswer = currentState.correctAnswer;
+    final normalized = normalizeAccents(userInput);
+    var isCorrect = normalized == normalizeAccents(correctAnswer);
+
+    // Also accept the base romand form and alternatives.
+    if (!isCorrect) {
+      if (normalized == normalizeAccents(expression.romand)) {
+        isCorrect = true;
+      }
+      for (final alt in expression.alternatives) {
+        if (normalized == normalizeAccents(alt)) {
+          isCorrect = true;
+          break;
+        }
+      }
+    }
+
+    await _writeProgress(expression.id, isCorrect: isCorrect);
+    if (isCorrect) {
+      await ref.read(totalPointsProvider.notifier).increment();
+    }
+
+    if (ref.mounted) {
+      state = AsyncData(
+        ExerciseBlankTypingFeedback(
+          expression: expression,
+          sentence: currentState.sentence,
+          userAnswer: userInput.trim(),
+          correctAnswer: correctAnswer,
           isCorrect: isCorrect,
           progressIndex: currentState.progressIndex,
           totalExpressions: currentState.totalExpressions,
@@ -213,6 +318,10 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       expression = currentState.expression;
     } else if (currentState is ExerciseTypingActive) {
       expression = currentState.expression;
+    } else if (currentState is ExerciseBlankActive) {
+      expression = currentState.expression;
+    } else if (currentState is ExerciseBlankTypingActive) {
+      expression = currentState.expression;
     } else {
       return;
     }
@@ -244,6 +353,30 @@ class ExerciseNotifier extends _$ExerciseNotifier {
           totalExpressions: currentState.totalExpressions,
         ),
       );
+    } else if (currentState is ExerciseBlankActive) {
+      state = AsyncData(
+        ExerciseBlankFeedback(
+          expression: expression,
+          sentence: currentState.sentence,
+          selectedAnswer: '',
+          correctAnswer: currentState.correctAnswer,
+          isCorrect: false,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
+    } else if (currentState is ExerciseBlankTypingActive) {
+      state = AsyncData(
+        ExerciseBlankTypingFeedback(
+          expression: expression,
+          sentence: currentState.sentence,
+          userAnswer: '',
+          correctAnswer: currentState.correctAnswer,
+          isCorrect: false,
+          progressIndex: currentState.progressIndex,
+          totalExpressions: currentState.totalExpressions,
+        ),
+      );
     }
   }
 
@@ -251,7 +384,9 @@ class ExerciseNotifier extends _$ExerciseNotifier {
   Future<void> advance() async {
     final currentState = state.value;
     if (currentState is! ExerciseFeedback &&
-        currentState is! ExerciseTypingFeedback) {
+        currentState is! ExerciseTypingFeedback &&
+        currentState is! ExerciseBlankFeedback &&
+        currentState is! ExerciseBlankTypingFeedback) {
       return;
     }
 
@@ -260,12 +395,16 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       final isCorrect = switch (currentState) {
         ExerciseFeedback(:final isCorrect) => isCorrect,
         ExerciseTypingFeedback(:final isCorrect) => isCorrect,
+        ExerciseBlankFeedback(:final isCorrect) => isCorrect,
+        ExerciseBlankTypingFeedback(:final isCorrect) => isCorrect,
         _ => true,
       };
       if (!isCorrect) {
         final expression = switch (currentState) {
           ExerciseFeedback(:final expression) => expression,
           ExerciseTypingFeedback(:final expression) => expression,
+          ExerciseBlankFeedback(:final expression) => expression,
+          ExerciseBlankTypingFeedback(:final expression) => expression,
           _ => null,
         };
         if (expression != null) _expressions.add(expression);
@@ -361,6 +500,18 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       nextTierName: tier < 4 ? Tier.nameForTier(tier + 1) : null,
       isAllComplete: isAllComplete,
     );
+  }
+
+  /// Parses a sentence string with optional answer override.
+  ///
+  /// Format: `"sentence text"` or `"sentence text|||answer"`.
+  /// Returns `(text, answer)` where answer is null if no override.
+  static (String, String?) _parseSentence(String raw) {
+    final parts = raw.split('|||');
+    if (parts.length >= 2) {
+      return (parts[0], parts[1]);
+    }
+    return (raw, null);
   }
 
   /// Reads existing progress, calculates SM-2, and writes the result.

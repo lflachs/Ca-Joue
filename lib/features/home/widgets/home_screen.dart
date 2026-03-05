@@ -5,7 +5,7 @@ import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/overall_progress_provider.dart';
 import 'package:ca_joue/core/progress/points_provider.dart';
 import 'package:ca_joue/core/progress/streak_provider.dart';
-import 'package:ca_joue/features/home/widgets/review_cta.dart';
+import 'package:ca_joue/core/spaced_repetition/review_provider.dart';
 import 'package:ca_joue/features/home/widgets/tier_row.dart';
 import 'package:ca_joue/theme/ca_joue_theme.dart';
 import 'package:ca_joue/widgets/cta_button.dart';
@@ -187,59 +187,36 @@ class HomeScreen extends ConsumerWidget {
 
                   const SizedBox(height: CaJoueSpacing.lg),
 
-                  // -- Review CTA (conditional, self-spacing) --
-                  const ReviewCta(),
-
-                  // -- Practice all button --
-                  if (completed > 0)
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        bottom: CaJoueSpacing.md,
-                      ),
-                      child: Semantics(
-                        label: 'Pratique libre. Appuie pour pratiquer'
-                            ' toutes les expressions.',
-                        button: true,
-                        child: GestureDetector(
-                          onTap: () => context.push('/practice'),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 18,
-                              horizontal: 20,
-                            ),
-                            decoration: const BoxDecoration(
-                              color: CaJoueColors.cream,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(14),
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    'Pratique libre',
-                                    style: CaJoueTypography.uiBody.copyWith(
-                                      color: CaJoueColors.slate,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                                Opacity(
-                                  opacity: 0.4,
-                                  child: Text(
-                                    '\u203A',
-                                    style: CaJoueTypography.expressionTitle
-                                        .copyWith(
-                                      color: CaJoueColors.slate,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                  // -- Practice & Review buttons --
+                  if (completed > 0) ...[
+                    _HomeActionButton(
+                      label: 'Pratique libre',
+                      semanticsLabel: 'Pratique libre. Appuie pour'
+                          ' pratiquer toutes les expressions.',
+                      onTap: () => context.push('/practice'),
                     ),
+                    const SizedBox(height: CaJoueSpacing.sm),
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final countAsync =
+                            ref.watch(dueExpressionCountProvider);
+                        final dueCount = countAsync.value ?? 0;
+                        return _HomeActionButton(
+                          label: 'Revoir les erreurs',
+                          badge: dueCount > 0 ? '$dueCount' : null,
+                          semanticsLabel: dueCount > 0
+                              ? '$dueCount expressions \u00e0 revoir.'
+                                  ' Appuie pour commencer.'
+                              : 'Revoir les erreurs.'
+                                  ' Aucune expression \u00e0 revoir.',
+                          onTap: dueCount > 0
+                              ? () => context.push('/review')
+                              : null,
+                        );
+                      },
+                    ),
+                    const SizedBox(height: CaJoueSpacing.md),
+                  ],
 
                   // -- Tier list --
                   ...tiers.map((tier) {
@@ -272,6 +249,89 @@ class HomeScreen extends ConsumerWidget {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+/// A cream-colored action button for the home screen.
+class _HomeActionButton extends StatelessWidget {
+  const _HomeActionButton({
+    required this.label,
+    required this.semanticsLabel,
+    this.badge,
+    this.onTap,
+  });
+
+  final String label;
+  final String semanticsLabel;
+  final String? badge;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDisabled = onTap == null;
+
+    return Semantics(
+      label: semanticsLabel,
+      button: true,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Opacity(
+          opacity: isDisabled ? 0.45 : 1.0,
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 18,
+              horizontal: 20,
+            ),
+            decoration: const BoxDecoration(
+              color: CaJoueColors.cream,
+              borderRadius: BorderRadius.all(Radius.circular(14)),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    label,
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.slate,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                if (badge != null) ...[
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 2,
+                    ),
+                    decoration: BoxDecoration(
+                      color: CaJoueColors.red,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      badge!,
+                      style: CaJoueTypography.uiCaption.copyWith(
+                        color: CaJoueColors.snow,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+                Opacity(
+                  opacity: 0.4,
+                  child: Text(
+                    '\u203A',
+                    style: CaJoueTypography.expressionTitle.copyWith(
+                      color: CaJoueColors.slate,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
