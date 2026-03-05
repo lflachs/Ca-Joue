@@ -195,23 +195,24 @@ class HomeScreen extends ConsumerWidget {
                           ' pratiquer toutes les expressions.',
                       onTap: () => context.push('/practice'),
                     ),
-                    const SizedBox(height: CaJoueSpacing.sm),
                     Consumer(
                       builder: (context, ref, _) {
                         final countAsync =
                             ref.watch(dueExpressionCountProvider);
                         final dueCount = countAsync.value ?? 0;
-                        return _HomeActionButton(
-                          label: 'Revoir les erreurs',
-                          badge: dueCount > 0 ? '$dueCount' : null,
-                          semanticsLabel: dueCount > 0
-                              ? '$dueCount expressions \u00e0 revoir.'
-                                  ' Appuie pour commencer.'
-                              : 'Revoir les erreurs.'
-                                  ' Aucune expression \u00e0 revoir.',
-                          onTap: dueCount > 0
-                              ? () => context.push('/review')
-                              : null,
+                        if (dueCount == 0) return const SizedBox.shrink();
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                            top: CaJoueSpacing.sm,
+                          ),
+                          child: _HomeActionButton(
+                            label: 'Revoir les erreurs',
+                            badge: '$dueCount',
+                            semanticsLabel:
+                                '$dueCount expressions \u00e0 revoir.'
+                                ' Appuie pour commencer.',
+                            onTap: () => context.push('/review'),
+                          ),
                         );
                       },
                     ),

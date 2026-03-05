@@ -36,16 +36,21 @@ abstract final class ReviewQueries {
     );
   }
 
-  /// Returns rows for all expressions the user has encountered
-  /// (i.e. that have a progress record), regardless of review date.
+  /// Returns rows for expressions the user has encountered, ordered by
+  /// least recently reviewed first so stale expressions get priority.
+  ///
+  /// Limited to [limit] expressions to keep practice sessions manageable.
   static Future<List<Map<String, Object?>>> seenExpressionRows(
-    Database db,
-  ) async {
+    Database db, {
+    int limit = 30,
+  }) async {
     return db.rawQuery(
       'SELECT e.* FROM ${Tables.expressions} e '
       'INNER JOIN ${Tables.progress} p '
       'ON e.${Tables.exprId} = p.${Tables.progExpressionId} '
-      'ORDER BY e.${Tables.exprTier} ASC, e.${Tables.exprLesson} ASC',
+      'ORDER BY p.${Tables.progLastReviewed} ASC '
+      'LIMIT ?',
+      [limit],
     );
   }
 }

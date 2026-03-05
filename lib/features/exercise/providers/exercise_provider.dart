@@ -390,25 +390,23 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       return;
     }
 
-    // Re-queue missed expressions in practice mode.
-    if (isPracticeMode(_lessonId)) {
-      final isCorrect = switch (currentState) {
-        ExerciseFeedback(:final isCorrect) => isCorrect,
-        ExerciseTypingFeedback(:final isCorrect) => isCorrect,
-        ExerciseBlankFeedback(:final isCorrect) => isCorrect,
-        ExerciseBlankTypingFeedback(:final isCorrect) => isCorrect,
-        _ => true,
+    // Re-queue missed expressions so they come back until answered correctly.
+    final isCorrect = switch (currentState) {
+      ExerciseFeedback(:final isCorrect) => isCorrect,
+      ExerciseTypingFeedback(:final isCorrect) => isCorrect,
+      ExerciseBlankFeedback(:final isCorrect) => isCorrect,
+      ExerciseBlankTypingFeedback(:final isCorrect) => isCorrect,
+      _ => true,
+    };
+    if (!isCorrect) {
+      final expression = switch (currentState) {
+        ExerciseFeedback(:final expression) => expression,
+        ExerciseTypingFeedback(:final expression) => expression,
+        ExerciseBlankFeedback(:final expression) => expression,
+        ExerciseBlankTypingFeedback(:final expression) => expression,
+        _ => null,
       };
-      if (!isCorrect) {
-        final expression = switch (currentState) {
-          ExerciseFeedback(:final expression) => expression,
-          ExerciseTypingFeedback(:final expression) => expression,
-          ExerciseBlankFeedback(:final expression) => expression,
-          ExerciseBlankTypingFeedback(:final expression) => expression,
-          _ => null,
-        };
-        if (expression != null) _expressions.add(expression);
-      }
+      if (expression != null) _expressions.add(expression);
     }
 
     _currentIndex++;

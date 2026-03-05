@@ -143,6 +143,13 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     }
   }
 
+  /// Double haptic for wrong answers: two medium impacts with a short pause.
+  Future<void> _wrongHaptic() async {
+    await HapticFeedback.mediumImpact();
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+    await HapticFeedback.mediumImpact();
+  }
+
   void _scheduleAdvance() {
     _advanceTimer?.cancel();
     _advanceTimer = Timer(const Duration(milliseconds: 800), () {
@@ -330,10 +337,14 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
       _scheduleAdvance();
     });
 
-    // Haptic on correct (once per feedback).
-    if (state.isCorrect && !_hapticFired) {
+    // Haptic feedback (once per feedback).
+    if (!_hapticFired) {
       _hapticFired = true;
-      unawaited(HapticFeedback.lightImpact());
+      if (state.isCorrect) {
+        unawaited(HapticFeedback.lightImpact());
+      } else {
+        unawaited(_wrongHaptic());
+      }
     }
 
     final buttonStates = <String, AnswerButtonState>{};
@@ -348,7 +359,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     }
 
     return _buildExerciseLayout(
-      key: ValueKey('feedback-${state.expression.id}'),
+      key: ValueKey('active-${state.expression.id}'),
       progressIndex: state.progressIndex,
       totalExpressions: state.totalExpressions,
       expression: state.expression,
@@ -487,16 +498,20 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     ExerciseTypingFeedback state,
     bool reducedMotion,
   ) {
-    // Haptic on correct (once per feedback).
-    if (state.isCorrect && !_hapticFired) {
+    // Haptic feedback (once per feedback).
+    if (!_hapticFired) {
       _hapticFired = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(HapticFeedback.lightImpact());
+        if (state.isCorrect) {
+          unawaited(HapticFeedback.lightImpact());
+        } else {
+          unawaited(_wrongHaptic());
+        }
       });
     }
 
     return Column(
-      key: ValueKey('typing-feedback-${state.expression.id}'),
+      key: ValueKey('typing-active-${state.expression.id}'),
       children: [
         CategoryStrip(
           lessonName: _lessonDisplayName,
@@ -790,6 +805,20 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
 
                 // Sentence with blank.
                 _buildSentenceText(state.sentence),
+                const SizedBox(height: CaJoueSpacing.sm),
+
+                // Hint: French meaning.
+                Padding(
+                  padding: CaJoueSpacing.horizontal,
+                  child: Text(
+                    '= ${state.expression.french}',
+                    style: CaJoueTypography.uiBody.copyWith(
+                      color: CaJoueColors.stone,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 const SizedBox(height: CaJoueSpacing.lg),
 
                 // MC answer buttons.
@@ -846,16 +875,20 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
   }
 
   Widget _buildBlankFeedback(ExerciseBlankFeedback state, bool reducedMotion) {
-    // Haptic on correct (once per feedback).
-    if (state.isCorrect && !_hapticFired) {
+    // Haptic feedback (once per feedback).
+    if (!_hapticFired) {
       _hapticFired = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(HapticFeedback.lightImpact());
+        if (state.isCorrect) {
+          unawaited(HapticFeedback.lightImpact());
+        } else {
+          unawaited(_wrongHaptic());
+        }
       });
     }
 
     return Column(
-      key: ValueKey('blank-feedback-${state.expression.id}'),
+      key: ValueKey('blank-active-${state.expression.id}'),
       children: [
         CategoryStrip(
           lessonName: _lessonDisplayName,
@@ -1087,16 +1120,20 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
     ExerciseBlankTypingFeedback state,
     bool reducedMotion,
   ) {
-    // Haptic on correct (once per feedback).
-    if (state.isCorrect && !_hapticFired) {
+    // Haptic feedback (once per feedback).
+    if (!_hapticFired) {
       _hapticFired = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(HapticFeedback.lightImpact());
+        if (state.isCorrect) {
+          unawaited(HapticFeedback.lightImpact());
+        } else {
+          unawaited(_wrongHaptic());
+        }
       });
     }
 
     return Column(
-      key: ValueKey('blank-typing-feedback-${state.expression.id}'),
+      key: ValueKey('blank-typing-active-${state.expression.id}'),
       children: [
         CategoryStrip(
           lessonName: _lessonDisplayName,
