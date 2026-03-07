@@ -102,8 +102,8 @@ void main() {
       });
 
       test('throws for unknown version', () async {
-        expect(
-          () => Migrations.runAll(db, 2, 99),
+        await expectLater(
+          Migrations.runAll(db, 99, 100),
           throwsA(isA<ArgumentError>()),
         );
       });

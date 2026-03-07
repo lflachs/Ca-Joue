@@ -36,7 +36,12 @@ void main() {
         ),
       );
 
-      final semantics = tester.widget<Semantics>(find.byType(Semantics));
+      final semantics = tester.widget<Semantics>(
+        find.descendant(
+          of: find.byType(Dahu),
+          matching: find.byType(Semantics),
+        ).first,
+      );
       expect(semantics.excludeSemantics, isTrue);
     });
   });
