@@ -1,7 +1,7 @@
 name: ca_joue
 description: "Apprends les expressions suisses romandes avec Ça joue!"
 publish_to: "none"
-version: 0.1.8+8
+version: 0.1.9+9
 
 environment:
   sdk: ^3.10.8
