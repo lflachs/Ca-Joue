@@ -62,7 +62,7 @@ final class ExerciseNotifierProvider
   }
 }
 
-String _$exerciseNotifierHash() => r'86feee10494f1be4ba34e7f76020115b3728600f';
+String _$exerciseNotifierHash() => r'61bb7c3546af2eb3b4f9040f6ed3f53da512194a';
 
 /// Manages the exercise flow state machine for a given lesson.
 ///

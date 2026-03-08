@@ -49,7 +49,7 @@ final class StreakNotifierProvider
   StreakNotifier create() => StreakNotifier();
 }
 
-String _$streakNotifierHash() => r'89a1fb97209b7e3f26c1586fa2fc1e18c8e3ca26';
+String _$streakNotifierHash() => r'6d540652116a473824abfe4223993f2c18c1f12a';
 
 /// Manages the user's daily learning streak in the sessions table.
 ///

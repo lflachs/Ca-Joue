@@ -43,7 +43,7 @@ final class OnboardingNotifierProvider
 }
 
 String _$onboardingNotifierHash() =>
-    r'3a5987ba7e0474980cab4bea329b3cae1e27d17a';
+    r'697f31d7a448683e5f71e51d20768f993e69d5c2';
 
 /// Manages the onboarding/first-launch state.
 ///

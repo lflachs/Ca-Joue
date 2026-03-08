@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:math';
 
+import 'package:ca_joue/core/analytics/analytics.dart';
 import 'package:ca_joue/core/content/accent_normalizer.dart';
 import 'package:ca_joue/core/content/content_provider.dart';
 import 'package:ca_joue/core/content/discovery_provider.dart';
@@ -61,6 +63,20 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
     _originalCount = _expressions.length;
     _currentIndex = startIndex.clamp(0, _expressions.length);
+
+    // Log session start (fire-and-forget).
+    if (lessonId == reviewLessonId) {
+      unawaited(Analytics.reviewStarted(dueCount: _expressions.length));
+    } else if (lessonId == practiceAllLessonId) {
+      unawaited(Analytics.practiceStarted());
+    } else if (isPracticeMode(lessonId)) {
+      unawaited(
+        Analytics.practiceStarted(tier: '${practiceTierNum(lessonId)}'),
+      );
+    } else {
+      final tier = _expressions.isNotEmpty ? _expressions.first.tier : 0;
+      unawaited(Analytics.lessonStarted(lessonId: lessonId, tier: tier));
+    }
 
     if (_expressions.isEmpty || _currentIndex >= _expressions.length) {
       return _buildCompleteState();
@@ -179,7 +195,10 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
     final isCorrect = answer == currentState.expression.romand;
 
-    await _writeProgress(currentState.expression.id, isCorrect: isCorrect);
+    await _writeProgress(
+      currentState.expression.id,
+      isCorrect: isCorrect,
+    );
     if (isCorrect) {
       await ref.read(totalPointsProvider.notifier).increment();
     }
@@ -206,7 +225,11 @@ class ExerciseNotifier extends _$ExerciseNotifier {
 
     final isCorrect = answer == currentState.correctAnswer;
 
-    await _writeProgress(currentState.expression.id, isCorrect: isCorrect);
+    await _writeProgress(
+      currentState.expression.id,
+      isCorrect: isCorrect,
+      exerciseType: 'blank_multiple_choice',
+    );
     if (isCorrect) {
       await ref.read(totalPointsProvider.notifier).increment();
     }
@@ -249,7 +272,11 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       }
     }
 
-    await _writeProgress(expression.id, isCorrect: isCorrect);
+    await _writeProgress(
+      expression.id,
+      isCorrect: isCorrect,
+      exerciseType: 'blank_typing',
+    );
     if (isCorrect) {
       await ref.read(totalPointsProvider.notifier).increment();
     }
@@ -270,6 +297,7 @@ class ExerciseNotifier extends _$ExerciseNotifier {
   }
 
   /// Processes the user's typed answer with accent-aware validation.
+  ///
   Future<void> submitTypingAnswer(String userInput) async {
     final currentState = state.value;
     if (currentState is! ExerciseTypingActive) return;
@@ -287,7 +315,11 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       }
     }
 
-    await _writeProgress(expression.id, isCorrect: isCorrect);
+    await _writeProgress(
+      expression.id,
+      isCorrect: isCorrect,
+      exerciseType: 'typing',
+    );
     if (isCorrect) {
       await ref.read(totalPointsProvider.notifier).increment();
     }
@@ -420,6 +452,12 @@ class ExerciseNotifier extends _$ExerciseNotifier {
       // Record session completion for streak tracking.
       await ref.read(streakProvider.notifier).recordSession();
 
+      // Log completion analytics.
+      await Analytics.lessonCompleted(
+        lessonId: _lessonId,
+        expressionsCount: _originalCount,
+      );
+
       // Refresh due count so home screen reflects latest state.
       ref.invalidate(dueExpressionCountProvider);
 
@@ -516,7 +554,13 @@ class ExerciseNotifier extends _$ExerciseNotifier {
   Future<void> _writeProgress(
     String expressionId, {
     required bool isCorrect,
+    String exerciseType = 'multiple_choice',
   }) async {
+    unawaited(Analytics.exerciseAnswered(
+      lessonId: _lessonId,
+      isCorrect: isCorrect,
+      exerciseType: exerciseType,
+    ));
     final db = await ref.read(databaseProvider.future);
 
     // Read existing progress (or use defaults for first encounter).

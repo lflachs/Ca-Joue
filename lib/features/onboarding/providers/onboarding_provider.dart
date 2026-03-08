@@ -1,3 +1,4 @@
+import 'package:ca_joue/core/analytics/analytics.dart';
 import 'package:ca_joue/core/database/database_provider.dart';
 import 'package:ca_joue/core/database/tables.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -36,6 +37,7 @@ class OnboardingNotifier extends _$OnboardingNotifier {
       whereArgs: [1],
     );
 
+    await Analytics.onboardingCompleted();
     if (ref.mounted) ref.invalidateSelf();
   }
 }
