@@ -67,3 +67,9 @@ app.*.map.json
 *.ipa
 *.aab
 *.apk
+
+# Firebase config (contains API keys)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
+firebase.json
