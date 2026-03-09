@@ -26,14 +26,30 @@ class OnboardingScreen extends ConsumerWidget {
                 const Dahu(size: DahuSize.onboarding),
                 const SizedBox(height: CaJoueSpacing.lg),
                 CtaButton(
-                  label: 'Commencer',
+                  label: 'Tester mon niveau',
                   fullWidth: false,
-                  onPressed: () async {
+                  onPressed: () => context.go('/placement'),
+                ),
+                const SizedBox(height: CaJoueSpacing.md),
+                GestureDetector(
+                  onTap: () async {
                     await ref
                         .read(onboardingProvider.notifier)
                         .completeOnboarding();
                     if (context.mounted) context.go('/home');
                   },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: CaJoueSpacing.sm,
+                      horizontal: CaJoueSpacing.md,
+                    ),
+                    child: Text(
+                      'Commencer depuis le début',
+                      style: CaJoueTypography.uiButton.copyWith(
+                        color: CaJoueColors.stone,
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: CaJoueSpacing.sm),
                 Text(

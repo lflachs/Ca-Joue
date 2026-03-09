@@ -2,7 +2,9 @@ import 'package:ca_joue/core/spaced_repetition/review_provider.dart';
 import 'package:ca_joue/features/exercise/widgets/exercise_screen.dart';
 import 'package:ca_joue/features/home/widgets/home_screen.dart';
 import 'package:ca_joue/features/home/widgets/lesson_list_screen.dart';
+import 'package:ca_joue/features/home/widgets/reset_sheet.dart';
 import 'package:ca_joue/features/onboarding/widgets/loader_screen.dart';
+import 'package:ca_joue/features/placement/widgets/placement_screen.dart';
 import 'package:ca_joue/theme/ca_joue_theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
@@ -68,6 +70,15 @@ final router = GoRouter(
       builder: (context, state) => const LoaderScreen(),
     ),
     GoRoute(
+      path: '/placement',
+      pageBuilder: (context, state) {
+        return _iosPush(
+          key: state.pageKey,
+          child: const PlacementScreen(),
+        );
+      },
+    ),
+    GoRoute(
       path: '/home',
       pageBuilder: (context, state) {
         return CustomTransitionPage<void>(
@@ -76,6 +87,22 @@ final router = GoRouter(
           transitionDuration: Duration.zero,
           reverseTransitionDuration: Duration.zero,
           transitionsBuilder: (_, __, ___, child) => child,
+        );
+      },
+    ),
+    GoRoute(
+      path: '/reset',
+      pageBuilder: (context, state) {
+        return CustomTransitionPage<void>(
+          key: state.pageKey,
+          opaque: false,
+          child: const ResetSheet(),
+          transitionDuration: _duration,
+          reverseTransitionDuration: _duration,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            if (MediaQuery.disableAnimationsOf(context)) return child;
+            return FadeTransition(opacity: animation, child: child);
+          },
         );
       },
     ),
