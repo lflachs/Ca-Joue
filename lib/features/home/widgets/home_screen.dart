@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:ca_joue/core/content/content_provider.dart';
+import 'package:ca_joue/core/database/reset_provider.dart';
 import 'package:ca_joue/core/progress/lesson_progress_provider.dart';
 import 'package:ca_joue/core/progress/overall_progress_provider.dart';
 import 'package:ca_joue/core/progress/points_provider.dart';
@@ -14,6 +15,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+
+void _showResetMenu(BuildContext context, WidgetRef ref) {
+  context.push('/reset');
+}
 
 /// The home screen showing greeting and tier navigation.
 class HomeScreen extends ConsumerWidget {
@@ -123,6 +128,15 @@ class HomeScreen extends ConsumerWidget {
                                 style: CaJoueTypography.uiBody.copyWith(
                                   color: CaJoueColors.stone,
                                   fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(width: 14),
+                              GestureDetector(
+                                onTap: () => _showResetMenu(context, ref),
+                                child: const Icon(
+                                  LucideIcons.settings,
+                                  size: 18,
+                                  color: CaJoueColors.stone,
                                 ),
                               ),
                             ],
