@@ -65,4 +65,19 @@ abstract final class Analytics {
         name: 'streak_milestone',
         parameters: {'days': days},
       );
+
+  /// User completed the placement test.
+  static Future<void> placementCompleted({
+    required int placedTier,
+    required int totalCorrect,
+    required int totalQuestions,
+  }) =>
+      _instance.logEvent(
+        name: 'placement_completed',
+        parameters: {
+          'placed_tier': placedTier,
+          'total_correct': totalCorrect,
+          'total_questions': totalQuestions,
+        },
+      );
 }
