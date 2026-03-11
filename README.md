@@ -1,8 +1,8 @@
 # Ca Joue!
 
-App mobile pour apprendre les expressions de Suisse romande. 253 expressions en 4 paliers de difficulte, avec contexte culturel et quiz.
+A mobile app to learn Swiss French (Suisse romande) expressions. 253 expressions across 4 difficulty tiers, with cultural context and quizzes. The app is in French.
 
-La mascotte, le Dahu, accompagne l'utilisateur dans les lecons.
+The mascot, le Dahu, guides the user through the lessons.
 
 ## Demo
 
@@ -17,7 +17,7 @@ La mascotte, le Dahu, accompagne l'utilisateur dans les lecons.
 - SQLite local (sqflite)
 - go_router
 
-## Lancer le projet
+## Getting Started
 
 ```bash
 flutter pub get
