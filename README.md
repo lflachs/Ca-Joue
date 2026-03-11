@@ -4,6 +4,12 @@ App mobile pour apprendre les expressions de Suisse romande. 253 expressions en 
 
 La mascotte, le Dahu, accompagne l'utilisateur dans les lecons.
 
+## Demo
+
+<p align="center">
+  <img src="demo.gif" width="300" />
+</p>
+
 ## Stack
 
 - Flutter (Dart), zero Material, widgets custom
