@@ -13,7 +13,7 @@ The mascot, le Dahu, guides the user through the lessons.
 ## Stack
 
 - Flutter (Dart), zero Material, widgets custom
-- Riverpod pour l'etat
+- Riverpod for state management
 - SQLite local (sqflite)
 - go_router
 
