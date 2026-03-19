@@ -21,7 +21,13 @@ class _ResetSheetState extends ConsumerState<ResetSheet> {
   Widget build(BuildContext context) {
     return GestureDetector(
       // Tapping the overlay background closes.
-      onTap: () => context.pop(),
+      onTap: () {
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go('/home');
+        }
+      },
       child: ColoredBox(
         color: const Color(0x66000000),
         child: Align(
@@ -81,7 +87,13 @@ class _ResetSheetState extends ConsumerState<ResetSheet> {
                     CtaButton(
                       label: 'Annuler',
                       fullWidth: true,
-                      onPressed: () => context.pop(),
+                      onPressed: () {
+                        if (context.canPop()) {
+                          context.pop();
+                        } else {
+                          context.go('/home');
+                        }
+                      },
                     ),
                   ],
                 ),

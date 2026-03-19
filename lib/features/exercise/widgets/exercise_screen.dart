@@ -51,6 +51,14 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
   late final Animation<double> _dahuBob;
   late final Animation<double> _dahuTilt;
   bool _hapticFired = false;
+
+  void _popOrHome(BuildContext context) {
+    if (context.canPop()) {
+      context.pop();
+    } else {
+      context.go('/home');
+    }
+  }
   AnimationController? _celebrationController;
   late final TextEditingController _typingController;
   late final FocusNode _typingFocusNode;
@@ -276,7 +284,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -394,7 +402,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -517,7 +525,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -771,7 +779,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -894,7 +902,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -1011,7 +1019,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -1139,7 +1147,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: state.progressIndex,
           totalExpressions: state.totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -1276,7 +1284,7 @@ class _ExerciseScreenState extends ConsumerState<ExerciseScreen>
           lessonName: _lessonDisplayName,
           progressIndex: progressIndex,
           totalExpressions: totalExpressions,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(

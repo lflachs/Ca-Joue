@@ -60,6 +60,14 @@ class _PlacementQuizState extends ConsumerState<_PlacementQuiz>
   late final Animation<double> _dahuTilt;
   bool _hapticFired = false;
 
+  void _popOrHome(BuildContext context) {
+    if (context.canPop()) {
+      context.pop();
+    } else {
+      context.go('/home');
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -244,7 +252,7 @@ class _PlacementQuizState extends ConsumerState<_PlacementQuiz>
           lessonName: 'Placement',
           progressIndex: state.currentIndex,
           totalExpressions: state.questions.length,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -361,7 +369,7 @@ class _PlacementQuizState extends ConsumerState<_PlacementQuiz>
           lessonName: 'Placement',
           progressIndex: state.currentIndex,
           totalExpressions: state.questions.length,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -541,7 +549,7 @@ class _PlacementQuizState extends ConsumerState<_PlacementQuiz>
           lessonName: 'Placement',
           progressIndex: state.currentIndex,
           totalExpressions: state.questions.length,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(
@@ -663,7 +671,7 @@ class _PlacementQuizState extends ConsumerState<_PlacementQuiz>
           lessonName: 'Placement',
           progressIndex: state.currentIndex,
           totalExpressions: state.questions.length,
-          onBack: () => context.pop(),
+          onBack: () => _popOrHome(context),
         ),
         const SizedBox(height: CaJoueSpacing.sm),
         ProgressBar(

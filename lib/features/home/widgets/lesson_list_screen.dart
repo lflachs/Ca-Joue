@@ -62,7 +62,13 @@ class LessonListScreen extends ConsumerWidget {
                     children: [
                       const SizedBox(height: CaJoueSpacing.md),
                       GestureDetector(
-                        onTap: () => context.pop(),
+                        onTap: () {
+                          if (context.canPop()) {
+                            context.pop();
+                          } else {
+                            context.go('/home');
+                          }
+                        },
                         child: Semantics(
                           label: 'Retour',
                           button: true,
